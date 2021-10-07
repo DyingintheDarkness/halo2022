@@ -18,8 +18,7 @@ const Join = () => {
     setSignInStatus(false);
     setUser(null);
   };
-  const responseGoogleSuccess = async (e) => {
-    e.preventDefault()
+  const responseGoogleSuccess = async () => {
     console.log("Logged In");
     const { name, email, imageUrl } = e.profileObj;
     login(name, email, imageUrl, setUser, setSignInStatus).then((res) => {
