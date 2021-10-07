@@ -1,13 +1,7 @@
-// Add Pink Blob At 2AM Issues Fixed
-// Don't Waste Time on This Shit
-
 import React from "react";
 import Layout from "../../components/Layout";
-import { useHistory } from "react-router";
 import { events } from "./events";
 function Home(props) {
-  // const { user } = useContext(AuthContext);
-  // const history = useHistory();
   return (
     <Layout>
       <div className="h-screen flex justify-center items-center">

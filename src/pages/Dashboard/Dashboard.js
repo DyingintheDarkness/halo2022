@@ -1,6 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Link, useHistory, Redirect } from "react-router-dom";
-import { AuthContext } from "../../components/AuthContext";
 import { updateEvents } from "../../components/authentication";
 import Layout from "../../components/Layout";
 import Loading from "../../components/Loading";
