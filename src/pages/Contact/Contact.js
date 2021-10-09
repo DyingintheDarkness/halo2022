@@ -1,74 +1,110 @@
 import React from "react";
 import Layout from "../../components/Layout";
-import {contacts} from "./data"
+import { contacts } from "./data";
 import { Link } from "react-router-dom";
 const Contact = () => {
   return (
     <Layout>
-      
       <div className="mt-24 font-pop font-bold text-lg text-center sm:text-xl md:text-2xl lg:text-4xl xl:text-5xl">
-        <h1>Lorem ipsum dolor sit amet,
-          <br/> consectetur adipiscing amet</h1>
-        <svg className="w-20 h-20 absolute -left-2 hero-3 sm:w-40 sm:h-40 sm:-mt-32 -mt-20 md:w-32 md:h-32 md:-mt-32 md:-left-5 lg:w-52 lg:h-52 lg:-mt-44" viewBox="0 0 78 142" fill="none" transform="rotate(5)" xmlns="http://www.w3.org/2000/svg">
-<path d="M3 0L77.1824 53.8967L48.8472 141.103H-42.8472L-71.1824 53.8967L3 0Z" fill="url(#paint1_linear)"/>
-<defs>
-<linearGradient id="paint1_linear" x1="-75" y1="0" x2="81" y2="156" gradientUnits="userSpaceOnUse">
-<stop stop-color="#F6CEEC"/>
-<stop offset="1" stop-color="#D939CD"/>
-</linearGradient>
-</defs>
-</svg>
+        <h1>
+          Lorem ipsum dolor sit amet,
+          <br /> consectetur adipiscing amet
+        </h1>
 
+        <svg
+          className="w-20 h-20 absolute -left-2 hero-3 sm:w-40 sm:h-40 sm:-mt-32 -mt-20 md:w-32 md:h-32 md:-mt-32 md:-left-5 lg:w-52 lg:h-52 lg:-mt-44"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          transform="rotate(5)"
+          viewBox="0 0 78 142"
+        >
+          <path
+            fill="url(#paint1_linear)"
+            d="M3 0l74.182 53.897-28.335 87.206h-91.694l-28.335-87.206L3 0z"
+          ></path>
+          <defs>
+            <linearGradient
+              id="paint1_linear"
+              x1="-75"
+              x2="81"
+              y1="0"
+              y2="156"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stopColor="#F6CEEC"></stop>
+              <stop offset="1" stopColor="#D939CD"></stop>
+            </linearGradient>
+          </defs>
+        </svg>
       </div>
 
       <div className="flex flex-col pl-2 mt-10 w-full gap-1 z-30 relative">
         <h1 className="font-sand font-medium text-base xsm:text-lg sm:text-xl">
           Feel Free to Contact Us
         </h1>
-        <div
-          className="contactdiv font-pop flex items-center gap-3 bg-white w-64 xsm:w-80 md:w-96 md:p-4 xsm:p-2 p-0.5 rounded-md text-sm text-secondaryblue sm:text-base"
-        >
+        <div className="contactdiv font-pop flex items-center gap-3 bg-white w-64 xsm:w-80 md:w-96 md:p-4 xsm:p-2 p-0.5 rounded-md text-sm text-secondaryblue sm:text-base">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="h-7 w-7 text-primarygray"
-            viewBox="0 0 20 20"
             fill="currentColor"
+            className="h-7 w-7 text-primarygray"
+            viewBox="0 0 20 20"
           >
-            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
           </svg>
-          <Link to={{ pathname: "mailto:hi@halolegion.com" }}
-          target="_blank">
-          hi@halolegion.com
+
+          <Link to={{ pathname: "mailto:hi@halolegion.com" }} target="_blank">
+            hi@halolegion.com
           </Link>
         </div>
         <div className="flex flex-col gap-2 mt-2">
+          {contacts.map((person) => {
+            return (
+              <div className="flex flex-col gap-1 bg-white contactdiv w-64 md:w-96 md:p-4 xsm:w-80 xsm:p-2 rounded-md pl-2 pb-2 pt-1">
+                <div>
+                  <h1 className="text-secondaryblue sm:text-lg">
+                    {person.name}
+                  </h1>
+                  <h2 className="text-sm font-sand font-light ml-20 sm:text-base">
+                    -{person.designation}
+                  </h2>
+                </div>
+                <p className="text-sm ">{person.phone}</p>
+              </div>
+            );
+          })}
 
-          {contacts.map(person => {
-            return <div className="flex flex-col gap-1 bg-white contactdiv w-64 md:w-96 md:p-4 xsm:w-80 xsm:p-2 rounded-md pl-2 pb-2 pt-1">
-            <div>
-              <h1 className="text-secondaryblue sm:text-lg">{person.name}</h1>
-              <h2 className="text-sm font-sand font-light ml-20 sm:text-base">-{person.designation}</h2>
-            </div>
-            <p className="text-sm ">{person.phone}</p>
-          </div> 
-            })
-          }
-
-<svg className="hero-3 h-32 w-32 absolute sm:w-40 sm:h-40 -right-9 md:w-40 md:h-40 lg:w-56 lg:h-56 lg:-right-14" viewBox="0 0 127 230" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="115" cy="115" r="115" fill="url(#paint0_linear)"/>
-<defs>
-<linearGradient id="paint0_linear" x1="0" y1="0" x2="230" y2="230" gradientUnits="userSpaceOnUse">
-<stop stop-color="#FEB692"/>
-<stop offset="1" stop-color="#EA5455"/>
-</linearGradient>
-</defs>
-</svg>
-
-
+          <svg
+            className="hero-3 h-32 w-32 absolute sm:w-40 sm:h-40 -right-9 md:w-40 md:h-40 lg:w-56 lg:h-56 lg:-right-14"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 127 230"
+          >
+            <circle
+              cx="115"
+              cy="115"
+              r="115"
+              fill="url(#paint0_linear)"
+            ></circle>
+            <defs>
+              <linearGradient
+                id="paint0_linear"
+                x1="0"
+                x2="230"
+                y1="0"
+                y2="230"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stopColor="#FEB692"></stop>
+                <stop offset="1" stopColor="#EA5455"></stop>
+              </linearGradient>
+            </defs>
+          </svg>
         </div>
 
-        <h1 className="font-sand font-medium text-base xsm:text-lg sm:text-xl">Our Socials</h1>
+        <h1 className="font-sand font-medium text-base xsm:text-lg sm:text-xl">
+          Our Socials
+        </h1>
         <div className="flex items-center gap-2 bg-white contactdiv w-64 md:w-96 md:p-4 xsm:w-80 rounded-md p-1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -81,7 +117,7 @@ const Contact = () => {
           </svg>
 
           <svg
-            className="w-8 h-8 xsm:w-10 xsm:h-10"
+            className="w-8 h-8 xsm:w-10 xsm:h-10 "
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >
@@ -124,17 +160,6 @@ const Contact = () => {
           ></iframe>
         </div>
       </div>
-
-
-
-
-
-
-
-
-
-
-
     </Layout>
   );
 };

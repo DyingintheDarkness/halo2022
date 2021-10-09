@@ -1,14 +1,33 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useHistory, Redirect } from "react-router-dom";
-import { updateEvents } from "../../components/authentication";
+import {
+  checkToken,
+  login,
+  updateEvents,
+} from "../../components/authentication";
 import Layout from "../../components/Layout";
 import Loading from "../../components/Loading";
-import { useSharedState, useSetSharedState } from "../../statedrive/index";
-import { userAtom, signInStatusAtom,redirectAtom } from "../../statedrive/atoms";
+import { getUser } from "../../components/authentication";
+
+import {
+  userAtom,
+  signInStatusAtom,
+  redirectAtom,
+  selectedEventsAtom,
+} from "../../statedrive/atoms";
+import { useSetSharedState, useSharedState } from "../../statedrive/index";
+
+import EventCard from "./eventCard";
+
+
 const Dashboard = () => {
   const [user, setUser] = useSharedState(userAtom);
   const [signInStatus, setSignInStatus] = useSharedState(signInStatusAtom);
-
+  const [selectedEvents, setSelectedEvents] =
+    useSharedState(selectedEventsAtom);
+  const [viewPrompts, setViewPrompts] = useState(false);
+  const [redirect, setRedirect] = useSharedState(redirectAtom);
+  
   const events = [
     "coding",
     "writing",
@@ -17,10 +36,6 @@ const Dashboard = () => {
     "gaming",
     "quiz",
   ];
-  const [viewPrompts, setViewPrompts] = useState(false);
-  const [redirect,setRedirect] = useSharedState(redirectAtom)
-  const history = useHistory()
-  const addEvent = (event, i, e) => {};
   setInterval(() => {
     const current = new Date().getTime();
     const past = new Date("Sep 23 2021 19:36:40").getTime();
@@ -28,37 +43,29 @@ const Dashboard = () => {
       setViewPrompts(true);
     }
   }, 1000);
-  useEffect(() => {
-    if (!signInStatus) {
-      history.push(redirect)
-    }
-  });
+
+
 
   return (
     <>
-      {signInStatus ? (
+      {signInStatus && user !== null ? (
         <Layout>
           <div>
             <h1>{user.name}</h1>
-            <h2>{user.events}</h2>
-            <div style={{ display: "flex", gap: "2rem" }}>
-              {events.map((event, i) => {
-                return (
-                  <button
-                    key={i}
-                    style={{ background: "" }}
-                    onClick={() => addEvent(event, i)}
-                    class="event-btns"
-                  >
-                    {event}
-                  </button>
-                );
-              })}
+
+            <div className="flex gap-2">
+              {events.map((event, i) => (
+                <EventCard
+                  name={event}
+                  key={i}
+                  isActive={() => selectedEvents.includes(event)}
+                />
+              ))}
             </div>
             <br />
             <br />
             <br />
-            <button onClick={() => updateEvents(["Lol"])}>Update</button>
+            <button onClick={() => updateEvents(selectedEvents)}>Update</button>
 
             {viewPrompts ? (
               <Link
@@ -71,14 +78,12 @@ const Dashboard = () => {
                 View Prompts
               </Link>
             ) : (
-              <div className="h-screen w-screen bg-white">
-              <Loading />
-              </div>
+              ""
             )}
           </div>
         </Layout>
       ) : (
-        ""
+        <Loading/>
       )}
     </>
   );

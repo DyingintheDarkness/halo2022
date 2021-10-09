@@ -1,3 +1,5 @@
+
+
 import React from "react";
 import Layout from "../../components/Layout";
 import { events } from "./events";
@@ -5,11 +7,11 @@ function Home(props) {
   return (
     <Layout>
       <div className="h-screen flex justify-center items-center">
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center relative">
           <h1 className="font-major text-4xl xsm:text-5xl sm:text-7xl -mt-36">
             halolegion
           </h1>
-          <p className="font-pop font-light text-sm mb-2 sm:text-xl">
+          <p className="font-pop font-light text-sm mb-2 sm:text-xl ">
             We’re the official Tech Club of DPS Indore
           </p>
           <button
@@ -24,7 +26,7 @@ function Home(props) {
         </div>
       </div>
 
-      <div className="relative">
+      <div className="relative ">
         <div className="flex flex-col font-pop bg-secdiv items-center sm:flex-row p-4 lg:p-10 sm:gap-28 sm:-mt-10">
           <h1
             className="font-bold text-xl xl:text-3xl
@@ -39,7 +41,7 @@ function Home(props) {
             Lorem ipsum dolor sit amet
           </h1>
 
-          <div className="md:flex md:gap-5 z-20">
+          <div className="md:flex md:gap-5 z-20 ">
             <div className="flex flex-col items-center justify-center">
               <h2 className="font-medium text-lg  md:text-xl xl:text-2xl">
                 Lorem ipsum dolor
@@ -63,30 +65,40 @@ function Home(props) {
           </div>
         </div>
 
-        <svg
-          className="hero-3 h-40 w-40 absolute -top-16 right-0 xsm:w-52 xsm:h-52 xsm:-top-24 md:w-64 md:h-64 md:-top-28"
-          viewBox="0 0 710 468"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
+        
+          <svg 
+          className="hero-3 h-40 w-40 absolute -top-16 right-0 xsm:w-52 xsm:h-52 xsm:-top-24 md:w-64 md:h-64 md:-top-28 "
+
+          xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 710 468">
+      <path
+        fill="url(#paint3_linear)"
+        d="M354.453 371.069C124.276 396.651 40.031 452.033 17.119 245.878-5.793 39.722 355.023 60.716 585.2 35.134 815.377 9.552 835.679 83.784 858.591 289.94c22.912 206.155-161.565-16.44-504.138 81.129z"
+      ></path>
+      <defs>
+        <linearGradient
+          id="paint3_linear"
+          x1="826.368"
+          x2="613.032"
+          y1="0"
+          y2="653.545"
+          gradientUnits="userSpaceOnUse"
         >
-          <path
-            d="M354.453 371.069C124.276 396.651 40.0314 452.033 17.1194 245.878C-5.79257 39.7224 355.023 60.7159 585.2 35.1342C815.377 9.55248 835.679 83.7846 858.591 289.94C881.503 496.095 697.026 273.5 354.453 371.069Z"
-            fill="url(#paint3_linear)"
-          />
-          <defs>
-            <linearGradient
-              id="paint3_linear"
-              x1="826.368"
-              y1="0"
-              x2="613.032"
-              y2="653.545"
-              gradientUnits="userSpaceOnUse"
-            >
-              <stop stop-color="#F5CBFF" />
-              <stop offset="1" stop-color="#C346C2" />
-            </linearGradient>
-          </defs>
-        </svg>
+          <stop stopColor="#F5CBFF"></stop>
+          <stop offset="1" stopColor="#C346C2"></stop>
+        </linearGradient>
+      </defs>
+    </svg>
+
+
+
+
+
+
+
+
+
+
+
       </div>
 
       <div className="flex justify-center items-center flex-col gap-3 mt-20">
@@ -97,6 +109,7 @@ function Home(props) {
           {events.map((event) => {
             return (
               <button
+              key={event.name}
                 className={`  
             flex p-2
             rounded-md
@@ -158,197 +171,223 @@ function Home(props) {
       
       
       "
-          >
-            <svg
-              className="w-8 h-6 xl:h-10"
-              viewBox="0 0 37 37"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g clip-path="url(#clip0)">
-                <path
-                  d="M36.481 18.8368C36.481 17.3619 36.3585 16.2856 36.0935 15.1694H18.8586V21.8264H28.9751C28.7712 23.4808 27.6698 25.9722 25.2222 27.6463L25.1879 27.8692L30.6372 31.9945L31.0148 32.0313C34.4821 28.9021 36.481 24.2979 36.481 18.8368Z"
-                  fill="#4285F4"
-                />
-                <path
-                  d="M18.8586 36.3762C23.8148 36.3762 27.9756 34.7816 31.0148 32.0312L25.2222 27.6462C23.6721 28.7026 21.5916 29.44 18.8586 29.44C14.0043 29.44 9.88423 26.3109 8.41555 21.9858L8.20028 22.0037L2.53396 26.2889L2.45985 26.4902C5.47848 32.35 11.679 36.3762 18.8586 36.3762Z"
-                  fill="#34A853"
-                />
-                <path
-                  d="M8.41555 21.9859C8.02803 20.8698 7.80376 19.6738 7.80376 18.4382C7.80376 17.2023 8.02803 16.0065 8.39517 14.8904L8.3849 14.6527L2.64757 10.2986L2.45986 10.3858C1.21573 12.8175 0.501854 15.5481 0.501854 18.4382C0.501854 21.3282 1.21573 24.0587 2.45986 26.4903L8.41555 21.9859Z"
-                  fill="#FBBC05"
-                />
-                <path
-                  d="M18.8586 7.43605C22.3055 7.43605 24.6306 8.89102 25.9564 10.1069L31.1371 5.16392C27.9553 2.27389 23.8148 0.5 18.8586 0.5C11.679 0.5 5.47848 4.52609 2.45985 10.3858L8.39516 14.8904C9.88423 10.5653 14.0043 7.43605 18.8586 7.43605Z"
-                  fill="#EB4335"
-                />
-              </g>
-              <defs>
-                <clipPath id="clip0">
-                  <rect
-                    width="36"
-                    height="36"
-                    fill="white"
-                    transform="translate(0.5 0.5)"
-                  />
-                </clipPath>
-              </defs>
-            </svg>
+      >
+            <svg 
+            
+            className="w-8 h-6 xl:h-10"
+            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 37 37">
+      <g clipPath="url(#clip0)">
+        <path
+          fill="#4285F4"
+          d="M36.481 18.837c0-1.475-.123-2.551-.388-3.668H18.86v6.657h10.116c-.204 1.655-1.305 4.146-3.753 5.82l-.034.223 5.45 4.125.377.037c3.467-3.129 5.466-7.733 5.466-13.194z"
+        ></path>
+        <path
+          fill="#34A853"
+          d="M18.859 36.376c4.956 0 9.117-1.594 12.156-4.345l-5.793-4.385c-1.55 1.057-3.63 1.794-6.363 1.794-4.855 0-8.975-3.13-10.443-7.454l-.216.018-5.666 4.285-.074.201c3.018 5.86 9.219 9.886 16.399 9.886z"
+        ></path>
+        <path
+          fill="#FBBC05"
+          d="M8.416 21.986a10.816 10.816 0 01-.612-3.548c0-1.236.224-2.431.591-3.548l-.01-.237-5.737-4.354-.188.087a17.623 17.623 0 00-1.958 8.052c0 2.89.714 5.62 1.958 8.052l5.956-4.504z"
+        ></path>
+        <path
+          fill="#EB4335"
+          d="M18.859 7.436c3.446 0 5.772 1.455 7.097 2.67l5.181-4.942C27.955 2.274 23.815.5 18.86.5c-7.18 0-13.38 4.026-16.4 9.886l5.936 4.504c1.49-4.325 5.61-7.454 10.464-7.454z"
+        ></path>
+      </g>
+      <defs>
+        <clipPath id="clip0">
+          <path
+            fill="#fff"
+            d="M0 0H36V36H0z"
+            transform="translate(.5 .5)"
+          ></path>
+        </clipPath>
+      </defs>
+    </svg>
+
             Sign Up with Google
           </button>
         </div>
-        <svg
+
+
+
+
+        
+          <svg 
           className="h-32 w-32 lg:-right-8 lg:w-40 lg:h-w-40 mt-2 absolute -right-5 -top-5 md:-top-2"
-          viewBox="0 0 115 267"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect
-            x="0.258789"
-            y="189.194"
-            width="204"
-            height="204"
-            transform="rotate(-67.8424 0.258789 189.194)"
+          xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 115 267">
+          <path
             fill="url(#paint4_linear)"
-          />
+            d="M0.259 189.194H204.259V393.19399999999996H0.259z"
+            transform="rotate(-67.842 .259 189.194)"
+          ></path>
           <defs>
             <linearGradient
               id="paint4_linear"
-              x1="0.258789"
-              y1="189.194"
+              x1="0.259"
               x2="204.259"
+              y1="189.194"
               y2="393.194"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#3B2667" />
-              <stop offset="1" stop-color="#BC78EC" />
+              <stop stopColor="#3B2667"></stop>
+              <stop offset="1" stopColor="#BC78EC"></stop>
             </linearGradient>
           </defs>
         </svg>
-      </div>
-      <svg
-        className="hero-1 w-80 h-80 xl:w-96 xl:h-96"
-        viewBox="0 0 345 510"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <g filter="url(#filter0_d)">
-          <path
-            d="M60.3875 296C-56.398 401.17 -162.956 546.744 -251.88 343.79C-253.767 339.484 -256.458 335.252 -259.474 331.645C-357.625 214.295 -246.159 62.1654 -129.909 -42.5231C-11.8578 -148.833 103.537 -184.083 209.849 -66.0291C316.161 52.0245 178.438 189.691 60.3875 296Z"
-            fill="url(#paint0_linear)"
-          />
-        </g>
-        <defs>
-          <filter
-            id="filter0_d"
-            x="-421"
-            y="-238"
-            width="765.607"
-            height="747.009"
-            filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
-          >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
-            <feColorMatrix
-              in="SourceAlpha"
-              type="matrix"
-              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-              result="hardAlpha"
-            />
-            <feOffset dy="4" />
-            <feGaussianBlur stdDeviation="10" />
-            <feComposite in2="hardAlpha" operator="out" />
-            <feColorMatrix
-              type="matrix"
-              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
-            />
-            <feBlend
-              mode="normal"
-              in2="BackgroundImageFix"
-              result="effect1_dropShadow"
-            />
-            <feBlend
-              mode="normal"
-              in="SourceGraphic"
-              in2="effect1_dropShadow"
-              result="shape"
-            />
-          </filter>
-          <linearGradient
-            id="paint0_linear"
-            x1="69.3906"
-            y1="-222"
-            x2="193.339"
-            y2="419.483"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stop-color="#52E5E7" />
-            <stop offset="0.706597" stop-color="#130CB7" />
-          </linearGradient>
-        </defs>
-      </svg>
 
-      <svg
-        className="hero-2 w-48 h-70 xl:w-96 xl:h-10/12 sm:-right-2 right-0"
-        viewBox="0 0 332 528"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <g filter="url(#filter0_d)">
-          <path
-            d="M489.943 348.55C380.217 447.363 509.171 491.436 255.931 363.964C221.752 346.76 189.11 324.459 169.685 291.491C102.748 177.893 126.268 34.1074 228.267 -57.7465C344.836 -162.722 402.203 -173.333 508.515 -55.2789C614.827 62.7747 606.512 243.575 489.943 348.55Z"
-            fill="url(#paint1_linear)"
-          />
-        </g>
-        <defs>
-          <filter
-            id="filter0_d"
-            x="0.221558"
-            y="-212"
-            width="738.688"
-            height="739.959"
-            filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
-          >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
-            <feColorMatrix
-              in="SourceAlpha"
-              type="matrix"
-              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-              result="hardAlpha"
-            />
-            <feOffset dy="4" />
-            <feGaussianBlur stdDeviation="10" />
-            <feComposite in2="hardAlpha" operator="out" />
-            <feColorMatrix
-              type="matrix"
-              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
-            />
-            <feBlend
-              mode="normal"
-              in2="BackgroundImageFix"
-              result="effect1_dropShadow"
-            />
-            <feBlend
-              mode="normal"
-              in="SourceGraphic"
-              in2="effect1_dropShadow"
-              result="shape"
-            />
-          </filter>
-          <linearGradient
-            id="paint1_linear"
-            x1="617.482"
-            y1="-66.4971"
-            x2="167.017"
-            y2="467.286"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stop-color="#6B73FF" />
-            <stop offset="1" stop-color="#000DFF" />
-          </linearGradient>
-        </defs>
-      </svg>
+
+
+
+
+
+
+      </div>
+
+
+      
+      
+
+
+
+      
+
+
+
+    
+    
+    
+    <svg
+    className="hero-1 w-80 h-80 xl:w-96 xl:h-96"
+xmlns='http://www.w3.org/2000/svg'
+width='345'
+height='510'
+fill='none'
+viewBox='0 0 345 510'
+>
+<g filter='url(#filter0_d)'>
+  <path
+    fill='url(#paint0_linear)'
+    d='M60.388 296C-56.398 401.17-162.957 546.744-251.88 343.79c-1.887-4.306-4.578-8.538-7.594-12.145-98.151-117.35 13.315-269.48 129.565-374.168 118.051-106.31 233.446-141.56 339.758-23.506C316.161 52.024 178.438 189.69 60.387 296z'
+  ></path>
+</g>
+<defs>
+  <filter
+    id='filter0_d'
+    width='765.607'
+    height='747.009'
+    x='-421'
+    y='-238'
+    colorInterpolationFilters='sRGB'
+    filterUnits='userSpaceOnUse'
+  >
+    <feFlood floodOpacity='0' result='BackgroundImageFix'></feFlood>
+    <feColorMatrix
+      in='SourceAlpha'
+      result='hardAlpha'
+      values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
+    ></feColorMatrix>
+    <feOffset dy='4'></feOffset>
+    <feGaussianBlur stdDeviation='10'></feGaussianBlur>
+    <feComposite in2='hardAlpha' operator='out'></feComposite>
+    <feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'></feColorMatrix>
+    <feBlend
+      in2='BackgroundImageFix'
+      result='effect1_dropShadow'
+    ></feBlend>
+    <feBlend
+      in='SourceGraphic'
+      in2='effect1_dropShadow'
+      result='shape'
+    ></feBlend>
+  </filter>
+  <linearGradient
+    id='paint0_linear'
+    x1='69.391'
+    x2='193.339'
+    y1='-222'
+    y2='419.483'
+    gradientUnits='userSpaceOnUse'
+  >
+    <stop stopColor='#52E5E7'></stop>
+    <stop offset='0.707' stopColor='#130CB7'></stop>
+  </linearGradient>
+</defs>
+</svg>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+        <svg 
+        className="hero-2 w-48 h-70 xl:w-96 xl:h-10/12 sm:-right-2 right-0 "
+        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 332 528">
+      <g filter="url(#filter0_d)">
+        <path
+          fill="url(#paint1_linear)"
+          d="M489.943 348.55c-109.726 98.813 19.228 142.886-234.012 15.414-34.179-17.204-66.821-39.505-86.246-72.473-66.937-113.598-43.417-257.384 58.582-349.237 116.569-104.976 173.936-115.587 280.248 2.467 106.312 118.054 97.997 298.854-18.572 403.829z"
+        ></path>
+      </g>
+      <defs>
+        <filter
+          id="filter0_d"
+          width="738.688"
+          height="739.959"
+          x="0.222"
+          y="-212"
+          colorInterpolationFilters="sRGB"
+          filterUnits="userSpaceOnUse"
+        >
+          <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
+          <feColorMatrix
+            in="SourceAlpha"
+            result="hardAlpha"
+            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+          ></feColorMatrix>
+          <feOffset dy="4"></feOffset>
+          <feGaussianBlur stdDeviation="10"></feGaussianBlur>
+          <feComposite in2="hardAlpha" operator="out"></feComposite>
+          <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"></feColorMatrix>
+          <feBlend
+            in2="BackgroundImageFix"
+            result="effect1_dropShadow"
+          ></feBlend>
+          <feBlend
+            in="SourceGraphic"
+            in2="effect1_dropShadow"
+            result="shape"
+          ></feBlend>
+        </filter>
+        <linearGradient
+          id="paint1_linear"
+          x1="617.482"
+          x2="167.017"
+          y1="-66.497"
+          y2="467.286"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stopColor="#6B73FF"></stop>
+          <stop offset="1" stopColor="#000DFF"></stop>
+        </linearGradient>
+      </defs>
+    </svg>
+
+
     </Layout>
   );
 }

@@ -57,11 +57,13 @@ const Footer = () => {
 
       <div className="flex justify-between items-center font-pop text-sm p-2 bg-footerbb xl:text-lg">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+
         <svg
-          xmlns="http://www.w3.org/2000/svg"
           className="w-30 h-10"
+          xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 212 44"
+          
         >
           <rect width="212" height="44" fill="#000" rx="8" />
           <path
@@ -70,6 +72,8 @@ const Footer = () => {
           />
           <path stroke="#5E5E5E" d="M43.5 0v44" />
         </svg>
+
+
       </div>
     </div>
   );

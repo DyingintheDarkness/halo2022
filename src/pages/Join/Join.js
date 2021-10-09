@@ -1,54 +1,97 @@
-import React, { useContext } from "react";
+import React, { useEffect } from "react";
 import { GoogleLogin, GoogleLogout } from "react-google-login";
-import { login } from "../../components/authentication";
+import {
+  checkToken,
+  getUser,
+  login,
+  logout,
+} from "../../components/authentication";
 import Layout from "../../components/Layout";
-import { userAtom, signInStatusAtom } from "../../statedrive/atoms";
-import { useSharedState} from "../../statedrive/index";
+import {
+  userAtom,
+  signInStatusAtom,
+  selectedEventsAtom,
+  redirectAtom,
+} from "../../statedrive/atoms";
+import { useSharedState, useSetSharedState } from "../../statedrive/index";
 
 const Join = () => {
   const client =
     "630712713096-dqoroom09ebrhe0e3j4v28c2hsda4t5d.apps.googleusercontent.com";
   const [user, setUser] = useSharedState(userAtom);
-  const [signInStatus, setSignInStatus] = useSharedState(signInStatusAtom)
-  const responseGoogleFailure = (e) => {
-    console.log(e);
+  const [signInStatus, setSignInStatus] = useSharedState(signInStatusAtom);
+  const setSelectedEvents = useSetSharedState(selectedEventsAtom);
+  const setRedirect = useSetSharedState(redirectAtom);
+  const responseGoogleFailure = () => {
+    console.log("Login Failed");
   };
-  const responseGoogleLogout = () => {
-    localStorage.removeItem("token");
-    setSignInStatus(false);
-    setUser(null);
-  };
-  const responseGoogleSuccess = async () => {
+  const responseGoogleSuccess = async (e) => {
     console.log("Logged In");
     const { name, email, imageUrl } = e.profileObj;
-    login(name, email, imageUrl, setUser, setSignInStatus).then((res) => {
-      console.log(res);
-    });
-    setSignInStatus(true);
-  };
 
+    const data = await login(name, email, imageUrl).then((res) => {
+      if (res.status !== 404) {
+        return res.data;
+      } else if(!res) {
+        return alert("Something Weird Happened");
+      }
+    });
+    console.log(data);
+    setSignInStatus(true);
+    localStorage.setItem("token", data.token);
+    setUser(data);
+    setSelectedEvents(data.events);
+  };
+const handleLogout = () => {
+  logout()
+  setUser(null)
+  setRedirect("/join")
+  setSignInStatus(false)
+}
+  
   return (
     <Layout>
       <br />
-      {signInStatus ? (
-        <GoogleLogout
-          clientId={client}
-          onLogoutSuccess={responseGoogleLogout}
-          render={(renderProps) => (
-            <button onClick={renderProps.onClick} className="" >Logout</button>
-          )}
-        />
-      ) : (
-        <GoogleLogin
-          clientId={client}
-          onSuccess={responseGoogleSuccess}
-          onFailure={responseGoogleFailure}
-          cookiePolicy={"single_host_origin"}
-          render={(renderProps) => (
-            <button onClick={renderProps.onClick}>Login</button>
-          )}
-        />
-      )}
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <div className="ml-10">
+        {signInStatus ? (
+          <button
+            onClick={handleLogout}
+            className="border-2 z-40 relative"
+          >
+            Logout
+          </button>
+        ) : (
+          <GoogleLogin
+            clientId={client}
+            onSuccess={responseGoogleSuccess}
+            onFailure={responseGoogleFailure}
+            cookiePolicy={"single_host_origin"}
+            render={(renderProps) => (
+              <button
+                onClick={renderProps.onClick}
+                className="border-2 z-40 relative"
+              >
+                Login
+              </button>
+            )}
+          />
+        )}
+      </div>
       <br />
       <br />
       <br />

@@ -1,81 +1,46 @@
 import axios from "axios";
-import { getUser } from "../GraphQL/Queries";
-import { addUser, updateUser } from "../GraphQL/Mutations";
+import { getUser as getUserQuery } from "../GraphQL/Queries";
+import {
+  addUser as addUserQuery,
+  updateUser as updateUserQuery,
+} from "../GraphQL/Mutations";
 
 export const checkToken = () => {
   const token = localStorage.getItem("token");
   return !!token && String(token) !== "null" && String(token) !== "undefined";
 };
 
-export const login = async (
-  name,
-  email,
-  imageUrl,
-  setUser,
-  setSignInStatus
-) => {
-  let token = localStorage.getItem("token");
-  axios
-    .post("https://halolegion-2021.herokuapp.com/register", {
-      query: getUser(token, email),
-    })
-    .then((res) => {
-      if (res.status === 204) {
-        axios
-          .post("https://halolegion-2021.herokuapp.com/register", {
-            query: addUser(name, email, imageUrl),
-          })
-          .then((addRes) => {
-            token = addRes.data;
-            localStorage.setItem("token", token);
-            axios
-              .post("https://halolegion-2021.herokuapp.com/register", {
-                query: getUser(token, email),
-              })
-              .then((getRes) => {
-                if (res.status !== 404 && res.data !== undefined) {
-                  console.log(res.data);
-                  setUser(getRes.data);
-                  setSignInStatus(true);
-                }
-              })
-              .catch((err) => {
-                console.log(err);
-              });
-          });
-      } else if (res.status !== 404) {
-        if (!checkToken()) {
-          localStorage.setItem("token", res.data.token);
-        }
+export const login = async (name, email, imageUrl) => {
+  if ((await getUser(email)).status === 204) {
+    getUser(addUser(name, email, imageUrl).data);
+  } else if ((await getUser(email)).status === 404) {
+    return false;
+  }
+  return getUser(email);
+};
 
-        console.log(res.data);
-        setUser(res.data);
-        setSignInStatus(true);
-      }
-    })
-    .catch((err) => {
-      // Login In Error
-      alert("Something Weird Happened");
-      setSignInStatus(false);
-      localStorage.clear("token");
-      setUser(null);
-    });
+export const getUser = async (email = undefined) => {
+  const token = localStorage.getItem("token");
+  return axios.post("https://halolegion-2021.herokuapp.com/register", {
+    query: getUserQuery(token, email),
+  });
+};
+
+const addUser = async (name, email, imageUrl) => {
+  return axios.post("https://halolegion-2021.herokuapp.com/register", {
+    query: addUserQuery(name, email, imageUrl),
+  });
 };
 
 export const updateEvents = (events) => {
-  console.log(events);
   let token = localStorage.getItem("token");
-  console.log(token);
-  axios
-    .post("https://halolegion-2021.herokuapp.com/register", {
-      query: updateUser(token, events),
-    })
-    .then((res) => {
-      console.log(res);
-      console.log("Updated Events");
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+
+  axios.post("https://halolegion-2021.herokuapp.com/register", {
+    query: updateUserQuery(token, events),
+  });
 };
 
+export const logout = (setSignInStatus, setUser, setRedirect) => {
+  localStorage.removeItem("token");
+  return true;
+};

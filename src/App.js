@@ -1,6 +1,19 @@
 import "./styles/app.css";
 import "./styles/custom.css";
-import { useState, Suspense, useEffect } from "react";
+import { Suspense, useEffect } from "react";
+
+import {
+  checkToken,
+  getUser,
+  login,
+  logout,
+} from "./components/authentication";
+import {
+  userAtom,
+  signInStatusAtom,
+  selectedEventsAtom,
+  redirectAtom,
+} from "./statedrive/atoms";
 
 import {
   Home,
@@ -13,35 +26,31 @@ import {
   Legal,
 } from "./pages/exports";
 
-import { userAtom, signInStatusAtom,redirectAtom } from "./statedrive/atoms";
-import { useSharedState, useSetSharedState } from "./statedrive/index";
-
 import Loading from "./components/Loading";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { checkToken, login } from "./components/authentication";
-// import ProtectedRoute from "./components/protectedRoute";
+import { useSetSharedState } from "./statedrive";
 
 function App() {
-  
   const setUser = useSetSharedState(userAtom);
-  const setRedirect = useSetSharedState(redirectAtom);
   const setSignInStatus = useSetSharedState(signInStatusAtom);
-  
-useEffect(() => {
+  const setSelectedEvents = useSetSharedState(selectedEventsAtom);
+  const setRedirect = useSetSharedState(redirectAtom);
 
-  try {
+  useEffect(() => {
+
     if (checkToken()) {
-      login(undefined, undefined, undefined, setUser, setSignInStatus);
-      setRedirect("/dashboard")
+      if (checkToken()) {
+        getUser().then((res) => {
+          setRedirect("/dashboard");
+          setSignInStatus(true);
+          setUser(res.data);
+          return setSelectedEvents(res.data.events);
+        });
+      }
     }
-  } catch (err) {
-    localStorage.removeItem("token");
-    setSignInStatus(false);
-    setUser(null);
-    setRedirect("/join")
 
-  }
-},[])
+    
+  }, []);
 
   return (
     <Router>

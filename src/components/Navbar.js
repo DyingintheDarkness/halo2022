@@ -12,7 +12,7 @@ function Navbar() {
   return (
     <>
       <div
-        className={`flex justify-between absolute top-0 left-0 h-screen w-full sm:hidden z-30 ${
+        className={`flex justify-between absolute top-0 left-0 h-screen w-full sm:hidden z-30  ${
           hideNav ? "bg-navbar z-50" : ""
         }`}
       >
@@ -20,15 +20,15 @@ function Navbar() {
           <svg
             onClick={() => setHideNav(!hideNav)}
             xmlns="http://www.w3.org/2000/svg"
-            class="h-6 w-6"
+            className="h-6 w-6"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-          >
+            >
             <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
               d="M4 6h16M4 12h16M4 18h16"
             />
           </svg>
@@ -41,9 +41,10 @@ function Navbar() {
         >
           <div className="flex flex-col gap-10 text-lg mt-20">
             <nav className="flex flex-col font-pop gap-10">
-              {links.map((link) => {
+              {links.map((link, i) => {
                 return (
                   <Link
+                    key={i}
                     to={link.src}
                     className={`${
                       window.location.pathname === link.src
