@@ -4,7 +4,7 @@ import { contacts } from "./data";
 import { Link } from "react-router-dom";
 const Contact = () => {
   return (
-    <Layout>
+    <Layout title="Contact">
       <div className="mt-24 font-pop font-bold text-lg text-center sm:text-xl md:text-2xl lg:text-4xl xl:text-5xl">
         <h1>
           Lorem ipsum dolor sit amet,

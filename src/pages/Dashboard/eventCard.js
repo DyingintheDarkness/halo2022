@@ -6,7 +6,6 @@ const EventCard = (props) => {
   const [active, setActive] = useState(props.isActive || false);
   const [selectedEvents, setSelectedEvents] =
     useSharedState(selectedEventsAtom);
-  
   return (
     <div
       onClick={() => {
@@ -16,7 +15,8 @@ const EventCard = (props) => {
         } else {
           setSelectedEvents(
             selectedEvents.filter((event) => event !== props.name)
-          );
+            );
+          
           
         }
       }}

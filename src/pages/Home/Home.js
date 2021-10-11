@@ -3,9 +3,14 @@
 import React from "react";
 import Layout from "../../components/Layout";
 import { events } from "./events";
-function Home(props) {
+import {Link} from "react-router-dom"
+import {redirectAtom} from "../../statedrive/atoms"
+import {useSharedState} from "../../statedrive/index"
+
+function Home() {
+  const [redirect, setRedirect] = useSharedState(redirectAtom)
   return (
-    <Layout>
+    <Layout title="Home">
       <div className="h-screen flex justify-center items-center">
         <div className="flex flex-col items-center justify-center relative">
           <h1 className="font-major text-4xl xsm:text-5xl sm:text-7xl -mt-36">
@@ -14,7 +19,7 @@ function Home(props) {
           <p className="font-pop font-light text-sm mb-2 sm:text-xl ">
             We’re the official Tech Club of DPS Indore
           </p>
-          <button
+          <Link to={redirect}
             className="rounded-md bg-btngreen w-20 h-7 flex justify-center shadow-md sm:text-xl sm:h-8 
           
           transform 
@@ -22,7 +27,7 @@ function Home(props) {
             transition duration-500 ease-in-out"
           >
             get in
-          </button>
+          </Link>
         </div>
       </div>
 

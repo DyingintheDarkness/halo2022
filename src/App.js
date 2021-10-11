@@ -5,7 +5,6 @@ import { Suspense, useEffect } from "react";
 import {
   checkToken,
   getUser,
-  login,
   logout,
 } from "./components/authentication";
 import {
@@ -28,28 +27,46 @@ import {
 
 import Loading from "./components/Loading";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { useSetSharedState } from "./statedrive";
+import { useSetSharedState, useSharedState } from "./statedrive";
 
 function App() {
   const setUser = useSetSharedState(userAtom);
   const setSignInStatus = useSetSharedState(signInStatusAtom);
   const setSelectedEvents = useSetSharedState(selectedEventsAtom);
   const setRedirect = useSetSharedState(redirectAtom);
-
   useEffect(() => {
-
-    if (checkToken()) {
+    async function getData() {
       if (checkToken()) {
-        getUser().then((res) => {
-          setRedirect("/dashboard");
+        const data = await getUser()
+          .then((res) => {
+            return res;
+          })
+          .catch((err) => {
+            logout();
+            setSignInStatus(false);
+            setRedirect("/join");
+            localStorage.setItem("redirect", "/join")
+            setUser(null);
+            setSelectedEvents([]);
+            alert("Something Weird Happened");
+            return false;
+          });
+        if (data) {
           setSignInStatus(true);
-          setUser(res.data);
-          return setSelectedEvents(res.data.events);
-        });
+          setRedirect("/dashboard");
+          setUser(data.data);
+          setSelectedEvents(data.data.events);
+          localStorage.setItem("events", JSON.stringify(data.data.events));
+          localStorage.setItem("redirect", "/dashboard")
+        }
+      } else{
+        localStorage.setItem("redirect", "/join")
+        setRedirect("/join")
       }
     }
-
-    
+    getData();
+    setSelectedEvents(JSON.parse(localStorage.getItem("events")));
+    setRedirect(localStorage.getItem("redirect"))
   }, []);
 
   return (

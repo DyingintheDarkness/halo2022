@@ -4,7 +4,7 @@ import Footer from './Footer'
 
 const Layout = ({title, children}) => {
     if (title) {
-        document.title = "Halolegion | " + title;
+        document.title = "Halolegion - " + title;
       }
     return (
         <>

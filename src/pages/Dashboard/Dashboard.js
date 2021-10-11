@@ -1,33 +1,27 @@
 import React, { useState, useEffect } from "react";
-import { Link, useHistory, Redirect } from "react-router-dom";
-import {
-  checkToken,
-  login,
-  updateEvents,
-} from "../../components/authentication";
+import { Link, Redirect } from "react-router-dom";
+import { checkToken, updateEvents } from "../../components/authentication";
 import Layout from "../../components/Layout";
 import Loading from "../../components/Loading";
-import { getUser } from "../../components/authentication";
 
 import {
   userAtom,
   signInStatusAtom,
-  redirectAtom,
   selectedEventsAtom,
+  redirectAtom,
 } from "../../statedrive/atoms";
-import { useSetSharedState, useSharedState } from "../../statedrive/index";
+import { useSharedState } from "../../statedrive/index";
 
 import EventCard from "./eventCard";
-
 
 const Dashboard = () => {
   const [user, setUser] = useSharedState(userAtom);
   const [signInStatus, setSignInStatus] = useSharedState(signInStatusAtom);
   const [selectedEvents, setSelectedEvents] =
     useSharedState(selectedEventsAtom);
+    const [redirect, setRedirect] = useSharedState(redirectAtom)
   const [viewPrompts, setViewPrompts] = useState(false);
-  const [redirect, setRedirect] = useSharedState(redirectAtom);
-  
+
   const events = [
     "coding",
     "writing",
@@ -36,20 +30,19 @@ const Dashboard = () => {
     "gaming",
     "quiz",
   ];
-  setInterval(() => {
+
+  useEffect(() => {
     const current = new Date().getTime();
     const past = new Date("Sep 23 2021 19:36:40").getTime();
     if (current > past) {
       setViewPrompts(true);
     }
-  }, 1000);
-
-
+  }, []);
 
   return (
     <>
-      {signInStatus && user !== null ? (
-        <Layout>
+      {signInStatus && user !== null && selectedEvents !== null ? (
+        <Layout title="Dashboard">
           <div>
             <h1>{user.name}</h1>
 
@@ -83,7 +76,7 @@ const Dashboard = () => {
           </div>
         </Layout>
       ) : (
-        <Loading/>
+        <Redirect to={redirect} />
       )}
     </>
   );

@@ -18,7 +18,7 @@ const Team = () => {
 
   const member = members[memberIndex];
   return (
-    <Layout>
+    <Layout title="Team">
       <div className="mt-32 sm:mt-10 flex justify-center lg:mb-10 mb-5 lg:mt-10 xsm:mt-14">
         <h1 className="font-pop font-bold text-lg xsm:text-xl sm:text-2xl lg:text-3xl lg:w-full text-center">
           Lorem ipsum dolor sit amet, <br/>consectetur adipiscing elit

@@ -1,8 +1,8 @@
 import axios from "axios";
-import { getUser as getUserQuery } from "../GraphQL/Queries";
+import { getUserQuery } from "../GraphQL/Queries";
 import {
-  addUser as addUserQuery,
-  updateUser as updateUserQuery,
+  addUserQuery,
+  updateUserQuery,
 } from "../GraphQL/Mutations";
 
 export const checkToken = () => {
@@ -12,9 +12,8 @@ export const checkToken = () => {
 
 export const login = async (name, email, imageUrl) => {
   if ((await getUser(email)).status === 204) {
-    getUser(addUser(name, email, imageUrl).data);
-  } else if ((await getUser(email)).status === 404) {
-    return false;
+    addUser(name, email, imageUrl)
+    return getUser(email)
   }
   return getUser(email);
 };
@@ -34,13 +33,15 @@ const addUser = async (name, email, imageUrl) => {
 
 export const updateEvents = (events) => {
   let token = localStorage.getItem("token");
-
+  localStorage.setItem("events", JSON.stringify(events))
   axios.post("https://halolegion-2021.herokuapp.com/register", {
     query: updateUserQuery(token, events),
   });
 };
 
-export const logout = (setSignInStatus, setUser, setRedirect) => {
+export const logout = () => {
   localStorage.removeItem("token");
+  localStorage.removeItem("events")
+  localStorage.setItem("redirect", "/join")
   return true;
 };
