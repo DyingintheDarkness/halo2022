@@ -36,6 +36,13 @@ function App() {
   const setSignInStatus = useSetSharedState(signInStatusAtom);
   const setSelectedEvents = useSetSharedState(selectedEventsAtom);
   const setRedirect = useSetSharedState(redirectAtom);
+  const contextClass = {
+    success: "bg-green-200",
+    error: "bg-red-200",
+    info: "bg-blue-200",
+    default: "bg-gray-200",
+
+  };
   async function getData() {
     if (checkToken()) {
       const data = await getUser()
@@ -52,15 +59,15 @@ function App() {
           toast.error("Something Weird Happened")
           return false;
         });
-if(data){
+      if (data) {
 
-  setSignInStatus(true);
-  setRedirect("/dashboard");
-  setUser(data.data);
-  setSelectedEvents(data.data.events);
-  localStorage.setItem("events", JSON.stringify(data.data.events));
-  localStorage.setItem("redirect", "/dashboard")
-}
+        setSignInStatus(true);
+        setRedirect("/dashboard");
+        setUser(data.data);
+        setSelectedEvents(data.data.events);
+        localStorage.setItem("events", JSON.stringify(data.data.events));
+        localStorage.setItem("redirect", "/dashboard")
+      }
 
     } else {
       localStorage.setItem("redirect", "/join")
@@ -82,24 +89,28 @@ if(data){
         newestOnTop={false}
         closeOnClick
         rtl={false}
-        className="mt-20"
-        
-        
+        toastClassName={({ type }) => contextClass[type || "default"] +
+          " relative flex  justify-between items-center overflow-hidden cursor-pointer p-3 xsm:rounded-md sm:mt-8 mb-px font-medium font-pop text-black"
+        }
+        bodyClassName={() => "flex "}
+
+
+
       ></ToastContainer>
-      
-    <Router>
-      <Suspense fallback={<Loading />}>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/join" component={Join} />
-          <Route exact path="/contact" component={Contact} />
-          <Route exact path="/resources" component={Resources} />
-          <Route exact path="/team" component={Team} />
-          <Route exact path="/legal" component={Legal} />
-          <Route exact path="/dashboard" component={Dashboard} />
-        </Switch>
-      </Suspense>
-    </Router>
+
+      <Router>
+        <Suspense fallback={<Loading />}>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/join" component={Join} />
+            <Route exact path="/contact" component={Contact} />
+            <Route exact path="/resources" component={Resources} />
+            <Route exact path="/team" component={Team} />
+            <Route exact path="/legal" component={Legal} />
+            <Route exact path="/dashboard" component={Dashboard} />
+          </Switch>
+        </Suspense>
+      </Router>
     </>
   );
 }

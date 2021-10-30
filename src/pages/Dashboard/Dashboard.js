@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, Redirect } from "react-router-dom";
+import { toast } from "react-toastify";
 import { checkToken, updateEvents } from "../../components/authentication";
 import Layout from "../../components/Layout";
 import Loading from "../../components/Loading";
@@ -63,7 +64,7 @@ const Dashboard = () => {
 
 
 
-              <button className=" mt-3 bg-updatebtn w-24 rounded-md font-pop text-sm h-6 xsm:text-lg xsm:h-8" onClick={() => updateEvents(selectedEvents)}>Update</button>
+              <button className=" mt-3 bg-updatebtn w-24 rounded-md font-pop text-sm h-6 xsm:text-lg xsm:h-8" onClick={() => updateEvents(selectedEvents,toast) }>Update</button>
             </div>
 
 

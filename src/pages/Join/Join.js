@@ -41,7 +41,7 @@ const Join = () => {
         setRedirect("/join");
         setUser(null);
         setSelectedEvents([]);
-        toast.error("Try to Login Again");
+        // toast.error("Try to Login Again");
         return false;
       });
     if (data) {
@@ -98,6 +98,7 @@ const Join = () => {
             />
           )}
         </div>
+
       </div>
     </Layout>
   );

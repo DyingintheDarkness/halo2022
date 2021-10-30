@@ -31,12 +31,15 @@ const addUser = async (name, email, imageUrl) => {
   });
 };
 
-export const updateEvents = (events) => {
+export const updateEvents = (events, toast) => {
   let token = localStorage.getItem("token");
   localStorage.setItem("events", JSON.stringify(events))
   axios.post("https://halolegion-2021.herokuapp.com/register", {
     query: updateUserQuery(token, events),
-  });
+  }).catch(err => {
+    toast.error("Something Weird Happened")
+  })
+  toast.success("Updated Events Succesfully")
 };
 
 export const logout = () => {
