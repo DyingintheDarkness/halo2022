@@ -10,7 +10,7 @@ import {useSharedState} from "../../statedrive/index"
 function Home() {
   const [redirect, setRedirect] = useSharedState(redirectAtom)
   return (
-    <Layout title="Home">
+    <Layout>
       <div className="h-screen flex justify-center items-center">
         <div className="flex flex-col items-center justify-center relative">
           <h1 className="font-major text-4xl xsm:text-5xl sm:text-7xl -mt-36">
@@ -40,13 +40,13 @@ function Home() {
         sm:w-3/12
         xl:w-3/6
         
-        
+        mb-2
         "
           >
             Lorem ipsum dolor sit amet
           </h1>
 
-          <div className="md:flex md:gap-5 z-20 ">
+          <div className="md:flex-row md:gap-5 z-20 flex flex-col gap-2">
             <div className="flex flex-col items-center justify-center">
               <h2 className="font-medium text-lg  md:text-xl xl:text-2xl">
                 Lorem ipsum dolor
@@ -72,7 +72,7 @@ function Home() {
 
         
           <svg 
-          className="hero-3 h-40 w-40 absolute -top-16 right-0 xsm:w-52 xsm:h-52 xsm:-top-24 md:w-64 md:h-64 md:-top-28 "
+          className="hero-3 h-52 w-52 absolute -top-20 right-0   xsm:w-64 xsm:h-64 xsm:-top-24 md:w-80 md:h-80 md:-top-32 md:right-0 "
 
           xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 710 468">
       <path
@@ -161,7 +161,7 @@ function Home() {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit?
           </h1>
           <button
-            className="sign-google-btn flex items-center text-sm gap-5 w-56 h-8 p-2 bg-white font-medium rounded-lg
+            className="shadow-spread-md flex items-center text-sm gap-5 w-56 h-8 p-2 bg-white font-medium rounded-lg
           
         sm:h-10
         xl:pt-4
@@ -169,12 +169,6 @@ function Home() {
 
         xl:w-72
         xl:text-xl
-        transform 
-        
-        hover:scale-105
-      transition duration-700 ease-out
-      
-      
       "
       >
             <svg 
@@ -219,7 +213,7 @@ function Home() {
 
         
           <svg 
-          className="h-32 w-32 lg:-right-8 lg:w-40 lg:h-w-40 mt-2 absolute -right-5 -top-5 md:-top-2"
+          className="h-32 w-32 lg:-right-8 lg:w-44 lg:h-44 mt-2 absolute -right-5 -top-5 md:-top-2 md:w-36 md:h-36"
           xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 115 267">
           <path
             fill="url(#paint4_linear)"

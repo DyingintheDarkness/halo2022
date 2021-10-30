@@ -1,13 +1,13 @@
 export const contacts = [
     {
-        "name": "Utkarsh Dubey",
-        "designation": "Director",
-        "phone": "+91 6261494213"
+        "name": "Person 1",
+        "designation": "Designation 1",
+        "phone": "+91 1234567890"
     },
     {
-        "name": "Udeshna Srimal",
-        "designation": "Editor",
-        "phone": "+91 9893740521"
+        "name": "Person 2",
+        "designation": "Designation 2",
+        "phone": "+91 1234567890"
     },
     {
         "name": "Savita Saluja",

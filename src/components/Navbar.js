@@ -56,16 +56,33 @@ function Navbar() {
                   </Link>
                 );
               })}
-              <Link
+
+              {signInStatus ?
+
+                <Link
                 to="/join"
                 className={`${
                   window.location.pathname === "/join"
-                    ? "text-black"
-                    : "text-white"
+                  ? "text-black"
+                  : "text-white"
                 }`}
-              >
+                >
                 join
               </Link>
+              : 
+              <Link
+                to="/dashboard"
+                className={`${
+                  window.location.pathname === "/dashboard"
+                  ? "text-black"
+                  : "text-white"
+                }`}
+                >
+                dashboard
+              </Link>
+              }
+
+
             </nav>
             <button className="align-right font-pop flex justify-center items-center border border-white rounded-md w-20">
               login
@@ -124,15 +141,16 @@ function Navbar() {
             </Link>
           )}
         </nav>
-        <button
+        <Link
           className="align-right font-pop border border-black flex items-center justify-center text-center p-1 rounded-md w-20 shadow-sm lg:w-50 lg:h-7
       outline-none
       xl:text-xl
       xl:h-8
       transform hover:shadow-lg transition duration-500 ease-in-out"
+      to={"/join"}
         >
           login
-        </button>
+        </Link>
       </div>
     </>
   );

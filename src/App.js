@@ -1,5 +1,6 @@
 import "./styles/app.css";
 import "./styles/custom.css";
+import 'react-toastify/dist/ReactToastify.css';
 import { Suspense, useEffect } from "react";
 
 import {
@@ -27,49 +28,65 @@ import {
 
 import Loading from "./components/Loading";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { useSetSharedState, useSharedState } from "./statedrive";
+import { useSetSharedState } from "./statedrive";
+import { toast, ToastContainer } from "react-toastify";
 
 function App() {
   const setUser = useSetSharedState(userAtom);
   const setSignInStatus = useSetSharedState(signInStatusAtom);
   const setSelectedEvents = useSetSharedState(selectedEventsAtom);
   const setRedirect = useSetSharedState(redirectAtom);
-  useEffect(() => {
-    async function getData() {
-      if (checkToken()) {
-        const data = await getUser()
-          .then((res) => {
-            return res;
-          })
-          .catch((err) => {
-            logout();
-            setSignInStatus(false);
-            setRedirect("/join");
-            localStorage.setItem("redirect", "/join")
-            setUser(null);
-            setSelectedEvents([]);
-            alert("Something Weird Happened");
-            return false;
-          });
-        if (data) {
-          setSignInStatus(true);
-          setRedirect("/dashboard");
-          setUser(data.data);
-          setSelectedEvents(data.data.events);
-          localStorage.setItem("events", JSON.stringify(data.data.events));
-          localStorage.setItem("redirect", "/dashboard")
-        }
-      } else{
-        localStorage.setItem("redirect", "/join")
-        setRedirect("/join")
-      }
+  async function getData() {
+    if (checkToken()) {
+      const data = await getUser()
+        .then((res) => {
+          return res;
+        })
+        .catch((err) => {
+          setSignInStatus(false);
+          logout();
+          setRedirect("/join");
+          localStorage.setItem("redirect", "/join")
+          setUser(null);
+          setSelectedEvents([]);
+          toast.error("Something Weird Happened")
+          return false;
+        });
+if(data){
+
+  setSignInStatus(true);
+  setRedirect("/dashboard");
+  setUser(data.data);
+  setSelectedEvents(data.data.events);
+  localStorage.setItem("events", JSON.stringify(data.data.events));
+  localStorage.setItem("redirect", "/dashboard")
+}
+
+    } else {
+      localStorage.setItem("redirect", "/join")
+      setRedirect("/join")
     }
+  }
+  useEffect(() => {
     getData();
     setSelectedEvents(JSON.parse(localStorage.getItem("events")));
     setRedirect(localStorage.getItem("redirect"))
   }, []);
 
   return (
+    <>
+      <ToastContainer
+        position="top-right"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        className="mt-20"
+        
+        
+      ></ToastContainer>
+      
     <Router>
       <Suspense fallback={<Loading />}>
         <Switch>
@@ -83,6 +100,7 @@ function App() {
         </Switch>
       </Suspense>
     </Router>
+    </>
   );
 }
 

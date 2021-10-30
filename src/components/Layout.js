@@ -2,10 +2,8 @@ import React from 'react'
 import Navbar from './Navbar'
 import Footer from './Footer'
 
-const Layout = ({title, children}) => {
-    if (title) {
-        document.title = "Halolegion - " + title;
-      }
+const Layout = ({children}) => {
+    
     return (
         <>
          <Navbar/>

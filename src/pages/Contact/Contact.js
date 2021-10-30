@@ -1,18 +1,21 @@
 import React from "react";
+import Parallax from 'react-rellax';
 import Layout from "../../components/Layout";
 import { contacts } from "./data";
 import { Link } from "react-router-dom";
 const Contact = () => {
   return (
-    <Layout title="Contact">
-      <div className="mt-24 font-pop font-bold text-lg text-center sm:text-xl md:text-2xl lg:text-4xl xl:text-5xl">
+    <Layout>
+
+
+      <div className="mt-10 font-pop font-bold text-lg text-center  xsm:text-2xl sm:text-3xl lg:text-4xl xl:text-5xl xsm:mt-16">
         <h1>
           Lorem ipsum dolor sit amet,
           <br /> consectetur adipiscing amet
         </h1>
 
         <svg
-          className="w-20 h-20 absolute -left-2 hero-3 sm:w-40 sm:h-40 sm:-mt-32 -mt-20 md:w-32 md:h-32 md:-mt-32 md:-left-5 lg:w-52 lg:h-52 lg:-mt-44"
+          className="w-20 h-20 -left-2 sm:w-40 sm:h-40 -mt-16 md:w-32 md:h-32  sm:-left-9  lg:w-40 lg:h-40 absolute hero-3 sm:-mt-32 md:-mt-28 xsm:-mt-20 md:-left-6"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           transform="rotate(5)"
@@ -36,31 +39,50 @@ const Contact = () => {
             </linearGradient>
           </defs>
         </svg>
+
       </div>
 
-      <div className="flex flex-col pl-2 mt-10 w-full gap-1 z-30 relative">
+
+      <div className="flex flex-col pl-2 mt-8 w-full gap-1 lg:mt-28 xl:mt-14">
         <h1 className="font-sand font-medium text-base xsm:text-lg sm:text-xl">
           Feel Free to Contact Us
         </h1>
-        <div className="contactdiv font-pop flex items-center gap-3 bg-white w-64 xsm:w-80 md:w-96 md:p-4 xsm:p-2 p-0.5 rounded-md text-sm text-secondaryblue sm:text-base">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="currentColor"
-            className="h-7 w-7 text-primarygray"
-            viewBox="0 0 20 20"
-          >
-            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
-            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
-          </svg>
+        <div className="flex flex-col gap-2">
 
-          <Link to={{ pathname: "mailto:hi@halolegion.com" }} target="_blank">
-            hi@halolegion.com
-          </Link>
+          <div className="contact-div-shadow font-pop flex items-center gap-3 bg-white w-64 xsm:w-80 md:w-96 md:p-4 xsm:p-2 p-0.5 rounded-md text-sm text-secondaryblue sm:text-base">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              className="h-7 w-7 text-primarygray"
+              viewBox="0 0 20 20"
+            >
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+            </svg>
+
+            <Link to={{ pathname: "mailto:hi@halolegion.com" }} target="_blank">
+              hi@halolegion.com
+            </Link>
+          </div>
+          <div className="contact-div-shadow font-pop flex items-center gap-3 bg-white w-64 xsm:w-80 md:w-96 md:p-4 xsm:p-2 p-0.5 rounded-md text-sm text-secondaryblue sm:text-base md:hidden">
+            <svg
+              className="h-7 w-7 text-primarygray"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20" fill="currentColor">
+              <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+            </svg>
+
+            <a href="https://www.google.com/maps/place/Delhi+Public+School,+Indore+Bypass+Rd,+Nipania+Road,+near+Water+Lilly,+Indore,+Madhya+Pradesh+452010/@22.7623268,75.9310855,17z/data=!4m2!3m1!1s0x39631d65000691bd:0x2ca713146ed7bc3b">
+              DPS Indore, India
+            </a>
+          </div>
+
         </div>
+
         <div className="flex flex-col gap-2 mt-2">
           {contacts.map((person) => {
             return (
-              <div className="flex flex-col gap-1 bg-white contactdiv w-64 md:w-96 md:p-4 xsm:w-80 xsm:p-2 rounded-md pl-2 pb-2 pt-1">
+              <div className="flex flex-col gap-1 bg-white contact-div-shadow w-64 md:w-96 md:p-4 xsm:w-80 xsm:p-2 rounded-md pl-2 pb-2 pt-1 ">
                 <div>
                   <h1 className="text-secondaryblue sm:text-lg">
                     {person.name}
@@ -73,42 +95,54 @@ const Contact = () => {
               </div>
             );
           })}
+          <Parallax speed={6} className="hero-3">
 
-          <svg
-            className="hero-3 h-32 w-32 absolute sm:w-40 sm:h-40 -right-9 md:w-40 md:h-40 lg:w-56 lg:h-56 lg:-right-14"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 127 230"
-          >
-            <circle
-              cx="115"
-              cy="115"
-              r="115"
-              fill="url(#paint0_linear)"
-            ></circle>
-            <defs>
-              <linearGradient
-                id="paint0_linear"
-                x1="0"
-                x2="230"
-                y1="0"
-                y2="230"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#FEB692"></stop>
-                <stop offset="1" stopColor="#EA5455"></stop>
-              </linearGradient>
-            </defs>
-          </svg>
+            <svg
+              className="hero-3 h-32 w-32 absolute sm:w-44 sm:h-44 -right-9 md:w-40 md:h-40 lg:w-56 lg:h-56 lg:-right-14 "
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 127 230"
+            >
+              <circle
+                cx="115"
+                cy="115"
+                r="115"
+                fill="url(#paint0_linear)"
+              ></circle>
+              <defs>
+                <linearGradient
+                  id="paint0_linear"
+                  x1="0"
+                  x2="230"
+                  y1="0"
+                  y2="230"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stopColor="#FEB692"></stop>
+                  <stop offset="1" stopColor="#EA5455"></stop>
+                </linearGradient>
+              </defs>
+            </svg>
+          </Parallax>
         </div>
 
         <h1 className="font-sand font-medium text-base xsm:text-lg sm:text-xl">
           Our Socials
         </h1>
-        <div className="flex items-center gap-2 bg-white contactdiv w-64 md:w-96 md:p-4 xsm:w-80 rounded-md p-1">
+        <div className="flex items-center gap-2 bg-white contact-div-shadow w-64 md:w-96 md:p-4 xsm:w-80 rounded-md p-1 mb-10">
           <svg
             xmlns="http://www.w3.org/2000/svg"
+
             className="w-8 h-8 xsm:w-10 xsm:h-10"
+            viewBox="0 0 24 24"
+            style={{ msFilter: "" }}
+            fill="rgba(0, 0, 0, 1)"
+          >
+            <path d="M14.82 4.26a10.14 10.14 0 00-.53 1.1 14.66 14.66 0 00-4.58 0 10.14 10.14 0 00-.53-1.1 16 16 0 00-4.13 1.3 17.33 17.33 0 00-3 11.59 16.6 16.6 0 005.07 2.59A12.89 12.89 0 008.23 18a9.65 9.65 0 01-1.71-.83 3.39 3.39 0 00.42-.33 11.66 11.66 0 0010.12 0q.21.18.42.33a10.84 10.84 0 01-1.71.84 12.41 12.41 0 001.08 1.78 16.44 16.44 0 005.06-2.59 17.22 17.22 0 00-3-11.59 16.09 16.09 0 00-4.09-1.35zM8.68 14.81a1.94 1.94 0 01-1.8-2 1.93 1.93 0 011.8-2 1.93 1.93 0 011.8 2 1.93 1.93 0 01-1.8 2zm6.64 0a1.94 1.94 0 01-1.8-2 1.93 1.93 0 011.8-2 1.92 1.92 0 011.8 2 1.92 1.92 0 01-1.8 2z"></path>
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-8 h-8 xsm:w-10 xsm:h-10 "
             viewBox="0 0 24 24"
           >
             <path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"></path>
@@ -124,13 +158,6 @@ const Contact = () => {
             <path d="M19.633 7.997c.013.175.013.349.013.523 0 5.325-4.053 11.461-11.46 11.461-2.282 0-4.402-.661-6.186-1.809.324.037.636.05.973.05a8.07 8.07 0 0 0 5.001-1.721 4.036 4.036 0 0 1-3.767-2.793c.249.037.499.062.761.062.361 0 .724-.05 1.061-.137a4.027 4.027 0 0 1-3.23-3.953v-.05c.537.299 1.16.486 1.82.511a4.022 4.022 0 0 1-1.796-3.354c0-.748.199-1.434.548-2.032a11.457 11.457 0 0 0 8.306 4.215c-.062-.3-.1-.611-.1-.923a4.026 4.026 0 0 1 4.028-4.028c1.16 0 2.207.486 2.943 1.272a7.957 7.957 0 0 0 2.556-.973 4.02 4.02 0 0 1-1.771 2.22 8.073 8.073 0 0 0 2.319-.624 8.645 8.645 0 0 1-2.019 2.083z"></path>
           </svg>
 
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-8 h-8 xsm:w-10 xsm:h-10"
-            viewBox="0 0 24 24"
-          >
-            <path d="M20 3H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h8.615v-6.96h-2.338v-2.725h2.338v-2c0-2.325 1.42-3.592 3.5-3.592.699-.002 1.399.034 2.095.107v2.42h-1.435c-1.128 0-1.348.538-1.348 1.325v1.735h2.697l-.35 2.725h-2.348V21H20a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1z"></path>
-          </svg>
 
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -146,7 +173,7 @@ const Contact = () => {
         </div>
       </div>
 
-      <div className="flex flex-col w-screen gap-2 mt-10">
+      <div className="flex-col w-screen gap-2 mt-10 hidden md:flex">
         <h1 className="font-pop font-bold text-lg text-center sm:text-xl md:text-2xl lg:text-3xl">
           Lorem ipsum dolor sit amet lorem
         </h1>
