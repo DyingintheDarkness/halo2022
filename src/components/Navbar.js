@@ -1,20 +1,79 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { links } from "./links";
-import { signInStatusAtom } from "../statedrive/atoms";
-import { useSharedState } from "../statedrive/index";
-function Navbar() {
-  // const { signInStatus } = useContext(AuthContext);
-  const [hideNav, setHideNav] = useState(false);
+import { toast } from "react-toastify"
+import { logout, login } from "./authentication"
+import { GoogleLogin } from "react-google-login";
+import { useHistory } from "react-router";
+import {
+  userAtom,
+  signInStatusAtom,
+  selectedEventsAtom,
+  redirectAtom,
+} from "../statedrive/atoms";
+import { useSharedState, useSetSharedState } from "../statedrive/index";
 
+function Navbar() {
+
+  const [hideNav, setHideNav] = useState(false);
+  const setUser = useSetSharedState(userAtom);
+  const history = useHistory();
   const [signInStatus, setSignInStatus] = useSharedState(signInStatusAtom);
+  const setSelectedEvents = useSetSharedState(selectedEventsAtom);
+  const setRedirect = useSetSharedState(redirectAtom);
+  
+  const responseGoogleFailure = (e) => {
+    if (e.type === "tokenFailed") {
+      return alert("You need a DPS Indore email to signup");
+    }
+    logout();
+    setSignInStatus(false);
+    setUser(null);
+    setRedirect("/join");
+    return toast.error("Login Failed");
+  };
+  const responseGoogleSuccess = async (e) => {
+    const { name, email, imageUrl } = e.profileObj;
+    const data = await login(name, email, imageUrl)
+      .then((res) => {
+        return res.data;
+      })
+      .catch((err) => {
+        logout();
+        setSignInStatus(false);
+        setRedirect("/join");
+        setUser(null);
+        setSelectedEvents([]);
+        // toast.error("Try to Login Again");
+        return false;
+      });
+    if (data) {
+      setSignInStatus(true);
+      localStorage.setItem("token", data.token);
+      setUser(data);
+      localStorage.setItem("redirect", "/dashboard");
+      setRedirect("/dashboard");
+      setSelectedEvents(data.events);
+      toast.success("Logged In Succesfully");
+      history.push("/dashboard");
+    }
+  };
+
+  const handleLogout = () => {
+    logout();
+    setSignInStatus(false);
+    setUser(null);
+    setRedirect("/join");
+    toast.success("Logged Out Succesfully");
+  };
+
+
 
   return (
     <>
       <div
-        className={`flex justify-between absolute top-0 left-0 h-screen w-full sm:hidden z-30  ${
-          hideNav ? "bg-navbar z-50" : ""
-        }`}
+        className={`flex justify-between absolute top-0 left-0 h-screen w-full sm:hidden z-30  ${hideNav ? "bg-navbar z-50" : ""
+          }`}
       >
         <div className="p-2 left-0">
           <svg
@@ -24,7 +83,7 @@ function Navbar() {
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-            >
+          >
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -35,9 +94,8 @@ function Navbar() {
         </div>
 
         <div
-          className={`${
-            hideNav ? "flex" : "hidden"
-          } bg-navbar h-full text-white w-full justify-center relative`}
+          className={`${hideNav ? "flex" : "hidden"
+            } bg-navbar h-full text-white w-full justify-center relative`}
         >
           <div className="flex flex-col gap-10 text-lg mt-20">
             <nav className="flex flex-col font-pop gap-10">
@@ -46,11 +104,10 @@ function Navbar() {
                   <Link
                     key={i}
                     to={link.src}
-                    className={`${
-                      window.location.pathname === link.src
-                        ? "text-black"
-                        : "text-white"
-                    }`}
+                    className={`${window.location.pathname === link.src
+                      ? "text-black"
+                      : "text-white"
+                      }`}
                   >
                     {link.name}
                   </Link>
@@ -58,38 +115,57 @@ function Navbar() {
               })}
 
               {signInStatus ?
-
                 <Link
-                to="/join"
-                className={`${
-                  window.location.pathname === "/join"
-                  ? "text-black"
-                  : "text-white"
-                }`}
+                  to="/dashboard"
+                  className={`${window.location.pathname === "/dashboard"
+                    ? "text-black"
+                    : "text-white"
+                    }`}
                 >
-                join
-              </Link>
-              : 
-              <Link
-                to="/dashboard"
-                className={`${
-                  window.location.pathname === "/dashboard"
-                  ? "text-black"
-                  : "text-white"
-                }`}
+                  dashboard
+                </Link>
+                :
+                <Link
+                  to="/join"
+                  className={`${window.location.pathname === "/join"
+                    ? "text-black"
+                    : "text-white"
+                    }`}
                 >
-                dashboard
-              </Link>
+                  join
+                </Link>
+
               }
 
 
             </nav>
-            <button className="align-right font-pop flex justify-center items-center border border-white rounded-md w-20">
-              login
-            </button>
+
+{ signInStatus ? <button className="align-right font-pop flex justify-center items-center border border-white rounded-md w-20" onClick={handleLogout}>logout</button>:
+            <GoogleLogin
+              clientId="630712713096-dqoroom09ebrhe0e3j4v28c2hsda4t5d.apps.googleusercontent.com"
+              onSuccess={responseGoogleSuccess}
+              onFailure={responseGoogleFailure}
+              cookiePolicy={"single_host_origin"}
+              // PRODUCTION ? hostedDomain={"student.dpsindore.org"} : ""
+              render={(renderProps) => (
+                <button
+                  onClick={renderProps.onClick}
+                  className="align-right font-pop flex justify-center items-center border border-white rounded-md w-20"
+
+                >
+                  Log In
+                </button>
+              )}
+            />
+              }
           </div>
         </div>
       </div>
+
+
+
+
+
 
       <div className="items-center justify-between p-2 hidden  sm:flex lg:text-lg">
         <div>
@@ -105,11 +181,10 @@ function Navbar() {
                 to={link.src}
                 className={`
               font-pop
-              ${
-                window.location.pathname === link.src
-                  ? "text-navbar"
-                  : "text-black"
-              }`}
+              ${window.location.pathname === link.src
+                    ? "text-navbar"
+                    : "text-black"
+                  }`}
                 smooth
               >
                 {link.name}
@@ -120,37 +195,61 @@ function Navbar() {
           {signInStatus ? (
             <Link
               to="/dashboard"
-              className={`${
-                window.location.pathname === "/dashboard"
-                  ? "text-navlink"
-                  : "text-black"
-              }`}
+              className={`${window.location.pathname === "/dashboard"
+                ? "text-navlink"
+                : "text-black"
+                }`}
             >
               dashboard
             </Link>
           ) : (
             <Link
               to="/join"
-              className={`${
-                window.location.pathname === "/join"
-                  ? "text-navlink"
-                  : "text-black"
-              }`}
+              className={`${window.location.pathname === "/join"
+                ? "text-navlink"
+                : "text-black"
+                }`}
             >
               join
             </Link>
           )}
         </nav>
-        <Link
-          className="align-right font-pop border border-black flex items-center justify-center text-center p-1 rounded-md w-20 shadow-sm lg:w-50 lg:h-7
+
+
+       
+        { signInStatus ? <button className="align-right font-pop border border-black flex items-center justify-center text-center p-1 rounded-md w-20 shadow-sm lg:w-50 lg:h-7
       outline-none
       xl:text-xl
       xl:h-8
-      transform hover:shadow-lg transition duration-500 ease-in-out"
-      to={"/join"}
-        >
-          login
-        </Link>
+      transform hover:shadow-lg transition duration-500 ease-in-out" onClick={handleLogout}>logout</button>:
+            <GoogleLogin
+              clientId="630712713096-dqoroom09ebrhe0e3j4v28c2hsda4t5d.apps.googleusercontent.com"
+              onSuccess={responseGoogleSuccess}
+              onFailure={responseGoogleFailure}
+              cookiePolicy={"single_host_origin"}
+              // PRODUCTION ? hostedDomain={"student.dpsindore.org"} : ""
+              render={(renderProps) => (
+                <button
+                  onClick={renderProps.onClick}
+                  className="align-right font-pop border border-black flex items-center justify-center text-center p-1 rounded-md w-20 shadow-sm lg:w-50 lg:h-7
+                  outline-none
+                  xl:text-xl
+                  xl:h-8
+                  transform hover:shadow-lg transition duration-500 ease-in-out"
+
+                >
+                  login
+                </button>
+              )}
+            />
+              }
+
+
+
+
+
+
+
       </div>
     </>
   );

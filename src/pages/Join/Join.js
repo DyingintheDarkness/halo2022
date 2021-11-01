@@ -1,7 +1,7 @@
-import React from "react";
+import React,{useEffect} from "react";
 import { GoogleLogin } from "react-google-login";
 import { useHistory } from "react-router";
-import { login, logout } from "../../components/authentication";
+import { login, logout,getUser, checkToken } from "../../components/authentication";
 import Layout from "../../components/Layout";
 import { toast } from "react-toastify";
 
@@ -63,6 +63,48 @@ const Join = () => {
     setRedirect("/join");
     toast.success("Logged Out Succesfully");
   };
+  async function getData() {
+    if (checkToken()) {
+      const data = await getUser()
+        .then((res) => {
+          return res;
+        })
+        .catch((err) => {
+          setSignInStatus(false);
+          logout();
+          setRedirect("/join");
+          localStorage.setItem("redirect", "/join")
+          setUser(null);
+          setSelectedEvents([]);
+          toast.error("Something Weird Happened")
+          return false;
+        });
+      if (data) {
+
+        setSignInStatus(true);
+        setRedirect("/dashboard");
+        setUser(data.data);
+        setSelectedEvents(data.data.events);
+        localStorage.setItem("events", JSON.stringify(data.data.events));
+        localStorage.setItem("redirect", "/dashboard")
+      }
+
+    } else {
+      localStorage.setItem("redirect", "/join")
+      setRedirect("/join")
+    }
+  }
+
+  useEffect(() => {
+    getData();
+    setSelectedEvents(JSON.parse(localStorage.getItem("events")));
+    setRedirect(localStorage.getItem("redirect"))
+    if(checkToken()){
+      history.push("/dashboard")
+    }
+  }, []);
+
+
 
   return (
     <Layout>
@@ -96,11 +138,15 @@ const Join = () => {
                 </button>
               )}
             />
+            
           )}
         </div>
 
       </div>
     </Layout>
+
+
+
   );
 };
 
