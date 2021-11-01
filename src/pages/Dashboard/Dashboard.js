@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, Redirect } from "react-router-dom";
 import { toast } from "react-toastify";
-import { checkToken, updateEvents,getUser,
-  logout } from "../../components/authentication";
+import { checkToken, updateEvents } from "../../components/authentication";
 import Layout from "../../components/Layout";
 import Loading from "../../components/Loading";
 
@@ -33,78 +32,13 @@ const Dashboard = () => {
     "quiz",
   ];
 
-  
-
-
-
-
-
-
-  // const setUser = useSetSharedState(userAtom);
-  // const setSignInStatus = useSetSharedState(signInStatusAtom);
-  // const setSelectedEvents = useSetSharedState(selectedEventsAtom);
-  // const setRedirect = useSetSharedState(redirectAtom);
-  async function getData() {
-    if (checkToken()) {
-      const data = await getUser()
-        .then((res) => {
-          return res;
-        })
-        .catch((err) => {
-          setSignInStatus(false);
-          logout();
-          setRedirect("/join");
-          localStorage.setItem("redirect", "/join")
-          setUser(null);
-          setSelectedEvents([]);
-          toast.error("Something Weird Happened")
-          return false;
-        });
-      if (data) {
-
-        setSignInStatus(true);
-        setRedirect("/dashboard");
-        setUser(data.data);
-        setSelectedEvents(data.data.events);
-        localStorage.setItem("events", JSON.stringify(data.data.events));
-        localStorage.setItem("redirect", "/dashboard")
-      }
-
-    } else {
-      localStorage.setItem("redirect", "/join")
-      setRedirect("/join")
-    }
-  }
-  // useEffect(() => {
-  //   getData();
-  //   setSelectedEvents(JSON.parse(localStorage.getItem("events")));
-  //   setRedirect(localStorage.getItem("redirect"))
-  // }, []);
-
-
-
-
   useEffect(() => {
     const current = new Date().getTime();
     const past = new Date("Sep 23 2021 19:36:40").getTime();
     if (current > past) {
       setViewPrompts(true);
     }
-    getData();
-    setSelectedEvents(JSON.parse(localStorage.getItem("events")));
-    setRedirect(localStorage.getItem("redirect"))
   }, []);
-
-
-
-
-
-
-
-
-
-
-
 
   return (
     <>

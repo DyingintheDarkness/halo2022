@@ -1,11 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { links } from "../components/links";
-import { useSharedState } from "../statedrive";
-import { signInStatusAtom } from "../statedrive/atoms";
 
 const Footer = () => {
-  const [signInStatus,setSignInStatus] = useSharedState(signInStatusAtom)
+  const signInStatus = false;
   return (
     
 
@@ -40,10 +38,10 @@ const Footer = () => {
               <Link
                 to="/dashboard"
                 className={`${
-                  window.location.pathname === "/dashboard" ? "text-navlink" : "text-black"
+                  window.location.pathname === "/join" ? "text-navlink" : ""
                 }`}
               >
-                dashboard
+                Dashboard
               </Link>
             ) : (
               <Link
