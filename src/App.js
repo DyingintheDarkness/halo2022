@@ -87,6 +87,7 @@ function App() {
         autoClose={2000}
         hideProgressBar={false}
         newestOnTop={false}
+        pauseOnHover={false}
         closeOnClick
         rtl={false}
         toastClassName={({ type }) => contextClass[type || "default"] +

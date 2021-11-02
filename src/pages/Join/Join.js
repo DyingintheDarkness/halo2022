@@ -2,8 +2,8 @@ import React from "react";
 import { GoogleLogin } from "react-google-login";
 import { useHistory } from "react-router";
 import { login, logout } from "../../components/authentication";
-import Layout from "../../components/Layout";
 import { toast } from "react-toastify";
+import Layout from "../../components/Layout";
 
 import {
   userAtom,
@@ -27,6 +27,7 @@ const Join = () => {
     setSignInStatus(false);
     setUser(null);
     setRedirect("/join");
+    if (e.details === "Cookies are not enabled in current environment.") { return toast.info("Please Enable Cookies To Continue") }
     return toast.error("Login Failed");
   };
   const responseGoogleSuccess = async (e) => {
@@ -41,7 +42,6 @@ const Join = () => {
         setRedirect("/join");
         setUser(null);
         setSelectedEvents([]);
-        // toast.error("Try to Login Again");
         return false;
       });
     if (data) {
@@ -86,7 +86,7 @@ const Join = () => {
               onSuccess={responseGoogleSuccess}
               onFailure={responseGoogleFailure}
               cookiePolicy={"single_host_origin"}
-              // PRODUCTION ? hostedDomain={"student.dpsindore.org"} : ""
+              // hostedDomain={"student.dpsindore.org"}
               render={(renderProps) => (
                 <button
                   onClick={renderProps.onClick}
@@ -96,6 +96,7 @@ const Join = () => {
                 </button>
               )}
             />
+
           )}
         </div>
 
