@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
-import { checkToken, updateEvents } from "../../components/authentication";
+import { updateEvents } from "../../components/authentication";
 import Layout from "../../components/Layout";
-import Loading from "../../components/Loading";
+
 
 import {
   userAtom,
@@ -22,7 +22,7 @@ const Dashboard = () => {
     useSharedState(selectedEventsAtom);
   const [redirect, setRedirect] = useSharedState(redirectAtom)
   const [viewPrompts, setViewPrompts] = useState(false);
-
+  const history = useHistory()
   const events = [
     "coding",
     "writing",
@@ -46,12 +46,12 @@ const Dashboard = () => {
         <Layout>
           <div className="mt-12 relative z-30">
 
-            <h1 className="font-pop p-2 font-bold mb-5 text-center  sm:text-xl xsm:text-2xl lg:text-4xl xl:text-5xl">
+            <h1 className="font-pop p-2 font-bold mb-5 text-center  text-lg xsm:text-xl md:text-2xl xl:text-3xl">
               Hi, {user.name} Lorem ipsum dolor <br />sit amet, consectetur adipiscing elit.
             </h1>
             <div className="flex flex-col items-center justify-center xl:relative">
 
-              <div className=" flex flex-wrap justify-center items-center xl:relative xl:left-10">
+              <div className=" flex flex-wrap justify-center items-center xl:relative xl:left-12">
                 {events.map((event, i) => (
                   <EventCard
                     name={event}
@@ -64,7 +64,7 @@ const Dashboard = () => {
 
 
 
-              <button className=" mt-3 bg-updatebtn w-24 rounded-md font-pop text-sm h-6 xsm:text-lg xsm:h-8" onClick={() => updateEvents(selectedEvents,toast) }>Update</button>
+              <button className=" mt-3 bg-updatebtn w-24 rounded-md font-pop text-sm h-6 xsm:text-lg xsm:h-8" onClick={() => updateEvents(selectedEvents, toast)}>Update</button>
             </div>
 
 
@@ -87,21 +87,21 @@ const Dashboard = () => {
 
               </div>
             </div>
-<div className="flex items-center justify-center mb-5">
+            <div className="flex items-center justify-center">
 
-            {viewPrompts ? (
-              <a
-                href="https://dyinginthedarkness.herokuapp.com/halo-prompts"
-                target="_blank"
-                rel="noreferrer"
-                className="bg-viewprompsbtn w-full flex items-center justify-center h-28 text-xl text-white font-pop font-medium underline shadow-spread-md xsm:text-2xl xsm:h-32 sm:h-44 xl:h-64 lg:h-52 lg:text-3xl xl:text-4xl"
+              {viewPrompts ? (
+                <a
+                  href="https://dyinginthedarkness.herokuapp.com/halo-prompts"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="bg-viewprompsbtn w-full flex items-center justify-center h-28 text-xl text-white font-pop font-medium underline shadow-spread-md xsm:text-2xl xsm:h-32 sm:h-44 xl:h-64 lg:h-52 lg:text-3xl xl:text-4xl"
                 >
-                View Prompts
-              </a>
-            ) : (
-              ""
+                  View Prompts
+                </a>
+              ) : (
+                ""
               )}
-              </div>
+            </div>
           </div>
         </Layout>
       ) : (

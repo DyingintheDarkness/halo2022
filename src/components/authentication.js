@@ -36,11 +36,14 @@ export const updateEvents = (events, toast) => {
   localStorage.setItem("events", JSON.stringify(events))
   axios.post("https://halolegion-2021.herokuapp.com/register", {
     query: updateUserQuery(token, events),
-  }).catch(err => {
+  })
+  .catch(err => {
     toast.error("Something Weird Happened")
   })
   toast.success("Updated Events Succesfully")
-};
+
+}
+
 
 export const logout = () => {
   localStorage.removeItem("token");

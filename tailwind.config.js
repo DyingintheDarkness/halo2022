@@ -18,6 +18,7 @@ module.exports = {
       current: 'currentColor',
       navlink: "#000AFF",
       link: "#4792D7",
+      tertiarylink: "#10B1F6",
       secdiv: "#7FFFC9",
       navbar: "#0A109F",
       btngreen: "#32FB9B",
@@ -32,6 +33,7 @@ module.exports = {
       primarygray: "#DADADA",
       secondarygray: "#BBBBBB",
       primarygreen: "#23FFBD",
+      secondarygreen: "#73FF81",
       secondaryblue: "#003FB9",
       activecard: "#040AAE",
       inactivecard: "#DADADA",
@@ -39,7 +41,6 @@ module.exports = {
       footerbg: "#F7F7F7",
       footerbb: "#F2F2F2",
       viewprompsbtn: "#0008C3",
-      
       black: colors.black,
       white: colors.white,
       gray: colors.coolGray,

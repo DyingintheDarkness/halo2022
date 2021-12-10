@@ -46,3 +46,11 @@ body {
 .event-container{
   padding-left: 20rem;
 }
+
+.legal-1 a{
+color: #2719C5;
+font-weight: bold;
+}
+.legal-1 a.normal{
+  font-weight: normal;
+}

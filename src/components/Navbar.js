@@ -169,13 +169,13 @@ cookiesEnabled ?
 
 
 
-      <div className="items-center justify-between p-2 hidden  sm:flex lg:text-lg">
+      <div className="items-center justify-between p-2 hidden sm:flex">
         <div>
-          <Link to="/" className="align-left font-sand font-medium xl:text-xl">
+          <Link to="/" className="align-left font-sand font-bold">
             halolegion
           </Link>
         </div>
-        <nav className="font-pop flex gap-4 xl:text-xl">
+        <nav className="font-pop flex gap-4 md:gap-8 xl:gap-14">
           {links.map((link, i) => {
             return (
               <Link

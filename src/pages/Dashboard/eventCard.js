@@ -41,7 +41,8 @@ const EventCard = (props) => {
           lg:h-32
           lg:m-8
           
-          xl:mr-28
+          xl:mr-32
+          
           
           
           xsm:w-64
@@ -53,7 +54,6 @@ const EventCard = (props) => {
           xsm:pt-7
           cursor-pointer
           font-pop
-
         `
       }
 

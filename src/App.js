@@ -3,6 +3,9 @@ import "./styles/custom.css";
 import 'react-toastify/dist/ReactToastify.css';
 import { Suspense, useEffect } from "react";
 
+// Remove in Production
+import { Redirect } from "react-router-dom";
+
 import {
   checkToken,
   getUser,
@@ -109,6 +112,11 @@ function App() {
             <Route exact path="/team" component={Team} />
             <Route exact path="/legal" component={Legal} />
             <Route exact path="/dashboard" component={Dashboard} />
+            // Remove in Production
+            <Route exact path="/view-prompts" component={() => {
+              window.location.href = "https://youtu.be/dQw4w9WgXcQ"
+              return null;
+            }} />
           </Switch>
         </Suspense>
       </Router>

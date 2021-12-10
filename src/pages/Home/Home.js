@@ -18,7 +18,7 @@ function Home() {
     <Layout>
       <div className="h-screen flex justify-center items-center">
         <div className="flex flex-col items-center justify-center relative">
-          <h1 className="font-major text-4xl xsm:text-5xl sm:text-7xl -mt-36">
+          <h1 style={{ script: "latin", rev: "1" }} className="font-major text-4xl xsm:text-5xl sm:text-7xl -mt-36">
             halolegion
           </h1>
           <p className="font-pop font-light text-sm mb-2 sm:text-xl ">
@@ -42,34 +42,30 @@ function Home() {
             className="font-bold text-xl xl:text-3xl
         
         
-        sm:w-3/12
+      sm:w-3/12
         xl:w-3/6
         
         mb-2
         "
           >
-            Lorem ipsum dolor sit amet
+          lorem ipsum morem lorem ipsum
           </h1>
 
           <div className="md:flex-row md:gap-5 z-20 flex flex-col gap-2">
             <div className="flex flex-col items-center justify-center">
               <h2 className="font-medium text-lg  md:text-xl xl:text-2xl">
-                Lorem ipsum dolor
+                Find your kind of people
               </h2>
               <p className="font-light text-sm sm:w-64 pl-2 lg:p-0 md:break-all xl:text-lg xl:w-10/12">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dis
-                diam hendrerit volutpat arcu scelerisque sed tempor. Facilisis
-                quam sagittis.
+                Have a knack for tech skills? Want to chill with cool peeps? Talk to school techies? Dont look around, explore here.
               </p>
             </div>
             <div className="flex flex-col items-center justify-center">
               <h2 className="font-medium text-lg md:text-xl xl:text-2xl ">
-                Lorem ipsum dolor
+                Get yourself engaged
               </h2>
               <p className="font-light text-sm sm:w-64 pl-2 md:pl-0 xl:text-lg xl:w-10/12">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dis
-                diam hendrerit volutpat arcu scelerisque sed tempor. Facilisis
-                quam sagittis.
+                Join our community and find opportunities and stuff to do apart from homework :)   work on your interests and skills highly required in the ever-developing world.
               </p>
             </div>
           </div>
@@ -113,7 +109,7 @@ function Home() {
 
       <div className="flex justify-center items-center flex-col gap-3 mt-20">
         <h1 className="font-sand font-bold text-lg md:text-2xl xl:text-3xl">
-          Lorem ipsum dolor sit amet
+          Make Halo your thing
         </h1>
         <div className="flex md:flex-row justify-center items-center gap-2 flex-wrap">
           {events.map((event) => {
@@ -146,24 +142,20 @@ function Home() {
         </div>
       </div>
 
-      <div className="flex flex-col justify-center items-center bg-primaryblue pt-5 text-white mt-40 md:p-8 xsm:p-6">
+      <div className="flex flex-col justify-center items-center bg-primaryblue pt-5 text-white mt-40 md:p-8 xsm:p-6 xl:pb-10">
         <h1 className="font-rose text-xl sm:text-2xl md:text-3xl">
-          Lorem ipsum dolor sit amet
+          Our club is about you
         </h1>
-        <p className="p-2 ml-5 font-pop break-words text-sm md:text-lg sm:pb-10 pb-4">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa
-          tincidunt dui faucibus gravida tempor ut magna elementum. Tortor ipsum
-          sit et consectetur morbi auctor facilisi pellentesque. Vivamus
-          sagittis, morbi tortor, lacus, eget erat. Fames amet proin id velit,
-          nisl. Nunc nulla ullamcorper ut eget pellentesque pellentesque
-          ullamcorper scelerisque. Ac dictum viverra ipsum a amet placerat vel
-          id diam.
+        <p className="p-2 ml-5 font-pop break-words text-sm md:text-xl sm:pb-10 pb-4 lg:text-2xl xl:mt-2">
+            Halo is about its members, about its legion. Be a part of the cavalry and join the war, I mean join the fun.
+            Halo looks forward to have and already has like-minded individuals who at the same time can set apart from others.
+             We value inquisitiveness before knowledge, synergy before solitude. We stick to our philosophy, it is what makes us a legion.
         </p>
       </div>
       <div className="relative">
         <div className="flex flex-col justify-start gap-4 mb-20 font-pop pl-2 md:text-2xl sm:text-xl mt-10">
           <h1 className="font-bold lg:w-5/12 xl:text-3xl w-60 md:w-80">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit?
+          You think this club is for <br/>you? Then join us!
           </h1>
 
 
@@ -277,7 +269,7 @@ function Home() {
 
 
       <svg
-        className="hero-1 w-80 h-80 xl:w-96 xl:h-96"
+        className="hero-1 xsm:w-80 xsm:h-80 xl:w-96 xl:h-96 w-44 h-44"
         xmlns='http://www.w3.org/2000/svg'
         width='345'
         height='510'
@@ -354,7 +346,7 @@ function Home() {
 
 
       <svg
-        className="hero-2 w-48 h-70 xl:w-96 xl:h-10/12 sm:-right-2 right-0 "
+        className="hero-2 w-44 h-70 xsm:w-56 xsm:h-70 xl:w-96 xl:h-10/12 sm:-right-7 right-0 "
         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 332 528">
         <g filter="url(#filter0_d)">
           <path

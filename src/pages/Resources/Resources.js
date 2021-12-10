@@ -7,22 +7,22 @@ import { resources } from "./data";
 const Resources = () => {
   return (
     <Layout>
-      <div className="font-pop flex flex-col gap-10 items-center mt-16 sm:mt-5 lg:mt-14 relative z-30 mb-20 xl:mt-5">
+      <div className="font-pop flex flex-col gap-10 items-center mt-16 sm:mt-8 pl-2  relative z-30 mb-20">
 
 
-        <h1 className="font-bold text-lg xsm:text-2xl sm:text-3xl lg:text-4xl xl:text-5xl">
+        <h1 className="font-bold text-lg xsm:text-2xl sm:text-3xl lg:text-4xl xl:text-5xl lg:mb-5">
           You can learn and develop your <br />
           skills through these resources.
         </h1>
 
 
 
-        <div className="flex flex-col justify-center items-center gap-7 mb-10">
+        <div className="flex flex-col justify-center items-center gap-7 mb-10 xsm:flex-wrap xsm:flex-row">
 
           {resources.map((resource) => {
             return (
               <div
-                className="shadow-spread-md bg-white relative w-60 h-32 flex items-center flex-col justify-evenly rounded-md xsm:w-80 sm:w-96 md:h-36"
+                className="shadow-spread-md bg-white relative w-60 h-32 flex items-center flex-col justify-evenly rounded-md xsm:w-80 xsm:mr-4 md:h-36 xl:mr-16"
                 key={resource.name}
               >
                 <h1 className="font-sand font-bold -mt-2 text-lg md:text-xl">
@@ -46,7 +46,7 @@ const Resources = () => {
             );
           })}
         </div>
-      <Parallax speed={6} className="absolute top-0 left-0 hero-3">
+      <Parallax speed={6} className="absolute top-5 left-0 hero-3">
         <svg
           className="w-36 h-32 sm:h-40 sm:w-40 hero-3 absolute top-10   lg:-top-10 -left-10 lg:w-52 lg:h-52 lg:-left-14 sm:top-20 xsm:top-32 xl:-top-3"
           xmlns="http://www.w3.org/2000/svg"
@@ -82,7 +82,7 @@ const Resources = () => {
 
         
         <svg
-        className="absolute bottom-10 -right-5 w-32 h-32  hero-3 sm:w-40 sm:h-40 lg:w-44 lg:h-44 "
+        className="absolute -bottom-10 -right-5 w-32 h-32  hero-3 sm:w-40 sm:h-40 lg:w-44 lg:h-44 xsm:bottom-0"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 179 261"

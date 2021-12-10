@@ -1,70 +1,87 @@
 
-import {Link} from "react-router-dom"
 const PrivacyPolicy = () => {
-    return (
-      <div>
-        <h1 className="">Privacy Policy</h1>
-        <p>
-          DPS Indore built the Halolegion app as a Free app. This SERVICE is
-          provided by DPS Indore at no cost and is intended for use as is.
-        </p>
-        <p>
-          This page is used to inform visitors regarding our policies with the
-          collection, use, and disclosure of Personal Information if anyone
-          decided to use our Service.
-        </p>
-        <p>
-          If you choose to use our Service, then you agree to the collection and
-          use of information in relation to this policy. The Personal Information
-          that we collect is used for providing and improving the Service. We will
-          not use or share your information with anyone except as described in
-          this Privacy Policy.
-        </p>
-        <p>
-          The terms used in this Privacy Policy have the same meanings as in our
-          Terms and Conditions, which is accessible at Halolegion unless otherwise
-          defined in this Privacy Policy.
-        </p>
-        <p>
-          Information Collection and Use
-        </p>
-        <p>
-          For a better experience, while using our Service, we may require you to
-          provide us with certain personally identifiable information, including
-          but not limited to cookies. The information that we request will be
-          retained by us and used as described in this privacy policy.
-        </p>
-        <div>
+  return (
+    <div className="mb-1 legal-1 pl-1 pr-2">
+      <p className="font-sand mb-4 text-4xl xl:text-5xl -ml-1">
+
+      <strong>Privacy Policy</strong>
+      </p>
+      <div className="font-pop text-sm xsm:text-base mt-2">
+        <div className="flex flex-col gap-1">
           <p>
-            The app does use third party services that may collect information
-            used to identify you.
+            DPS Indore built the Halolegion app as a Free app. This SERVICE is
+            provided by DPS Indore at no cost and is intended for use as is.
           </p>
           <p>
-            Link to privacy policy of third party service providers used by the
-            app
+            This page is used to inform visitors regarding our policies with the
+            collection, use, and disclosure of Personal Information if anyone
+            decided to use our Service.
           </p>
-          <ul>
+          <p>
+            If you choose to use our Service, then you agree to the collection and
+            use of information in relation to this policy. The Personal Information
+            that we collect is used for providing and improving the Service. We will
+            not use or share your information with anyone except as described in
+            this Privacy Policy.
+          </p>
+          <p>
+            The terms used in this Privacy Policy have the same meanings as in our
+            Terms and Conditions, which is accessible at Halolegion unless otherwise
+            defined in this Privacy Policy.
+          </p>
+          <p>
+            Information Collection and Use
+          </p>
+          <p>
+            For a better experience, while using our Service, we may require you to
+            provide us with certain personally identifiable information, including
+            but not limited to cookies. The information that we request will be
+            retained by us and used as described in this privacy policy.
+          </p>
+
+
+          <div>
+            <p>
+              The app does use third party services that may collect information
+              used to identify you.
+            </p>
+            <p>
+              Link to privacy policy of third party service providers used by the
+              app
+            </p>
+          </div>
+          <ul className="mt-2 mb-2">
             <li>
-              <Link
+              <a
                 href="https://www.google.com/policies/privacy/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Google Play Services
-              </Link>
+              </a>
             </li>
             <li>
-              <Link
+              <a
                 href="https://firebase.google.com/policies/analytics"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Google Analytics for Firebase
-              </Link>
+              </a>
             </li>
           </ul>
         </div>
-        <p>
+
+
+
+
+
+
+
+
+
+
+        <p className="font-sand mb-2 text-2xl">
           <strong>Log Data</strong>
         </p>
         <p>
@@ -76,30 +93,33 @@ const PrivacyPolicy = () => {
           utilizing our Service, the time and date of your use of the Service, and
           other statistics.
         </p>
-        <p>
+        <p className="font-sand mb-2 text-2xl">
           <strong>Cookies</strong>
         </p>
-        <p>
-          Cookies are files with a small amount of data that are commonly used as
-          anonymous unique identifiers. These are sent to your browser from the
-          websites that you visit and are stored on your device's internal memory.
-        </p>
-        <p>
-          This Service does not use these “cookies” explicitly. However, the app
-          may use third party code and libraries that use “cookies” to collect
-          information and improve their services. You have the option to either
-          accept or refuse these cookies and know when a cookie is being sent to
-          your device. If you choose to refuse our cookies, you may not be able to
-          use some portions of this Service.
-        </p>
-        <p>
+        <div className="flex flex-col gap-1">
+          <p>
+            Cookies are files with a small amount of data that are commonly used as
+            anonymous unique identifiers. These are sent to your browser from the
+            websites that you visit and are stored on your device's internal memory.
+          </p>
+          <p>
+            This Service does not use these “cookies” explicitly. However, the app
+            may use third party code and libraries that use “cookies” to collect
+            information and improve their services. You have the option to either
+            accept or refuse these cookies and know when a cookie is being sent to
+            your device. If you choose to refuse our cookies, you may not be able to
+            use some portions of this Service.
+          </p>
+        </div>
+
+        <p className="font-sand mb-2 text-2xl">
           <strong>Service Providers</strong>
         </p>
         <p>
           We may employ third-party companies and individuals due to the following
           reasons:
         </p>
-        <ul>
+        <ul className="font-pop font-light pt-1 pb-1">
           <li>To facilitate our Service;</li>
           <li>To provide the Service on our behalf;</li>
           <li>To perform Service-related services; or</li>
@@ -111,7 +131,7 @@ const PrivacyPolicy = () => {
           assigned to them on our behalf. However, they are obligated not to
           disclose or use the information for any other purpose.
         </p>
-        <p>
+        <p className="font-sand mb-2 text-2xl">
           <strong>Security</strong>
         </p>
         <p>
@@ -121,7 +141,7 @@ const PrivacyPolicy = () => {
           electronic storage is 100% secure and reliable, and we cannot guarantee
           its absolute security.
         </p>
-        <p>
+        <p className="font-sand mb-2 text-2xl">
           <strong>Links to Other Sites</strong>
         </p>
         <p>
@@ -132,7 +152,7 @@ const PrivacyPolicy = () => {
           and assume no responsibility for the content, privacy policies, or
           practices of any third-party sites or services.
         </p>
-        <p>
+        <p className="font-sand mb-2 text-2xl">
           <strong>Children’s Privacy</strong>
         </p>
         <p>
@@ -144,7 +164,7 @@ const PrivacyPolicy = () => {
           provided us with personal information, please contact us so that we will
           be able to do necessary actions.
         </p>
-        <p>
+        <p className="font-sand mb-2 text-2xl">
           <strong>Changes to This Privacy Policy</strong>
         </p>
         <p>
@@ -152,15 +172,16 @@ const PrivacyPolicy = () => {
           advised to review this page periodically for any changes. We will notify
           you of any changes by posting the new Privacy Policy on this page.
         </p>
-        <p>This policy is effective as of 2020-11-28</p>
-        <p>
+        <p className="font-pop text-base">This policy is effective as of 2020-11-sm xsm:text-base </p>
+        <p className="font-sand mb-2 text-2xl">
           <strong>Contact Us</strong>
         </p>
         <p>
           If you have any questions or suggestions about our Privacy Policy, do
-          not hesitate to contact us at halolegionofficial@gmail.com.
+          not hesitate to contact us at <a className="normal" href="mailto:halolegionofficial@gmail.com">halolegionofficial@gmail.com</a>.
         </p>
       </div>
-    );
-  }
-  export default PrivacyPolicy
+    </div>
+  );
+}
+export default PrivacyPolicy
