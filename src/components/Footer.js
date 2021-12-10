@@ -11,7 +11,7 @@ const Footer = () => {
 
     <div className="flex flex-col bg-footerbg gap-5 relative z-30 ">
       <div className="flex  flex-col  md:pt-40 md:mb-10 mb-2 pl-5 gap-5 xsm:flex-row xsm:pt-32 xsm:gap-12 xsm:-mt-20 xl:gap-32 justify-center items-center xsm:justify-start">
-        <h1 className="flex-col flex  font-bold text-2xl  mt-5 md:text-4xl xl:text-5xl sm:mr-10 md:-mt-5">
+        <h1 className="flex-col flex  font-bold text-3xl  mt-5 md:text-4xl xl:text-5xl sm:mr-10 md:-mt-5">
        <p>
        Don’t do it alone,
          </p> 
@@ -24,7 +24,7 @@ const Footer = () => {
         </h1>
         
 
-        <nav className="flex flex-col font-pop xl:mt-5 pl-10 text-sm gap-1 md:gap-3 pt-2 md:text-base ">
+        <nav className="flex flex-col font-pop xl:mt-5 pl-12  gap-1 md:gap-3 pt-2 text-base ">
           {links.map((link, i) => {
             return (
               <Link

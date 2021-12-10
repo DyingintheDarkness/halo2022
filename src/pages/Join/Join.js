@@ -71,7 +71,7 @@ const Join = () => {
           <h1 className="font-bold text-xl xsm:text-2xl md:text-3xl">
             Join Us
           </h1>
-<p className="text-secondarygray text-sm xsm:text-base md:text-lg">
+<p className="text-secondarygray text-sm xsm:text-base sm:text-lg lg:text-xl">
 Elit aliquam amet, in purus euismod est. <br/>Sollicitudin viverra pretium platea quis.
 </p>
           {signInStatus ? (
@@ -137,10 +137,10 @@ xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 37 37">
 
 
 <div className="mt-16 lg:mt-28 xl:mt-30 flex flex-col items-center justify-center">
-  <h1 className="font-pop text-center font-bold text-lg xsm:text-xl md:text-2xl">
+  <h1 className="font-pop text-center font-bold text-lg xsm:text-xl sm:text-2xl md:text-3xl lg:text-4xl">
   Eu, est arcu suspendisse tincidunt.
   </h1>
-  <p className="font-sans text-sm p-1 xsm:p-3 break-words md:w-4/5 lg:w-1/2 xsm:text-base text-secondarygray md:text-lg">
+  <p className="font-sans text-sm p-1 xsm:p-3 break-words md:w-4/5 lg:w-2/3 xsm:text-base text-secondarygray sm:text-lg lg:text-xl">
   Ut tempus euismod nunc, quam ultrices. Hendrerit duis urna nullam nullam purus netus. 
   Scelerisque quisque pharetra, diam enim purus vulputate a tincidunt ac. 
   Lorem augue interdum felis, morbi maecenas facilisis velit turpis cursus.
@@ -151,7 +151,7 @@ xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 37 37">
 
 <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="absolute w-40 h-40 lg:w-56 lg:h-56 -right-16  lg:bottom-40 xl:bottom-36 hero-3 hidden lg:flex"
+      className="absolute w-40 h-40 lg:w-56 lg:h-56 -right-20  lg:bottom-28 hero-3 hidden lg:flex"
       fill="none"
       viewBox="0 0 157 290"
     >
@@ -178,7 +178,7 @@ xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 37 37">
 
       </div>
       <svg
-      className="absolute w-32 h-32 -top-10 -left-7 hero-5 xsm:-left-2"
+      className="absolute w-32 h-32 -top-10 -left-8 hero-5 xsm:hidden"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 184 115"

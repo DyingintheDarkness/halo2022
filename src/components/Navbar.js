@@ -30,7 +30,7 @@ function Navbar() {
     setSignInStatus(false);
     setUser(null);
     setRedirect("/join");
-    if(e.details === "Cookies are not enabled in current environment."){return setCookiesEnabled(false)}
+    if (e.details === "Cookies are not enabled in current environment.") { return setCookiesEnabled(false) }
     return toast.error("Login Failed");
   };
   const responseGoogleSuccess = async (e) => {
@@ -70,106 +70,144 @@ function Navbar() {
 
   return (
     <>
-      <div
-        className={`flex justify-between absolute top-0 left-0 h-screen w-full sm:hidden z-30  ${hideNav ? "bg-navbar z-50" : ""
-          }`}
-      >
-        <div className="p-2 left-0">
-          <svg
-            onClick={() => setHideNav(!hideNav)}
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
-        </div>
 
-        <div
-          className={`${hideNav ? "flex" : "hidden"
-            } bg-navbar h-full text-white w-full justify-center relative`}
+      <div className={`sm:hidden z-30  ${hideNav ? "z-50" : ""
+        } p-2 left-0`}>
+        <svg
+          onClick={() => setHideNav(!hideNav)}
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
         >
-          <div className="flex flex-col gap-10 text-lg mt-20">
-            <nav className="flex flex-col font-pop gap-10">
-              {links.map((link, i) => {
-                return (
-                  <Link
-                    key={i}
-                    to={link.src}
-                    className={`${window.location.pathname === link.src
-                      ? "text-black"
-                      : "text-white"
-                      }`}
-                  >
-                    {link.name}
-                  </Link>
-                );
-              })}
-
-              {signInStatus ?
-                <Link
-                  to="/dashboard"
-                  className={`${window.location.pathname === "/dashboard"
-                    ? "text-black"
-                    : "text-white"
-                    }`}
-                >
-                  dashboard
-                </Link>
-                :
-                <Link
-                  to="/join"
-                  className={`${window.location.pathname === "/join"
-                    ? "text-black"
-                    : "text-white"
-                    }`}
-                >
-                  join
-                </Link>
-
-              }
-
-
-            </nav>
-
-{ signInStatus ? <button className="align-right font-pop flex justify-center items-center border border-white rounded-md w-20"  onClick={handleLogout} >logout</button>:
-
-cookiesEnabled ?
-            <GoogleLogin
-              clientId="630712713096-dqoroom09ebrhe0e3j4v28c2hsda4t5d.apps.googleusercontent.com"
-              onSuccess={responseGoogleSuccess}
-              onFailure={responseGoogleFailure}
-              cookiePolicy={"single_host_origin"}
-              // hostedDomain={"student.dpsindore.org"}
-              render={(renderProps) => (
-                <button
-                  onClick={renderProps.onClick}
-                  className="align-right font-pop flex justify-center items-center border border-white rounded-md w-20"
-
-                >
-                 login
-                </button>
-              )}
-            />
-            : <button className="align-right font-pop flex justify-center items-center border border-white rounded-md w-20" onClick={() => toast.error("Cookies Are Not Enabled")}>login</button>
-              }
-          </div>
-        </div>
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
       </div>
 
 
 
 
+      <div 
+        className={`${hideNav ? "flex" : "hidden"
+          } font-sans justify-center items-center text-lg font-medium sm:hidden mt-5`}
+      >
+<div className="flex flex-col w-3/4  gap-2 bg-navbg shadow-spread-md  backdrop-blur-md p-3 rounded-md">
 
 
-      <div className="items-center justify-between p-2 hidden sm:flex">
+          <nav className="flex flex-col gap-1">
+            {links.map((link, i) => {
+              return (
+                <Link
+                  key={i}
+                  to={link.src}
+                  className={`${window.location.pathname === link.src
+                    ? "text-navlink"
+                    : "text-black"
+                    }
+                    border-2 border-white rounded-md text-center p-1 pb-2 w-30 h-10 
+                    
+                    `}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
+
+            {signInStatus ?
+              <Link
+                to="/dashboard"
+                className={`${window.location.pathname === "/dashboard"
+                  ? "text-navlink"
+                  : "text-black"
+                  }  
+                  border-2 border-white rounded-md text-center p-1 pb-2 w-30 h-10
+                  `}
+              >
+                dashboard
+              </Link>
+              :
+              <Link
+                to="/join"
+                className={`${window.location.pathname === "/join"
+                  ? "text-navlink"
+                  : "text-black"
+                  }
+                  border-2 border-white rounded-md text-center pb-2 w-30 h-10 p-1
+                  
+                  `}
+              >
+                join
+              </Link>
+            }
+          </nav>
+
+          {signInStatus ? <button className="border-2 border-navloginborder text-navlogintext rounded-md text-center pl-1 pr-1 pb-2 w-24 h-8 font-medium" onClick={handleLogout} >logout</button> :
+
+            cookiesEnabled ?
+              <GoogleLogin
+                clientId="630712713096-dqoroom09ebrhe0e3j4v28c2hsda4t5d.apps.googleusercontent.com"
+                onSuccess={responseGoogleSuccess}
+                onFailure={responseGoogleFailure}
+                cookiePolicy={"single_host_origin"}
+                // hostedDomain={"student.dpsindore.org"}
+                render={(renderProps) => (
+                  <button
+                    onClick={renderProps.onClick}
+                    className="border-2 border-navloginborder text-navlogintext rounded-md text-center pl-1 pr-1 pb-2 w-24 h-8 font-medium" 
+
+                  >
+                    login
+                  </button>
+                )}
+              />
+              : <button className="border-2 border-navloginborder text-navlogintext rounded-md text-center pl-1 pr-1 pb-2 w-24 h-8 font-medium" onClick={() => toast.error("Cookies Are Not Enabled")}>login</button>
+          }
+
+</div>
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div className="items-center justify-between p-2 hidden sm:flex lg:text-lg">
         <div>
           <Link to="/" className="align-left font-sand font-bold">
             halolegion
@@ -218,15 +256,15 @@ cookiesEnabled ?
         </nav>
 
 
-       
-        { signInStatus ? <button className="align-right font-pop border border-black flex items-center justify-center text-center p-1 rounded-md w-20 shadow-sm lg:w-50 lg:h-7
+
+        {signInStatus ? <button className="align-right font-pop border border-black flex items-center justify-center text-center p-1 rounded-md w-20 shadow-sm lg:w-50 lg:h-7
       outline-none
-      xl:text-xl
+      
       xl:h-8
-      transform hover:shadow-lg transition duration-500 ease-in-out" onClick={handleLogout}>logout</button>:
-           
-      cookiesEnabled ?
-      <GoogleLogin
+      transform hover:shadow-lg transition duration-500 ease-in-out" onClick={handleLogout}>logout</button> :
+
+          cookiesEnabled ?
+            <GoogleLogin
               clientId="630712713096-dqoroom09ebrhe0e3j4v28c2hsda4t5d.apps.googleusercontent.com"
               onSuccess={responseGoogleSuccess}
               onFailure={responseGoogleFailure}
@@ -237,7 +275,7 @@ cookiesEnabled ?
                   onClick={renderProps.onClick}
                   className="align-right font-pop border border-black flex items-center justify-center text-center p-1 rounded-md w-20 shadow-sm lg:w-50 lg:h-7
                   outline-none
-                  xl:text-xl
+                  
                   xl:h-8
                   transform hover:shadow-lg transition duration-500 ease-in-out"
 
@@ -249,10 +287,10 @@ cookiesEnabled ?
             :
             <button className="align-right font-pop border border-black flex items-center justify-center text-center p-1 rounded-md w-20 shadow-sm lg:w-50 lg:h-7
             outline-none
-            xl:text-xl
+            
             xl:h-8
             transform hover:shadow-lg transition duration-500 ease-in-out" onClick={() => toast.error("Cookies Are Not Enabled")}>login</button>
-              }
+        }
 
 
 
