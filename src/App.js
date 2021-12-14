@@ -2,10 +2,6 @@ import "./styles/app.css";
 import "./styles/custom.css";
 import 'react-toastify/dist/ReactToastify.css';
 import { Suspense, useEffect } from "react";
-
-// Remove in Production
-import { Redirect } from "react-router-dom";
-
 import {
   checkToken,
   getUser,
@@ -17,7 +13,6 @@ import {
   selectedEventsAtom,
   redirectAtom,
 } from "./statedrive/atoms";
-
 import {
   Home,
   Join,
@@ -28,24 +23,44 @@ import {
   Team,
   Legal,
 } from "./pages/exports";
-
 import Loading from "./components/Loading";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useSetSharedState } from "./statedrive";
 import { toast, ToastContainer } from "react-toastify";
+
+const CloseButton = ({ closeToast }) => (
+  <i
+    className="Toastify__close-button"
+    onClick={closeToast}
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      style={{ msFilter: "" }}
+      fill="rgba(0, 0, 0, 1)"
+    >
+      <path d="M16.192 6.344l-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"></path>
+    </svg>
+  </i>
+);
+
+
 
 function App() {
   const setUser = useSetSharedState(userAtom);
   const setSignInStatus = useSetSharedState(signInStatusAtom);
   const setSelectedEvents = useSetSharedState(selectedEventsAtom);
   const setRedirect = useSetSharedState(redirectAtom);
-  const contextClass = {
-    success: "bg-green-200",
-    error: "bg-red-200",
-    info: "bg-blue-200",
-    default: "bg-gray-200",
 
+
+  const contextClass = {
+    success: "success",
+    error: "error",
+    info: "info",
+    default: "",
   };
+
+
   async function getData() {
     if (checkToken()) {
       const data = await getUser()
@@ -89,17 +104,17 @@ function App() {
         position="top-right"
         autoClose={2000}
         hideProgressBar={false}
-        newestOnTop={false}
+        newestOnTop={true}
         pauseOnHover={false}
+        limit={3}
         closeOnClick
+        closeButton={CloseButton}
         rtl={false}
+
         toastClassName={({ type }) => contextClass[type || "default"] +
-          " relative flex  justify-between items-center overflow-hidden cursor-pointer p-3 xsm:rounded-md sm:mt-8 mb-px font-medium font-pop text-black"
+          " defaults relative flex justify-start items-center h-10 p-1 pl-2 bg-black font-pop"
         }
-        bodyClassName={() => "flex "}
-
-
-
+        bodyClassName={() => "flex"}
       ></ToastContainer>
 
       <Router>
@@ -112,11 +127,8 @@ function App() {
             <Route exact path="/team" component={Team} />
             <Route exact path="/legal" component={Legal} />
             <Route exact path="/dashboard" component={Dashboard} />
-            // Remove in Production
-            <Route exact path="/view-prompts" component={() => {
-              window.location.href = "https://youtu.be/dQw4w9WgXcQ"
-              return null;
-            }} />
+            <Route path="*" component={PageNotFound} />
+
           </Switch>
         </Suspense>
       </Router>

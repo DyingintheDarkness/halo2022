@@ -2,15 +2,8 @@ import React from "react";
 import Layout from "../../components/Layout";
 import { events } from "./events";
 import { Link } from "react-router-dom"
-// import {
-//   userAtom,
-//   signInStatusAtom,
-//   selectedEventsAtom,
-//   redirectAtom,
-// } from "../../statedrive/atoms";
 import { redirectAtom } from "../../statedrive/atoms";
 import { useSharedState } from "../../statedrive/index"
-import { GoogleLogin } from "react-google-login";
 
 function Home() {
   const [redirect, setRedirect] = useSharedState(redirectAtom)
@@ -25,7 +18,7 @@ function Home() {
             We’re the official Tech Club of DPS Indore
           </p>
           <Link to={redirect}
-            className="rounded-md bg-btngreen w-20 h-7 flex justify-center shadow-md sm:text-xl sm:h-8 
+            className="rounded-md bg-green_6 w-20 h-7 flex justify-center shadow-md sm:text-xl sm:h-8 
           
           transform 
             hover:scale-110
@@ -37,7 +30,7 @@ function Home() {
       </div>
 
       <div className="relative ">
-        <div className="flex flex-col font-pop bg-secdiv items-center sm:flex-row p-4 lg:p-10 sm:gap-28 sm:-mt-10">
+        <div className="flex flex-col font-pop bg-green_4 items-center sm:flex-row p-4 lg:p-10 sm:gap-28 sm:-mt-10">
           <h1
             className="font-bold text-xl xl:text-3xl
         
@@ -48,7 +41,7 @@ function Home() {
         mb-2
         "
           >
-          lorem ipsum morem lorem ipsum
+            lorem ipsum morem lorem ipsum
           </h1>
 
           <div className="md:flex-row md:gap-5 z-20 flex flex-col gap-2">
@@ -121,7 +114,7 @@ function Home() {
             rounded-md
             justify-center
             items-center
-            bg-${event.bg}
+            bg-${event.color}
             w-40
             mt-1
             shadow-md
@@ -138,24 +131,27 @@ function Home() {
                 {event.name}
               </button>
             );
+
           })}
+
+
         </div>
       </div>
 
-      <div className="flex flex-col justify-center items-center bg-primaryblue pt-5 text-white mt-40 md:p-8 xsm:p-6 xl:pb-10">
+      <div className="flex flex-col justify-center items-center bg-blue_1 pt-5 text-white mt-40 md:p-8 xsm:p-6 xl:pb-10">
         <h1 className="font-rose text-xl sm:text-2xl md:text-3xl">
           Our club is about you
         </h1>
         <p className="p-2 ml-5 font-pop break-words text-sm md:text-xl sm:pb-10 pb-4 lg:text-2xl xl:mt-2">
-            Halo is about its members, about its legion. Be a part of the cavalry and join the war, I mean join the fun.
-            Halo looks forward to have and already has like-minded individuals who at the same time can set apart from others.
-             We value inquisitiveness before knowledge, synergy before solitude. We stick to our philosophy, it is what makes us a legion.
+          Halo is about its members, about its legion. Be a part of the cavalry and join the war, I mean join the fun.
+          Halo looks forward to have and already has like-minded individuals who at the same time can set apart from others.
+          We value inquisitiveness before knowledge, synergy before solitude. We stick to our philosophy, it is what makes us a legion.
         </p>
       </div>
       <div className="relative">
         <div className="flex flex-col justify-start gap-4 mb-20 font-pop pl-2 md:text-2xl sm:text-xl mt-10">
           <h1 className="font-bold lg:w-5/12 xl:text-3xl w-60 md:w-80">
-          You think this club is for <br/>you? Then join us!
+            You think this club is for <br />you? Then join us!
           </h1>
 
 

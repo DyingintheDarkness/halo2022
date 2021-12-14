@@ -23,11 +23,11 @@ const EventCard = (props) => {
 
     >
       <div
-              
+
 
         className={` ${active
-            ? "bg-activecard"
-            : "bg-inactivecard"
+          ? "bg-active_card"
+          : "bg-inactive_card"
           } 
         
         
@@ -39,9 +39,9 @@ const EventCard = (props) => {
           
           lg:w-60
           lg:h-32
-          lg:m-8
           
-          xl:mr-32
+          
+          
           
           
           
@@ -55,7 +55,7 @@ const EventCard = (props) => {
           cursor-pointer
           font-pop
         `
-      }
+        }
 
       >
 

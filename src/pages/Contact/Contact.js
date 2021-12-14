@@ -1,13 +1,11 @@
 import React from "react";
 import Parallax from 'react-rellax';
 import Layout from "../../components/Layout";
-import { contacts,socials } from "./data";
+import { contacts, socials } from "./data";
 import { Link } from "react-router-dom";
 const Contact = () => {
   return (
     <Layout>
-
-
       <div className="mt-10 font-pop font-bold text-lg text-center  xsm:text-2xl sm:text-3xl lg:text-4xl xl:text-5xl xsm:mt-16">
         <h1>
           Lorem ipsum dolor sit amet,
@@ -49,11 +47,11 @@ const Contact = () => {
         </h1>
         <div className="flex flex-col gap-2">
 
-          <div className="contact-div-shadow font-pop flex items-center gap-3 bg-white w-64 xsm:w-80 md:w-96 md:p-4 xsm:p-2 p-0.5 rounded-md text-sm text-secondaryblue sm:text-base">
+          <div className="contact-div-shadow font-pop flex items-center gap-3 bg-white w-64 xsm:w-80 md:w-96 md:p-4 xsm:p-2 p-0.5 rounded-md text-sm text-blue_2 sm:text-base">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
-              className="h-7 w-7 text-primarygray"
+              className="h-7 w-7 text-gray_1"
               viewBox="0 0 20 20"
             >
               <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
@@ -64,9 +62,9 @@ const Contact = () => {
               hi@halolegion.com
             </Link>
           </div>
-          <div className="contact-div-shadow font-pop flex items-center gap-3 bg-white w-64 xsm:w-80 md:w-96 md:p-4 xsm:p-2 p-0.5 rounded-md text-sm text-secondaryblue sm:text-base md:hidden">
+          <div className="contact-div-shadow font-pop flex items-center gap-3 bg-white w-64 xsm:w-80 md:w-96 md:p-4 xsm:p-2 p-0.5 rounded-md text-sm text-blue_2 sm:text-base md:hidden">
             <svg
-              className="h-7 w-7 text-primarygray"
+              className="h-7 w-7 text-gray_1"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
@@ -84,7 +82,7 @@ const Contact = () => {
             return (
               <div key={person.name} className="flex flex-col gap-1 bg-white contact-div-shadow w-64 md:w-96 md:p-4 xsm:w-80 xsm:p-2 rounded-md pl-2 pb-2 pt-1 ">
                 <div>
-                  <h1 className="text-secondaryblue sm:text-lg">
+                  <h1 className="text-blue_2 sm:text-lg">
                     {person.name}
                   </h1>
                   <h2 className="text-sm font-sand font-light ml-20 sm:text-base">
@@ -130,14 +128,14 @@ const Contact = () => {
           Our Socials
         </h1>
         <div className="flex items-center gap-2 bg-white contact-div-shadow w-64 md:w-96 md:p-4 xsm:w-80 rounded-md p-1 mb-10">
-{socials.map(social => {
-  return <a href={social.link} key={social.name}
-  target="_blank"
-  rel="noreferrer noopener nofollow"
-  >
-{social.icon}
-  </a>
-})}
+          {socials.map(social => {
+            return <a href={social.link} key={social.name}
+              target="_blank"
+              rel="noreferrer noopener nofollow"
+            >
+              {social.icon}
+            </a>
+          })}
         </div>
       </div>
 

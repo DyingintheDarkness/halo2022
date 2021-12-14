@@ -1,6 +1,6 @@
 
-export const getUserQuery  = (token,email) =>
-`
+export const getUserQuery = (token, email) =>
+  `
   query {
   getUser(email: "${email}", token: "${token}") {
     token

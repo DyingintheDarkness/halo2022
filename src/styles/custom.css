@@ -54,3 +54,30 @@ font-weight: bold;
 .legal-1 a.normal{
   font-weight: normal;
 }
+
+
+.defaults .Toastify__close-button *{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: #ffff;
+  fill-opacity: 1;
+}
+.defaults .Toastify__toast-icon i svg{
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.success .Toastify__progress-bar{
+  background: green;
+}
+.error .Toastify__progress-bar{
+  background: red;
+}
+.info .Toastify__progress-bar{
+  background: blue;
+}
+
+

@@ -1,65 +1,38 @@
 export const members = [
   {
-    name: "DyingintheDarkness",
+    name: "Lorem Ipsum",
     img: "https://avatars.githubusercontent.com/u/64571343?s=400&u=333faad5070566e4b0a2b436bc0e5f4187f5607b&v=4",
     designation: "Head Code",
-    about: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit quisque amet semper id. Sem sit habitant faucibus dolor. In quis in interdum augue fusce nunc, magna tellus sed. Leo vestibulum ut ultrices molestie.`,
-    socials: {
-      twitter: "https://twitter.com/DyingintheDark_",
-      instagram: "https://www.instagram.com/dyinginthedarkness_/",
-      github: "https://github.com/DyingintheDarkness"
-    }
-    
+    color: "purple_2"
   },
   {
-    name: "Person 2",
+    name: "Lorem Ipsum",
     img: "https://thumbs2.imgbox.com/d1/bd/mbZZabom_t.jpg",
-    designation: "ok",
-    about: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit quisque amet semper id. Sem sit habitant faucibus dolor. In quis in interdum augue fusce nunc, magna tellus sed. Leo vestibulum ut ultrices molestie.`,
-    socials: {
-      twitter: "#",
-      instagram: "#",
-      github: "#"
-    }
-    
+    designation: "Head Pitching",
+    color: "green_7"
   },
   {
-    name: "Person 3",
+    name: "Lorem Ipsum",
     img: "https://thumbs2.imgbox.com/d1/bd/mbZZabom_t.jpg",
-    designation: "ok",
-    about: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit quisque amet semper id. Sem sit habitant faucibus dolor. In quis in interdum augue fusce nunc, magna tellus sed. Leo vestibulum ut ultrices molestie.`,
-    socials: {
-
-      twitter: "#",
-      instagram: "#",
-      github: "#"
-    }
-    
+    designation: "Head Design",
+    color: "blue_5"
   },
   {
-    name: "Person 4",
+    name: "Lorem Ipsum",
     img: "https://thumbs2.imgbox.com/d1/bd/mbZZabom_t.jpg",
-    designation: "ok",
-    about: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit quisque amet semper id. Sem sit habitant faucibus dolor. In quis in interdum augue fusce nunc, magna tellus sed. Leo vestibulum ut ultrices molestie.`,
-    socials: {
-
-      twitter: "#",
-      instagram: "#",
-      github: "#"
-    }
-    
+    designation: "Head Gaming",
+    color: "red_1"
   },
   {
-    name: "Person 5",
+    name: "Lorem Ipsum",
     img: "https://thumbs2.imgbox.com/d1/bd/mbZZabom_t.jpg",
-    designation: "ok",
-    about: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit quisque amet semper id. Sem sit habitant faucibus dolor. In quis in interdum augue fusce nunc, magna tellus sed. Leo vestibulum ut ultrices molestie.`,
-    socials: {
-
-      twitter: "#",
-      instagram: "#",
-      github: "#"
-    }
-    
+    designation: "Head Writing",
+    color: "orange_1"
+  },
+  {
+    name: "Lorem Ipsum",
+    img: "https://thumbs2.imgbox.com/d1/bd/mbZZabom_t.jpg",
+    designation: "Head Quiz",
+    color: "violet_1"
   },
 ];

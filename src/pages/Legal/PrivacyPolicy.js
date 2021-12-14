@@ -3,8 +3,7 @@ const PrivacyPolicy = () => {
   return (
     <div className="mb-1 legal-1 pl-1 pr-2">
       <p className="font-sand mb-4 text-4xl xl:text-5xl -ml-1">
-
-      <strong>Privacy Policy</strong>
+        <strong>Privacy Policy</strong>
       </p>
       <div className="font-pop text-sm xsm:text-base mt-2">
         <div className="flex flex-col gap-1">
@@ -38,8 +37,6 @@ const PrivacyPolicy = () => {
             but not limited to cookies. The information that we request will be
             retained by us and used as described in this privacy policy.
           </p>
-
-
           <div>
             <p>
               The app does use third party services that may collect information

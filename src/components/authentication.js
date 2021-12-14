@@ -37,9 +37,9 @@ export const updateEvents = (events, toast) => {
   axios.post("https://halolegion-2021.herokuapp.com/register", {
     query: updateUserQuery(token, events),
   })
-  .catch(err => {
-    toast.error("Something Weird Happened")
-  })
+    .catch(err => {
+      toast.error("Something Weird Happened")
+    })
   toast.success("Updated Events Succesfully")
 
 }

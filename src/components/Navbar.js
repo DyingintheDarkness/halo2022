@@ -4,7 +4,7 @@ import { links } from "./links";
 import { toast } from "react-toastify"
 import { logout, login } from "./authentication"
 import { GoogleLogin } from "react-google-login";
-import { useHistory } from "react-router";
+
 import {
   userAtom,
   signInStatusAtom,
@@ -55,7 +55,6 @@ function Navbar() {
       setRedirect("/dashboard");
       setSelectedEvents(data.events);
       toast.success("Logged In Succesfully");
-      // history.push("/dashboard");
     }
   };
 
@@ -93,11 +92,11 @@ function Navbar() {
 
 
 
-      <div 
+      <div
         className={`${hideNav ? "flex" : "hidden"
-          } font-sans justify-center items-center text-lg font-medium sm:hidden mt-5`}
+          } font-sans justify-center items-center text-xl sm:hidden mt-5`}
       >
-<div className="flex flex-col w-3/4  gap-2 bg-navbg shadow-spread-md  backdrop-blur-md p-3 rounded-md">
+        <div className="flex flex-col w-3/4 gap-2 bg-purple_1 bg-opacity-50 shadow-spread-md  backdrop-filter backdrop-blur-lg p-5 rounded-md">
 
 
           <nav className="flex flex-col gap-1">
@@ -107,10 +106,10 @@ function Navbar() {
                   key={i}
                   to={link.src}
                   className={`${window.location.pathname === link.src
-                    ? "text-navlink"
+                    ? "text-link_1"
                     : "text-black"
                     }
-                    border-2 border-white rounded-md text-center p-1 pb-2 w-30 h-10 
+                    border-2 border-white rounded-md  flex justify-center items-center h-12 
                     
                     `}
                 >
@@ -123,10 +122,10 @@ function Navbar() {
               <Link
                 to="/dashboard"
                 className={`${window.location.pathname === "/dashboard"
-                  ? "text-navlink"
+                  ? "text-link_1"
                   : "text-black"
                   }  
-                  border-2 border-white rounded-md text-center p-1 pb-2 w-30 h-10
+                  border-2 border-white rounded-md  flex justify-center items-center h-12 
                   `}
               >
                 dashboard
@@ -135,10 +134,10 @@ function Navbar() {
               <Link
                 to="/join"
                 className={`${window.location.pathname === "/join"
-                  ? "text-navlink"
+                  ? "text-link_1"
                   : "text-black"
                   }
-                  border-2 border-white rounded-md text-center pb-2 w-30 h-10 p-1
+                  border-2 border-white rounded-md  flex justify-center items-center h-12 
                   
                   `}
               >
@@ -146,8 +145,7 @@ function Navbar() {
               </Link>
             }
           </nav>
-
-          {signInStatus ? <button className="border-2 border-navloginborder text-navlogintext rounded-md text-center pl-1 pr-1 pb-2 w-24 h-8 font-medium" onClick={handleLogout} >logout</button> :
+          {signInStatus ? <button className="border-2 border-white rounded-md  flex justify-center items-center h-12 w-7/12 bg-red-500 text-white" onClick={handleLogout} >logout</button> :
 
             cookiesEnabled ?
               <GoogleLogin
@@ -159,20 +157,21 @@ function Navbar() {
                 render={(renderProps) => (
                   <button
                     onClick={renderProps.onClick}
-                    className="border-2 border-navloginborder text-navlogintext rounded-md text-center pl-1 pr-1 pb-2 w-24 h-8 font-medium" 
+                    className="border-2 border-white rounded-md  flex justify-center items-center h-12 w-7/12 bg-green_5 text-purple-900"
 
                   >
                     login
                   </button>
                 )}
               />
-              : <button className="border-2 border-navloginborder text-navlogintext rounded-md text-center pl-1 pr-1 pb-2 w-24 h-8 font-medium" onClick={() => toast.error("Cookies Are Not Enabled")}>login</button>
+              : <button className="border-2 border-white rounded-md  flex justify-center items-center h-12 w-7/12 bg-green_5 text-purple-900" onClick={() => toast.info("Cookies are Disabled")}>login</button>
           }
-
-</div>
 
 
         </div>
+
+
+      </div>
 
 
 
@@ -222,7 +221,7 @@ function Navbar() {
                 className={`
               font-pop
               ${window.location.pathname === link.src
-                    ? "text-navbar"
+                    ? "text-link_1"
                     : "text-black"
                   }`}
                 smooth
@@ -236,7 +235,7 @@ function Navbar() {
             <Link
               to="/dashboard"
               className={`${window.location.pathname === "/dashboard"
-                ? "text-navlink"
+                ? "text-link_1"
                 : "text-black"
                 }`}
             >
@@ -246,7 +245,7 @@ function Navbar() {
             <Link
               to="/join"
               className={`${window.location.pathname === "/join"
-                ? "text-navlink"
+                ? "text-link_1"
                 : "text-black"
                 }`}
             >
@@ -289,7 +288,7 @@ function Navbar() {
             outline-none
             
             xl:h-8
-            transform hover:shadow-lg transition duration-500 ease-in-out" onClick={() => toast.error("Cookies Are Not Enabled")}>login</button>
+            transform hover:shadow-lg transition duration-500 ease-in-out" onClick={() => toast.info("Cookies are Disabled")}>login</button>
         }
 
 

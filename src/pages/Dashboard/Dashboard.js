@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Redirect, useHistory } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { toast } from "react-toastify";
 import { updateEvents } from "../../components/authentication";
 import Layout from "../../components/Layout";
-
-
 import {
   userAtom,
   signInStatusAtom,
@@ -12,7 +10,6 @@ import {
   redirectAtom,
 } from "../../statedrive/atoms";
 import { useSharedState } from "../../statedrive/index";
-
 import EventCard from "./eventCard";
 
 const Dashboard = () => {
@@ -22,7 +19,6 @@ const Dashboard = () => {
     useSharedState(selectedEventsAtom);
   const [redirect, setRedirect] = useSharedState(redirectAtom)
   const [viewPrompts, setViewPrompts] = useState(false);
-  const history = useHistory()
   const events = [
     "coding",
     "writing",
@@ -49,9 +45,9 @@ const Dashboard = () => {
             <h1 className="font-pop p-2 font-bold mb-5 text-center  text-lg xsm:text-xl md:text-2xl xl:text-3xl">
               Hi, {user.name} Lorem ipsum dolor <br />sit amet, consectetur adipiscing elit.
             </h1>
-            <div className="flex flex-col items-center justify-center xl:relative">
+            <div className="flex flex-col items-center justify-center">
 
-              <div className=" flex flex-wrap justify-center items-center xl:relative xl:left-12">
+              <div className="flex flex-col xsm:flex-row xsm:flex-wrap justify-center items-center lg:w-10/12 xl:w-8/12">
                 {events.map((event, i) => (
                   <EventCard
                     name={event}
@@ -64,7 +60,7 @@ const Dashboard = () => {
 
 
 
-              <button className=" mt-3 bg-updatebtn w-24 rounded-md font-pop text-sm h-6 xsm:text-lg xsm:h-8" onClick={() => updateEvents(selectedEvents, toast)}>Update</button>
+              <button className=" mt-3 bg-green_3 w-24 rounded-md font-pop text-sm h-6 xsm:text-lg xsm:h-8" onClick={() => updateEvents(selectedEvents, toast)}>Update</button>
             </div>
 
 
@@ -76,12 +72,12 @@ const Dashboard = () => {
                 <h2 className="font-bold xsm:text-lg">
                   Instructions:-
                 </h2>
-                <ul className="instructions list-decimal pl-4 font-medium text-secondarygray flex flex-col gap-1 md:gap-2 lg:gap-3">
+                <ul className="instructions list-decimal pl-4 font-medium text-gray_2 flex flex-col gap-1 md:gap-2 lg:gap-3">
                   <li>Just click and select the event boxes, whichever events you are interested in and then just click on update.</li>
                   <li>If you have any further problems related to something,<br />
                     please do not hesitate to contact us and we will be ready to help you out.</li>
                   <li>{!viewPrompts ? "Promps are now available just click on the View Prompts Button Below" : "Information for the prompts will be available later on."}</li>
-                  <li>As for any new updates, keep an eye out for annoucements on our <span className="text-link"> Halolegion’s Discord Server</span>.</li>
+                  <li>As for any new updates, keep an eye out for annoucements on our <span className="text-link_2"> Halolegion’s Discord Server</span>.</li>
                   <li>Besides, have a great time.</li>
                 </ul>
 
@@ -94,7 +90,7 @@ const Dashboard = () => {
                   href="https://dyinginthedarkness.herokuapp.com/halo-prompts"
                   target="_blank"
                   rel="noreferrer"
-                  className="bg-viewprompsbtn w-full flex items-center justify-center h-28 text-xl text-white font-pop font-medium underline shadow-spread-md xsm:text-2xl xsm:h-32 sm:h-44 xl:h-64 lg:h-52 lg:text-3xl xl:text-4xl"
+                  className="bg-blue_4 w-full flex items-center justify-center h-28 text-xl text-white font-pop font-medium underline shadow-spread-md xsm:text-2xl xsm:h-32 sm:h-44 xl:h-64 lg:h-52 lg:text-3xl xl:text-4xl"
                 >
                   View Prompts
                 </a>

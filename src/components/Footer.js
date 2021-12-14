@@ -9,20 +9,20 @@ const Footer = () => {
   return (
 
 
-    <div className="flex flex-col bg-footerbg gap-5 relative z-30 ">
+    <div className="flex flex-col bg-gray_3 gap-5 relative z-30 ">
       <div className="flex  flex-col  md:pt-40 md:mb-10 mb-2 pl-5 gap-5 xsm:flex-row xsm:pt-32 xsm:gap-12 xsm:-mt-20 xl:gap-32 justify-center items-center xsm:justify-start">
         <h1 className="flex-col flex  font-bold text-3xl  mt-5 md:text-4xl xl:text-5xl sm:mr-10 md:-mt-5">
-       <p>
-       Don’t do it alone,
-         </p> 
-         <p className="-mt-2">
-        do it with a legion,
-         </p>
-         <p className="-mt-2">
-         Halo.
-         </p>
+          <p>
+            Don’t do it alone,
+          </p>
+          <p className="-mt-2">
+            do it with a legion,
+          </p>
+          <p className="-mt-2">
+            Halo.
+          </p>
         </h1>
-        
+
 
         <nav className="flex flex-col font-pop xl:mt-5 pl-12  gap-1 md:gap-3 pt-2 text-base ">
           {links.map((link, i) => {
@@ -33,7 +33,7 @@ const Footer = () => {
                 className={`
             font-pop
             ${window.location.pathname === link.src
-                    ? "text-navlink"
+                    ? "text-link_1"
                     : "text-black"
                   }`}
                 smooth
@@ -46,7 +46,7 @@ const Footer = () => {
           {signInStatus ? (
             <Link
               to="/dashboard"
-              className={`${window.location.pathname === "/dashboard" ? "text-navlink" : "text-black"
+              className={`${window.location.pathname === "/dashboard" ? "text-link_1" : "text-black"
                 }`}
             >
               dashboard
@@ -55,7 +55,7 @@ const Footer = () => {
             <Link
               to="/join"
               className={`${window.location.pathname === "/join"
-                ? "text-navlink"
+                ? "text-link_1"
                 : "text-black"
                 }`}
             >
@@ -64,7 +64,7 @@ const Footer = () => {
           )}
           <Link
             to="/legal"
-            className={`${window.location.pathname === "/legal" ? "text-navlink" : "text-black"
+            className={`${window.location.pathname === "/legal" ? "text-link_1" : "text-black"
               }`}
           >
             legal
@@ -73,9 +73,9 @@ const Footer = () => {
         </nav>
       </div>
 
-      <div className="flex sm:justify-between items-center font-pop text-sm bg-footerbb sm:text-left justify-center pl-4 pb-0.5 pr-2">
+      <div className="flex sm:justify-between items-center font-pop text-sm bg-gray_4 sm:text-left justify-center pl-4 pb-0.5 pr-2 pt-1">
         <p>Made By&nbsp;
-          <a className="text-tertiarylink" href="https://github.com/DyingintheDarkness" target="_blank" rel="noreferrer noopener">
+          <a className="text-link_3" href="https://github.com/DyingintheDarkness" target="_blank" rel="noreferrer noopener">
             Vihaan Singh
           </a>
         </p>

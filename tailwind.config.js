@@ -16,34 +16,50 @@ module.exports = {
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
-      navlink: "#000AFF",
-      link: "#4792D7",
-      tertiarylink: "#10B1F6",
-      secdiv: "#7FFFC9",
-      navbar: "#0A109F",
-      btngreen: "#32FB9B",
-      writebtn: "#FBAD16",
-      designbtn: "#168DFB",
-      pitchbtn: "#52FB16",
-      codebtn: "#8307FF",
-      gamingbtn: "#EB2626",
-      quizbtn: "#BE28F3",
-      updatebtn: "#18F82E",
-      primaryblue: "#6E85FF",
-      primarygray: "#DADADA",
-      secondarygray: "#BBBBBB",
-      primarygreen: "#23FFBD",
-      secondarygreen: "#73FF81",
-      secondaryblue: "#003FB9",
-      activecard: "#040AAE",
-      inactivecard: "#DADADA",
-      tertiaryblue: "#2145FF",
-      footerbg: "#F7F7F7",
-      footerbb: "#F2F2F2",
-      navbg: "#B6BDFF",
-      navlogintext: "#7D00C9",
-      navloginborder: "#9E00FF",
-      viewprompsbtn: "#0008C3",
+      link_1: "#000AFF", 
+      link_2: "#4792D7", 
+      link_3: "#10B1F6", 
+      link_4: "#0A109F", 
+
+      
+
+      gray_1: "#DADADA", 
+      gray_2: "#BBBBBB", 
+      gray_3: "#F7F7F7", 
+      gray_4: "#F2F2F2", 
+
+
+      
+      orange_1: "#FBAD16",
+      blue_5: "#168DFB", 
+      green_7: "#52FB16",
+      purple_2: "#8307FF",
+      red_1: "#EB2626", 
+      violet_1: "#BE28F3",
+
+      
+      blue_1: "#6E85FF", 
+      blue_2: "#003FB9", 
+      blue_3: "#2145FF", 
+      blue_4: "#0008C3",
+
+      
+      purple_1: "#A065FF", 
+
+      
+      active_card: "#040AAE", 
+      inactive_card: "#DADADA",
+
+      
+      green_1: "#23FFBD", 
+      green_2: "#73FF81", 
+      green_3: "#18F82E", 
+      green_4: "#7FFFC9", 
+      green_5: "#3AFFA0", 
+      green_6: "#32FB9B", 
+
+
+
       black: colors.black,
       white: colors.white,
       gray: colors.coolGray,
