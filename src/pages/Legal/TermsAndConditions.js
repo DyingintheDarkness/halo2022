@@ -25,7 +25,7 @@ const TermsAndCondition = () => {
                 </p>
             </div>
 
-            <ul className="mt-2 mb-2">
+            <ul className="mt-3 mb-3">
                 <li>
                     <a
                         href="https://www.google.com/policies/privacy/"

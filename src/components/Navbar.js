@@ -224,7 +224,7 @@ function Navbar() {
                     ? "text-link_1"
                     : "text-black"
                   }`}
-                smooth
+
               >
                 {link.name}
               </Link>

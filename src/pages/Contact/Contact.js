@@ -13,7 +13,7 @@ const Contact = () => {
         </h1>
 
         <svg
-          className="w-20 h-20 -left-2 sm:w-40 sm:h-40 -mt-16 md:w-32 md:h-32  sm:-left-9  lg:w-40 lg:h-40 absolute hero-3 sm:-mt-32 md:-mt-28 xsm:-mt-20 md:-left-6"
+          className="w-20 h-20 -left-2 -mt-16 absolute hero-3  xsm:-mt-20 sm:w-32 sm:h-32 sm:-mt-28 sm:-left-7 md:w-36 md:h-36 md:-left-7 md:-mt-32"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           transform="rotate(5)"
@@ -37,7 +37,6 @@ const Contact = () => {
             </linearGradient>
           </defs>
         </svg>
-
       </div>
 
 
@@ -47,7 +46,7 @@ const Contact = () => {
         </h1>
         <div className="flex flex-col gap-2">
 
-          <div className="contact-div-shadow font-pop flex items-center gap-3 bg-white w-64 xsm:w-80 md:w-96 md:p-4 xsm:p-2 p-0.5 rounded-md text-sm text-blue_2 sm:text-base">
+          <div className="contact-div-shadow xsm:text-base md:text-lg font-pop flex items-center gap-3 bg-white w-64 xsm:w-80 md:w-96 md:p-4 xsm:p-2 p-0.5 rounded-md text-sm text-blue_2 sm:text-base">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
@@ -82,31 +81,24 @@ const Contact = () => {
             return (
               <div key={person.name} className="flex flex-col gap-1 bg-white contact-div-shadow w-64 md:w-96 md:p-4 xsm:w-80 xsm:p-2 rounded-md pl-2 pb-2 pt-1 ">
                 <div>
-                  <h1 className="text-blue_2 sm:text-lg">
+                  <h1 className="text-blue_2 xsm:text-lg md:text-xl">
                     {person.name}
                   </h1>
-                  <h2 className="text-sm font-sand font-light ml-20 sm:text-base">
+                  <h2 className="text-sm xsm:text-base md:text-lg font-sand font-light ml-10 sm:text-base">
                     -{person.designation}
                   </h2>
                 </div>
-                <p className="text-sm ">{person.phone}</p>
+                <p className="text-sm xsm:text-base md:text-lg">{person.phone}</p>
               </div>
             );
           })}
           <Parallax speed={6} className="hero-3">
 
             <svg
+
               className="hero-3 h-32 w-32 absolute sm:w-44 sm:h-44 -right-9 md:w-40 md:h-40 lg:w-56 lg:h-56 lg:-right-14 "
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 127 230"
-            >
-              <circle
-                cx="115"
-                cy="115"
-                r="115"
-                fill="url(#paint0_linear)"
-              ></circle>
+              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 127 230">
+              <circle cx="115" cy="115" r="115" fill="url(#paint0_linear)"></circle>
               <defs>
                 <linearGradient
                   id="paint0_linear"
@@ -148,7 +140,7 @@ const Contact = () => {
             className="w-full h-60 shadow-md xsm:h-80 md:h-96 lg:h-screen"
             title="DPS Indore"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.0821678758057!2d75.92889681483157!3d22.762331731716277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39631d65000691bd%3A0x2ca713146ed7bc3b!2sDelhi%20Public%20School!5e0!3m2!1sen!2sin!4v1633106205692!5m2!1sen!2sin"
-            allowfullscreen=""
+            allowFullScreen=""
             loading="lazy"
           ></iframe>
         </div>

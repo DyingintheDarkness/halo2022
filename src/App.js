@@ -17,7 +17,6 @@ import {
   Home,
   Join,
   Dashboard,
-  PageNotFound,
   Resources,
   Contact,
   Team,
@@ -43,6 +42,7 @@ const CloseButton = ({ closeToast }) => (
     </svg>
   </i>
 );
+
 
 
 
@@ -127,8 +127,7 @@ function App() {
             <Route exact path="/team" component={Team} />
             <Route exact path="/legal" component={Legal} />
             <Route exact path="/dashboard" component={Dashboard} />
-            <Route path="*" component={PageNotFound} />
-
+            <Route path="*" component={() => { return <div className="font-sans font-medium pl-1">404 - Page Not Found</div> }} />x
           </Switch>
         </Suspense>
       </Router>

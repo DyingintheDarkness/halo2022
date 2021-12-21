@@ -4,6 +4,7 @@ import { events } from "./events";
 import { Link } from "react-router-dom"
 import { redirectAtom } from "../../statedrive/atoms";
 import { useSharedState } from "../../statedrive/index"
+import { GoogleLogin } from "react-google-login";
 
 function Home() {
   const [redirect, setRedirect] = useSharedState(redirectAtom)
@@ -11,8 +12,8 @@ function Home() {
     <Layout>
       <div className="h-screen flex justify-center items-center">
         <div className="flex flex-col items-center justify-center relative">
-          <h1 style={{ script: "latin", rev: "1" }} className="font-major text-4xl xsm:text-5xl sm:text-7xl -mt-36">
-            halolegion
+          <h1 className="font-major text-4xl xsm:text-5xl sm:text-7xl -mt-36">
+            Halolegion
           </h1>
           <p className="font-pop font-light text-sm mb-2 sm:text-xl ">
             We’re the official Tech Club of DPS Indore
@@ -32,7 +33,7 @@ function Home() {
       <div className="relative ">
         <div className="flex flex-col font-pop bg-green_4 items-center sm:flex-row p-4 lg:p-10 sm:gap-28 sm:-mt-10">
           <h1
-            className="font-bold text-xl xl:text-3xl
+            className="font-bold text-xl xsm:text-2xl md:text-3xl
         
         
       sm:w-3/12
@@ -41,15 +42,15 @@ function Home() {
         mb-2
         "
           >
-            lorem ipsum morem lorem ipsum
+            lorem ipsum morem lorem
           </h1>
 
-          <div className="md:flex-row md:gap-5 z-20 flex flex-col gap-2">
+          <div className="md:flex-row md:gap-5 z-20 flex flex-col gap-2 pb-5">
             <div className="flex flex-col items-center justify-center">
               <h2 className="font-medium text-lg  md:text-xl xl:text-2xl">
                 Find your kind of people
               </h2>
-              <p className="font-light text-sm sm:w-64 pl-2 lg:p-0 md:break-all xl:text-lg xl:w-10/12">
+              <p className="font-light text-sm sm:w-64 xsm:pl-2 lg:p-0 md:break-all xl:text-lg xl:w-10/12">
                 Have a knack for tech skills? Want to chill with cool peeps? Talk to school techies? Dont look around, explore here.
               </p>
             </div>
@@ -57,7 +58,7 @@ function Home() {
               <h2 className="font-medium text-lg md:text-xl xl:text-2xl ">
                 Get yourself engaged
               </h2>
-              <p className="font-light text-sm sm:w-64 pl-2 md:pl-0 xl:text-lg xl:w-10/12">
+              <p className="font-light text-sm sm:w-64 xsm:pl-2 md:pl-0 xl:text-lg xl:w-10/12">
                 Join our community and find opportunities and stuff to do apart from homework :)   work on your interests and skills highly required in the ever-developing world.
               </p>
             </div>
@@ -87,17 +88,6 @@ function Home() {
             </linearGradient>
           </defs>
         </svg>
-
-
-
-
-
-
-
-
-
-
-
       </div>
 
       <div className="flex justify-center items-center flex-col gap-3 mt-20">
@@ -138,20 +128,20 @@ function Home() {
         </div>
       </div>
 
-      <div className="flex flex-col justify-center items-center bg-blue_1 pt-5 text-white mt-40 md:p-8 xsm:p-6 xl:pb-10">
-        <h1 className="font-rose text-xl sm:text-2xl md:text-3xl">
+      <div className="flex flex-col justify-center items-center bg-blue_1 pt-5 text-white mt-24 md:p-8 xsm:p-6 xl:pb-10">
+        <h1 className="font-rose text-2xl  md:text-3xl">
           Our club is about you
         </h1>
-        <p className="p-2 ml-5 font-pop break-words text-sm md:text-xl sm:pb-10 pb-4 lg:text-2xl xl:mt-2">
+        <p className="p-2 ml-5 font-pop break-all  md:text-xl sm:pb-10 pb-8 lg:text-2xl xl:mt-2">
           Halo is about its members, about its legion. Be a part of the cavalry and join the war, I mean join the fun.
           Halo looks forward to have and already has like-minded individuals who at the same time can set apart from others.
           We value inquisitiveness before knowledge, synergy before solitude. We stick to our philosophy, it is what makes us a legion.
         </p>
       </div>
       <div className="relative">
-        <div className="flex flex-col justify-start gap-4 mb-20 font-pop pl-2 md:text-2xl sm:text-xl mt-10">
-          <h1 className="font-bold lg:w-5/12 xl:text-3xl w-60 md:w-80">
-            You think this club is for <br />you? Then join us!
+        <div className="flex flex-col justify-start gap-3 mb-20 font-pop pl-2 md:text-2xl sm:text-xl mt-10">
+          <h1 className="font-bold text-lg xsm:text-xl md:text-2xl lg:mt-5 xl:text-3xl ">
+            You think this club is <br/>for you? Then join us!
           </h1>
 
 
@@ -159,7 +149,7 @@ function Home() {
 
           <Link
             to={redirect}
-            className="shadow-spread-md flex items-center text-sm gap-5 w-56 h-8 p-2 bg-white font-medium rounded-lg
+            className="shadow-spread-md flex items-center text-sm xsm:text-base gap-5 xsm:w-56 w-52 h-8 bg-white font-medium rounded-lg 
         
       sm:h-10
       xl:pt-4
@@ -171,7 +161,7 @@ function Home() {
           >
             <svg
 
-              className="w-8 h-6 xl:h-10"
+              className="w-8 h-6 xl:h-10 pl-1"
               xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 37 37">
               <g clipPath="url(#clip0)">
                 <path
@@ -221,7 +211,7 @@ function Home() {
 
 
         <svg
-          className="h-32 w-32 lg:-right-8 lg:w-44 lg:h-44 mt-2 absolute -right-5 -top-5 md:-top-2 md:w-36 md:h-36"
+          className="h-32 w-32 lg:-right-10 lg:w-44 lg:h-44 mt-2 absolute -right-7 -top-5 md:-top-2 md:w-36 md:h-36 lg:mt-7"
           xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 115 267">
           <path
             fill="url(#paint4_linear)"

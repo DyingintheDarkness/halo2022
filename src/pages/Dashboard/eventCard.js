@@ -16,8 +16,6 @@ const EventCard = (props) => {
           setSelectedEvents(
             selectedEvents.filter((event) => event !== props.name)
           );
-
-
         }
       }}
 

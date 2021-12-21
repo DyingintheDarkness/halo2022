@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Redirect } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 import { updateEvents } from "../../components/authentication";
 import Layout from "../../components/Layout";
@@ -19,11 +19,12 @@ const Dashboard = () => {
     useSharedState(selectedEventsAtom);
   const [redirect, setRedirect] = useSharedState(redirectAtom)
   const [viewPrompts, setViewPrompts] = useState(false);
+  const history = useHistory()
   const events = [
     "coding",
     "writing",
     "designing",
-    "pitching",
+    "discussion",
     "gaming",
     "quiz",
   ];

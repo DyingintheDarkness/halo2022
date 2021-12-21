@@ -47,7 +47,7 @@ const PrivacyPolicy = () => {
               app
             </p>
           </div>
-          <ul className="mt-2 mb-2">
+          <ul className="mt-3 mb-3">
             <li>
               <a
                 href="https://www.google.com/policies/privacy/"
@@ -68,15 +68,6 @@ const PrivacyPolicy = () => {
             </li>
           </ul>
         </div>
-
-
-
-
-
-
-
-
-
 
         <p className="font-sand mb-2 text-2xl">
           <strong>Log Data</strong>
