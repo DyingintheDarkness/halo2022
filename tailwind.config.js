@@ -313,8 +313,7 @@ module.exports = {
       pop: ['Poppins', 'sans-serif'],
       sand: ['Quicksand', 'sans-serif'],
       major: ['Major Mono Display', 'monospace'],
-      rose: ['Red Rose', 'cursive'],
-      saira: ['Saira Condensed', 'sans-serif']
+      rose: ['Red Rose', 'cursive']
     },
     fontSize: {
       xs: ['0.75rem', { lineHeight: '1rem' }],

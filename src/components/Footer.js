@@ -24,7 +24,7 @@ const Footer = () => {
         </h1>
 
 
-        <nav className="flex flex-col font-pop xl:mt-5 pl-12  gap-1 md:gap-3 pt-2 text-base ">
+        <nav className="flex flex-col font-pop xl:mt-5 pl-12  gap-1 md:gap-3 pt-2 md:text-lg">
           {links.map((link, i) => {
             return (
               <Link
@@ -75,13 +75,11 @@ const Footer = () => {
 
       <div className="flex sm:justify-between items-center font-pop text-sm bg-gray_4 sm:text-left justify-center pl-4 pb-0.5 pr-2 pt-1">
         <p>lorem ipsum&nbsp;
-          <a className="text-link_3" href="https://github.com/DyingintheDarkness" target="_blank" rel="noreferrer noopener">
+          <a className="text-blue-900" href="https://github.com/DyingintheDarkness" target="_blank" rel="noreferrer noopener">
             ok
           </a>
         </p>
-        <a href="https://vercel.com/" rel="noreferrer noopener">
-
-
+     
           <svg
 
             className="w-32 hidden sm:flex md:w-40 "
@@ -93,7 +91,7 @@ const Footer = () => {
             ></path>
             <path stroke="#5E5E5E" d="M43.5 0v44"></path>
           </svg>
-        </a>
+        
 
       </div>
     </div>

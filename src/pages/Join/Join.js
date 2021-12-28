@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { GoogleLogin } from "react-google-login";
 import { useHistory } from "react-router";
-import { login, logout } from "../../components/authentication";
 import { toast } from "react-toastify";
 import Layout from "../../components/Layout";
+import {
+  checkToken,
+  getUser,
+  logout,
+  login
+} from "../../components/authentication";
 import {
   userAtom,
   signInStatusAtom,
@@ -64,24 +69,68 @@ const Join = () => {
     toast.success("Logged Out Succesfully");
   };
 
+
+  async function getData() {
+    if (checkToken()) {
+      const data = await getUser()
+        .then((res) => {
+          return res;
+        })
+        .catch((err) => {
+          setSignInStatus(false);
+          logout();
+          setRedirect("/join");
+          localStorage.setItem("redirect", "/join")
+          setUser(null);
+          setSelectedEvents([]);
+          toast.error("Something Weird Happened")
+          return false;
+        });
+      if (data) {
+        setSignInStatus(true);
+        setRedirect("/dashboard");
+        setUser(data.data);
+        setSelectedEvents(data.data.events);
+        localStorage.setItem("events", JSON.stringify(data.data.events));
+        localStorage.setItem("redirect", "/dashboard")
+        return history.push("/dashboard")
+      }
+
+    } else {
+      localStorage.setItem("redirect", "/join")
+      setRedirect("/join")
+    }
+  }
+
+  useEffect(() => {
+    getData();
+    setSelectedEvents(JSON.parse(localStorage.getItem("events")));
+    setRedirect(localStorage.getItem("redirect"))
+  }, []);
+
+
+
+
+
+
+
+
+
+
+
+
+
   return (
     <Layout>
       <div className="mb-36 sm:mb-44 mt-10  relative z-30 xsm:mt-20 lg:mt-24">
-
-
-
         <div className="flex flex-col gap-2 pl-2 ">
-          <h1 className="font-pop font-bold w-10/12 break-words xsm:w-8/12 sm:w-5/12 lg:w-5/12 text-lg md:text-xl lg:text-3xl ">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis at nis ac diam amet.</h1>
-          <div className="flex flex-col   font-sans break-all -mt-1 text-sm text-gray_2 xsm:text-base md:text-lg">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
+          <h1 className="font-pop font-bold break-words text-lg md:text-2xl  lg:text-4xl">Lorem ipsum dolor sit amet, consectetur <br/>adipiscing elit. Quis at nis ac diam amet.</h1>
+          <div className="flex flex-col font-sans break-all -mt-1 text-sm text-gray-400 xsm:text-base md:text-lg">
 
-            </p>
-            <p className="-mt-1">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </p>
-
-
+              Lorem ipsum dolor sit amet, consectetur 
+              <span className="-mt-2">
+              adipiscing elit, Lorem ipsum dolor sit amet
+              </span>
           </div>
 
           {signInStatus ? (

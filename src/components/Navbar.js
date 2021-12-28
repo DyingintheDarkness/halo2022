@@ -4,7 +4,6 @@ import { links } from "./links";
 import { toast } from "react-toastify"
 import { logout, login } from "./authentication"
 import { GoogleLogin } from "react-google-login";
-
 import {
   userAtom,
   signInStatusAtom,
@@ -12,16 +11,13 @@ import {
   redirectAtom,
 } from "../statedrive/atoms";
 import { useSharedState, useSetSharedState } from "../statedrive/index";
-
 function Navbar() {
-
   const [hideNav, setHideNav] = useState(false);
   const [cookiesEnabled, setCookiesEnabled] = useState(true)
   const setUser = useSetSharedState(userAtom);
   const [signInStatus, setSignInStatus] = useSharedState(signInStatusAtom);
   const setSelectedEvents = useSetSharedState(selectedEventsAtom);
   const setRedirect = useSetSharedState(redirectAtom);
-
   const responseGoogleFailure = (e) => {
     if (e.type === "tokenFailed") {
       return alert("You need a DPS Indore email to signup");
@@ -57,7 +53,6 @@ function Navbar() {
       toast.success("Logged In Succesfully");
     }
   };
-
   const handleLogout = () => {
     logout();
     setSignInStatus(false);
@@ -65,11 +60,8 @@ function Navbar() {
     setRedirect("/join");
     toast.success("Logged Out Succesfully");
   };
-
-
   return (
     <>
-
       <div className={`sm:hidden z-30  ${hideNav ? "z-50" : ""
         } p-2 left-0`}>
         <svg
@@ -88,17 +80,11 @@ function Navbar() {
           />
         </svg>
       </div>
-
-
-
-
       <div
         className={`${hideNav ? "flex" : "hidden"
           } font-sans justify-center items-center text-xl sm:hidden mt-5`}
       >
         <div className="flex flex-col w-3/4 gap-2 bg-purple_1 bg-opacity-50 shadow-spread-md  backdrop-filter backdrop-blur-lg p-5 rounded-md">
-
-
           <nav className="flex flex-col gap-1">
             {links.map((link, i) => {
               return (
@@ -117,7 +103,6 @@ function Navbar() {
                 </Link>
               );
             })}
-
             {signInStatus ?
               <Link
                 to="/dashboard"
@@ -146,7 +131,6 @@ function Navbar() {
             }
           </nav>
           {signInStatus ? <button className="border-2 border-white rounded-md  flex justify-center items-center h-12 w-7/12 bg-red-500 text-white" onClick={handleLogout} >logout</button> :
-
             cookiesEnabled ?
               <GoogleLogin
                 clientId="630712713096-dqoroom09ebrhe0e3j4v28c2hsda4t5d.apps.googleusercontent.com"
@@ -166,46 +150,8 @@ function Navbar() {
               />
               : <button className="border-2 border-white rounded-md  flex justify-center items-center h-12 w-7/12 bg-green_5 text-purple-900" onClick={() => toast.info("Cookies are Disabled")}>login</button>
           }
-
-
         </div>
-
-
       </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       <div className="items-center justify-between p-2 hidden sm:flex lg:text-lg">
         <div>
           <Link to="/" className="align-left font-sand font-bold">
@@ -253,9 +199,6 @@ function Navbar() {
             </Link>
           )}
         </nav>
-
-
-
         {signInStatus ? <button className="align-right font-pop border border-black flex items-center justify-center text-center p-1 rounded-md w-20 shadow-sm lg:w-50 lg:h-7
       outline-none
       
@@ -290,13 +233,6 @@ function Navbar() {
             xl:h-8
             transform hover:shadow-lg transition duration-500 ease-in-out" onClick={() => toast.info("Cookies are Disabled")}>login</button>
         }
-
-
-
-
-
-
-
       </div>
     </>
   );

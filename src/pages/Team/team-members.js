@@ -28,15 +28,5 @@ export const members = [
     name: "Lorem Ipsum",
     img: "https://thumbs2.imgbox.com/d1/bd/mbZZabom_t.jpg",
     designation: "Designation",
-  },
-  {
-    name: "Lorem Ipsum",
-    img: "https://thumbs2.imgbox.com/d1/bd/mbZZabom_t.jpg",
-    designation: "Designation",
-  },
-  {
-    name: "Lorem Ipsum",
-    img: "https://thumbs2.imgbox.com/d1/bd/mbZZabom_t.jpg",
-    designation: "Designation",
   }
 ];
