@@ -1,8 +1,8 @@
 export const contacts = [
     {
-        "name": "Person 1",
-        "designation": "Designation 1",
-        "phone": "+91 9323872373"
+        "name": "Achal Jhawar",
+        "designation": "Director",
+        "phone": "+91 9977133993"
     },
     {
         "name": "Person 2",
