@@ -62,28 +62,6 @@ export const resources = [
     link: "#",
   },
   {
-    name: "Writing",
-    color: "orange_1",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="21"
-        fill="none"
-        viewBox="0 0 20 21"
-      >
-        <path
-          stroke="#000"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          d="M13.232 3.732l3.536 3.536-3.536-3.536zm1.5-1.5a2.5 2.5 0 013.536 3.536L4.5 19.536H1v-3.572L14.732 2.232v0z"
-        ></path>
-      </svg>
-    ),
-    link: "#",
-  },
-  {
     name: "Discussion",
     color: "green_7",
     icon: (

@@ -5,13 +5,14 @@ import { useSharedState } from "../statedrive";
 import { signInStatusAtom } from "../statedrive/atoms";
 
 const Footer = () => {
+  // eslint-disable-next-line no-unused-vars
   const [signInStatus, setSignInStatus] = useSharedState(signInStatusAtom)
   return (
 
 
     <div className="flex flex-col bg-gray_3 gap-5 relative z-30 ">
-      <div className="flex  flex-col  md:pt-40 md:mb-10 mb-2 pl-5 gap-5 xsm:flex-row xsm:pt-32 xsm:gap-12 xsm:-mt-20 xl:gap-32 justify-center items-center xsm:justify-start">
-        <h1 className="flex-col flex  font-bold text-3xl  mt-5 md:text-4xl xl:text-5xl sm:mr-10 md:-mt-5">
+      <div className="flex  flex-col md:mb-10 mb-2 pl-5 gap-5 xsm:flex-row xsm:pt-20 xsm:gap-12 xsm:-mt-20 xl:gap-32 justify-center items-center xsm:justify-start">
+        <h1 className="flex-col flex  font-bold text-3xl  mt-5 md:text-4xl xl:text-5xl sm:mr-10 md:mt-10">
           <p>
             Don’t do it alone,
           </p>
@@ -24,7 +25,7 @@ const Footer = () => {
         </h1>
 
 
-        <nav className="flex flex-col font-pop xl:mt-5 pl-12  gap-1 md:gap-3 pt-2 md:text-lg">
+        <nav className="flex flex-col font-pop pl-12  gap-1 md:gap-3 pt-2 md:text-lg sm:mt-8 md:mt-14">
           {links.map((link, i) => {
             return (
               <Link

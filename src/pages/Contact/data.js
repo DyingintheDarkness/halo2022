@@ -1,13 +1,13 @@
 export const contacts = [
     {
+        "name": "Utkarsh Dubey",
+        "designation": "President",
+        "phone": "+91 6261494213"
+    },
+    {
         "name": "Achal Jhawar",
         "designation": "Director",
         "phone": "+91 9977133993"
-    },
-    {
-        "name": "Person 2",
-        "designation": "Designation 2",
-        "phone": "+91 1234567890"
     },
     {
         "name": "Savita Saluja",

@@ -9,13 +9,12 @@ const Resources = () => {
     <Layout>
       <div className="font-pop flex flex-col gap-10 items-center mt-16 sm:mt-8 pl-2  relative z-30 mb-20">
 
-        <h1 className="font-bold text-lg xsm:text-2xl sm:text-3xl lg:text-4xl xl:text-5xl lg:mb-5">
+        <h1 className="font-bold text-lg xsm:text-2xl sm:text-3xl lg:text-4xl xl:text-5xl lg:mb-8">
           You can learn and develop your <br />
           skills through these resources.
         </h1>
 
-        <div className="flex flex-col justify-center items-center gap-7 mb-10 xsm:flex-wrap xsm:flex-row xl:w-10/12 xl:gap-x-12">
-
+        <div className="flex flex-col justify-center items-center gap-7 mb-10 xsm:flex-wrap xsm:flex-row lg:w-10/12 xl:w-8/12 lg:gap-10 xl:gap-14">
           {resources.map((resource) => {
             return (
               <div

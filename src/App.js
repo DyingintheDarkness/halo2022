@@ -1,7 +1,15 @@
+import { Suspense, useEffect } from "react";
 import "./styles/app.css";
 import "./styles/custom.css";
 import 'react-toastify/dist/ReactToastify.css';
-import { Suspense} from "react";
+import { checkToken, getUser, logout } from "./components/authentication";
+import {
+  userAtom,
+  signInStatusAtom,
+  selectedEventsAtom,
+  redirectAtom,
+} from "./statedrive/atoms";
+import { useSharedState, useSetSharedState } from "./statedrive/index";
 import {
   Home,
   Join,
@@ -12,8 +20,8 @@ import {
   Legal,
 } from "./pages/exports";
 import Loading from "./components/Loading";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
+import { BrowserRouter as Router, Switch, Route, useHistory } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 
 const CloseButton = ({ closeToast }) => (
   <i
@@ -31,31 +39,79 @@ const CloseButton = ({ closeToast }) => (
   </i>
 );
 
-
-
-
 function App() {
+  const setUser = useSetSharedState(userAtom);
+  const setSignInStatus = useSharedState(signInStatusAtom);
+  const setSelectedEvents = useSetSharedState(selectedEventsAtom);
+  const setRedirect = useSetSharedState(redirectAtom);
+  const history = useHistory();
+
   const contextClass = {
     success: "success",
     error: "error",
     info: "info",
-    default: "",
+    default: "font-black",
   };
+
+  async function getData() {
+    if (checkToken()) {
+      const data = await getUser()
+        .then((res) => {
+          return res;
+        })
+        .catch((err) => {
+          setSignInStatus(false);
+          logout();
+          setRedirect("/join");
+          localStorage.setItem("redirect", "/join")
+          setUser(null);
+          setSelectedEvents([]);
+          toast.error("Something Weird Happened")
+          return false;
+        });
+      if (data) {
+        setSignInStatus(true);
+        setRedirect("/dashboard");
+        setUser(data.data);
+        setSelectedEvents(data.data.events);
+        localStorage.setItem("events", JSON.stringify(data.data.events));
+        localStorage.setItem("redirect", "/dashboard")
+        return history.push("/dashboard")
+      }
+
+    } else {
+      localStorage.setItem("redirect", "/join")
+      setRedirect("/join")
+    }
+  }
+
+
+
+
+
+
+  useEffect(() => {
+    getData();
+    setSelectedEvents(JSON.parse(localStorage.getItem("events")));
+    setRedirect(localStorage.getItem("redirect"))
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <>
       <ToastContainer
         position="top-right"
         autoClose={2000}
         hideProgressBar={false}
+        icon={false}
         newestOnTop={true}
         pauseOnHover={false}
         limit={3}
         closeOnClick
         closeButton={CloseButton}
         rtl={false}
-
         toastClassName={({ type }) => contextClass[type || "default"] +
-          " defaults relative flex justify-start items-center h-10 p-1 pl-2 bg-black font-pop"
+          " defaults relative flex justify-start items-center h-10 p-1 pl-2 font-pop mb-2"
         }
         bodyClassName={() => "flex"}
       ></ToastContainer>

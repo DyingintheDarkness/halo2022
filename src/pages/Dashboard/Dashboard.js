@@ -1,5 +1,6 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
-import { Redirect, useHistory } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { toast } from "react-toastify";
 import { updateEvents } from "../../components/authentication";
 import Layout from "../../components/Layout";
@@ -19,7 +20,6 @@ const Dashboard = () => {
     useSharedState(selectedEventsAtom);
   const [redirect, setRedirect] = useSharedState(redirectAtom)
   const [viewPrompts, setViewPrompts] = useState(false);
-  const history = useHistory()
   const events = [
     "coding",
     "writing",
@@ -77,8 +77,8 @@ const Dashboard = () => {
                   <li>Just click and select the event boxes, whichever events you are interested in and then just click on update.</li>
                   <li>If you have any further problems related to something,<br />
                     please do not hesitate to contact us and we will be ready to help you out.</li>
-                  <li>{!viewPrompts ? "Promps are now available just click on the View Prompts Button Below" : "Information for the prompts will be available later on."}</li>
-                  <li>As for any new updates, keep an eye out for annoucements on our <span className="text-link_2"> Halolegion’s Discord Server</span>.</li>
+                  <li>{!viewPrompts ? "Prompts are now available just click on the View Prompts Button Below" : "Information for the prompts will be available later on."}</li>
+                  <li>As for any new updates, keep an eye out for announcements on our <span className="text-link_2"> Halolegion’s Discord Server</span>.</li>
                   <li>Besides, have a great time.</li>
                 </ul>
 

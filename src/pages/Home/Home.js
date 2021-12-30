@@ -4,9 +4,10 @@ import { events } from "./events";
 import { Link } from "react-router-dom"
 import { redirectAtom } from "../../statedrive/atoms";
 import { useSharedState } from "../../statedrive/index"
-import { GoogleLogin } from "react-google-login";
+
 
 function Home() {
+  // eslint-disable-next-line no-unused-vars
   const [redirect, setRedirect] = useSharedState(redirectAtom)
   return (
     <Layout>
@@ -33,9 +34,7 @@ function Home() {
       <div className="relative ">
         <div className="flex flex-col font-pop bg-green_4 items-center sm:flex-row p-4 lg:p-10 sm:gap-28 sm:-mt-10">
           <h1
-            className="font-bold text-xl xsm:text-2xl md:text-3xl
-        
-        
+            className="font-bold text-xl xsm:text-2xl md:text-3xl       
       sm:w-3/12
         xl:w-3/6
         
@@ -64,8 +63,6 @@ function Home() {
             </div>
           </div>
         </div>
-
-
         <svg
           className="hero-3 h-52 w-52 absolute -top-20 right-0   xsm:w-64 xsm:h-64 xsm:-top-24 md:w-80 md:h-80 md:-top-32 md:right-0 "
 
@@ -123,11 +120,8 @@ function Home() {
             );
 
           })}
-
-
         </div>
       </div>
-
       <div className="flex flex-col justify-center items-center bg-blue_1 pt-5 text-white mt-24 md:p-8 xsm:p-6 xl:pb-10">
         <h1 className="font-rose text-2xl  md:text-3xl">
           Our club is about you
@@ -143,10 +137,6 @@ function Home() {
           <h1 className="font-bold text-lg xsm:text-xl md:text-2xl lg:mt-5 xl:text-3xl ">
             You think this club is <br/>for you? Then join us!
           </h1>
-
-
-
-
           <Link
             to={redirect}
             className="shadow-spread-md flex items-center text-sm xsm:text-base gap-5 xsm:w-56 w-52 h-8 bg-white font-medium rounded-lg 
@@ -191,25 +181,9 @@ function Home() {
                 </clipPath>
               </defs>
             </svg>
-
             Sign Up with Google
           </Link>
-
-
-
-
-
-
-
-
-
-
         </div>
-
-
-
-
-
         <svg
           className="h-32 w-32 lg:-right-10 lg:w-44 lg:h-44 mt-2 absolute -right-7 -top-5 md:-top-2 md:w-36 md:h-36 lg:mt-7"
           xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 115 267">
@@ -232,26 +206,7 @@ function Home() {
             </linearGradient>
           </defs>
         </svg>
-
-
-
-
-
-
-
       </div>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
       <svg
@@ -311,26 +266,6 @@ function Home() {
           </linearGradient>
         </defs>
       </svg>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       <svg
         className="hero-2 w-44 h-70 xsm:w-56 xsm:h-70 xl:w-96 xl:h-10/12 sm:-right-7 right-0 "
         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 332 528">
@@ -383,8 +318,6 @@ function Home() {
           </linearGradient>
         </defs>
       </svg>
-
-
     </Layout>
   );
 }

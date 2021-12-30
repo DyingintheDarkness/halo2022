@@ -1,13 +1,13 @@
 module.exports = {
-  purge: {
-    enabled: true,
-    mode: "all",
-    content: ["./**/*.html", "./**/*.css","./**/*.js"]
-  }
-,
   plugins: [
     require('tailwindcss'),
     require('autoprefixer'),
-    require("cssnano")
+    require("cssnano")({
+      preset: 'default'
+    }),
+    require("@fullhuman/postcss-purgecss")({
+      content: ['./layouts/**/*.html', './src/**/*.css', './src/**/*.js'],
+      defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || []
+    })
   ]
 }
