@@ -67,14 +67,16 @@ const Join = () => {
 
   return (
     <Layout>
-      <div className="mb-36 sm:mb-44 mt-10  relative z-30 xsm:mt-20 lg:mt-24">
-        <div className="flex flex-col gap-2 pl-2 ">
-          <h1 className="font-pop font-bold break-words text-lg md:text-2xl  lg:text-4xl">Lorem ipsum dolor sit amet, consectetur <br />adipiscing elit. Quis at nis ac diam amet.</h1>
-          <div className="flex flex-col font-sans break-all -mt-1 text-sm text-gray-400 xsm:text-base md:text-lg">
-
-            Lorem ipsum dolor sit amet, consectetur
+      <div className="mb-40 sm:mb-44 mt-14  relative z-30 xsm:mt-20 lg:mt-24">
+        <div className="flex flex-col gap-3 pl-2 ">
+          <h1 className="font-pop font-bold break-words text-lg md:text-2xl  lg:text-4xl">
+          Join us and help our team to <br/>
+make the good work even better!
+          </h1>
+          <div className="flex flex-col font-sans break-all -mt-1 xsm:-mt-2 text-sm text-gray-400 xsm:text-base md:text-lg">
+          Well, what are you waiting for?
             <span className="xsm:-mt-2">
-              adipiscing elit, Lorem ipsum dolor sit amet
+            We believe in you!
             </span>
           </div>
 
@@ -92,7 +94,7 @@ const Join = () => {
               onSuccess={responseGoogleSuccess}
               onFailure={responseGoogleFailure}
               cookiePolicy={"single_host_origin"}
-              // hostedDomain={"student.dpsindore.org"}
+              hostedDomain={"student.dpsindore.org"}
               render={(renderProps) => (
                 <button
                   onClick={renderProps.onClick}
@@ -131,7 +133,7 @@ const Join = () => {
                     </defs>
                   </svg>
                   <span className="lg:-ml-3">
-                    lorem ipsum
+                  let’s get started!
                   </span>
                 </button>
               )}
@@ -175,7 +177,7 @@ const Join = () => {
                   </defs>
                 </svg>
                 <span className="lg:-ml-3">
-                  lorem ipsum
+                let’s get started!
                 </span>
               </button>
           )}

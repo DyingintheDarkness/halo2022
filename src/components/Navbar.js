@@ -137,7 +137,7 @@ function Navbar() {
                 onSuccess={responseGoogleSuccess}
                 onFailure={responseGoogleFailure}
                 cookiePolicy={"single_host_origin"}
-                // hostedDomain={"student.dpsindore.org"}
+                hostedDomain={"student.dpsindore.org"}
                 render={(renderProps) => (
                   <button
                     onClick={renderProps.onClick}
@@ -211,7 +211,7 @@ function Navbar() {
               onSuccess={responseGoogleSuccess}
               onFailure={responseGoogleFailure}
               cookiePolicy={"single_host_origin"}
-              // hostedDomain={"student.dpsindore.org"} 
+              hostedDomain={"student.dpsindore.org"} 
               render={(renderProps) => (
                 <button
                   onClick={renderProps.onClick}

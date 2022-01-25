@@ -34,14 +34,12 @@ function Home() {
       <div className="relative ">
         <div className="flex flex-col font-pop bg-green_4 items-center sm:flex-row p-4 lg:p-10 sm:gap-28 sm:-mt-10">
           <h1
-            className="font-bold text-xl xsm:text-2xl md:text-3xl       
-      sm:w-3/12
-        xl:w-3/6
-        
+            className="font-bold text-xl xsm:text-2xl md:text-3xl lg:w-4/6 
         mb-2
         "
           >
-            lorem ipsum morem lorem
+            Explore what this club
+holds for you...
           </h1>
 
           <div className="md:flex-row md:gap-5 z-20 flex flex-col gap-2 pb-5">
@@ -49,7 +47,7 @@ function Home() {
               <h2 className="font-medium text-lg  md:text-xl xl:text-2xl">
                 Find your kind of people
               </h2>
-              <p className="font-light text-sm sm:w-64 xsm:pl-2 lg:p-0 md:break-all xl:text-lg xl:w-10/12">
+              <p className="font-light text-sm sm:w-64 md:pl-2 lg:p-0 md:break-words xl:text-lg xl:w-10/12">
                 Have a knack for tech skills? Want to chill with cool peeps? Talk to school techies? Dont look around, explore here.
               </p>
             </div>
@@ -126,7 +124,7 @@ function Home() {
         <h1 className="font-rose text-2xl  md:text-3xl">
           Our club is about you
         </h1>
-        <p className="p-2 ml-5 font-pop break-all  md:text-xl sm:pb-10 pb-8 lg:text-2xl xl:mt-2">
+        <p className="p-2 ml-5 font-pop break-words  md:text-xl sm:pb-10 pb-8 lg:text-2xl xl:mt-2">
           Halo is about its members, about its legion. Be a part of the cavalry and join the war, I mean join the fun.
           Halo looks forward to have and already has like-minded individuals who at the same time can set apart from others.
           We value inquisitiveness before knowledge, synergy before solitude. We stick to our philosophy, it is what makes us a legion.

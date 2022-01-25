@@ -75,9 +75,9 @@ const Footer = () => {
       </div>
 
       <div className="flex sm:justify-between items-center font-pop text-sm bg-gray_4 sm:text-left justify-center pl-4 pb-0.5 pr-2 pt-1">
-        <p>lorem ipsum&nbsp;
-          <a className="text-blue-900" href="https://github.com/DyingintheDarkness" target="_blank" rel="noreferrer noopener">
-            ok
+        <p>Made By&nbsp;
+          <a className="text-purple-700" href="https://github.com/DyingintheDarkness" target="_blank" rel="noreferrer noopener">
+          Vihaan 
           </a>
         </p>
      

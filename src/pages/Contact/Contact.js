@@ -8,8 +8,9 @@ const Contact = () => {
     <Layout>
       <div className="mt-10 font-pop font-bold text-lg text-center  xsm:text-2xl sm:text-3xl lg:text-4xl xl:text-5xl xsm:mt-16">
         <h1>
-          Lorem ipsum dolor sit amet,
-          <br /> consectetur adipiscing amet
+        Have any questions? 
+
+          <br /> We would love to hear from you. 
         </h1>
 
         <svg
@@ -42,7 +43,7 @@ const Contact = () => {
 
       <div className="flex flex-col pl-2 mt-8 w-full gap-1 lg:mt-28 xl:mt-14">
         <h1 className="font-sand font-medium text-base xsm:text-lg sm:text-xl">
-          Feel Free to Contact Us
+        Here’s how you can reach us...
         </h1>
         <div className="flex flex-col gap-2">
 
@@ -133,7 +134,7 @@ const Contact = () => {
 
       <div className="flex-col w-screen gap-2 mt-10 hidden md:flex">
         <h1 className="font-pop font-bold text-lg text-center sm:text-xl md:text-2xl lg:text-3xl">
-          Lorem ipsum dolor sit amet lorem
+        Let’s have a conversation and get in touch.
         </h1>
         <div>
           <iframe

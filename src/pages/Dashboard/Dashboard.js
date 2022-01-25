@@ -44,7 +44,8 @@ const Dashboard = () => {
           <div className="mt-12 relative z-30">
 
             <h1 className="font-pop p-2 font-bold mb-5 text-center  text-lg xsm:text-xl md:text-2xl xl:text-3xl">
-              Hi, {user.name} Lorem ipsum dolor <br />sit amet, consectetur adipiscing elit.
+              Hi, {user.name}. Welcome to the club! <br/>
+Glad to have you here!
             </h1>
             <div className="flex flex-col items-center justify-center">
 

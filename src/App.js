@@ -1,7 +1,7 @@
-import { Suspense, useEffect } from "react";
 import "./styles/app.css";
 import "./styles/custom.css";
 import 'react-toastify/dist/ReactToastify.css';
+import { Suspense, useEffect } from "react";
 import { checkToken, getUser, logout } from "./components/authentication";
 import {
   userAtom,
@@ -9,7 +9,7 @@ import {
   selectedEventsAtom,
   redirectAtom,
 } from "./statedrive/atoms";
-import { useSharedState, useSetSharedState } from "./statedrive/index";
+import { useSetSharedState } from "./statedrive/index";
 import {
   Home,
   Join,
@@ -20,7 +20,7 @@ import {
   Legal,
 } from "./pages/exports";
 import Loading from "./components/Loading";
-import { BrowserRouter as Router, Switch, Route, useHistory } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 
 const CloseButton = ({ closeToast }) => (
@@ -41,16 +41,15 @@ const CloseButton = ({ closeToast }) => (
 
 function App() {
   const setUser = useSetSharedState(userAtom);
-  const setSignInStatus = useSharedState(signInStatusAtom);
+  const setSignInStatus = useSetSharedState(signInStatusAtom);
   const setSelectedEvents = useSetSharedState(selectedEventsAtom);
   const setRedirect = useSetSharedState(redirectAtom);
-  const history = useHistory();
 
   const contextClass = {
     success: "success",
     error: "error",
     info: "info",
-    default: "font-black",
+    default: "",
   };
 
   async function getData() {
@@ -76,7 +75,6 @@ function App() {
         setSelectedEvents(data.data.events);
         localStorage.setItem("events", JSON.stringify(data.data.events));
         localStorage.setItem("redirect", "/dashboard")
-        return history.push("/dashboard")
       }
 
     } else {
@@ -86,15 +84,10 @@ function App() {
   }
 
 
-
-
-
-
   useEffect(() => {
     getData();
     setSelectedEvents(JSON.parse(localStorage.getItem("events")));
     setRedirect(localStorage.getItem("redirect"))
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -111,7 +104,7 @@ function App() {
         closeButton={CloseButton}
         rtl={false}
         toastClassName={({ type }) => contextClass[type || "default"] +
-          " defaults relative flex justify-start items-center h-10 p-1 pl-2 font-pop mb-2"
+          " defaults relative flex justify-start items-center h-16 p-1 pl-2 font-pop mb-2 text-lg"
         }
         bodyClassName={() => "flex"}
       ></ToastContainer>
