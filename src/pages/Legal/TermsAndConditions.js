@@ -1,16 +1,16 @@
 const TermsAndCondition = () => {
     return (
-        <div className="mb-1 legal-1 pl-1 pr-2 flex flex-col gap-1">
-            <p className="font-sand mb-4 text-4xl xl:text-5xl -ml-1">
+        <div className="mb-1 legal pl-1 pr-2 flex flex-col gap-1">
+            <p className="font-pro mb-4 text-4xl xl:text-5xl -ml-1">
                 <strong>
                     Terms & Conditions
                 </strong>
             </p>
 
-            <div className="font-pop flex flex-col gap-5">
+            <div className="font-poppins flex flex-col gap-5">
                 <p>
                     By downloading or using the app, these terms will automatically apply to you – you should make sure therefore that you read them carefully before using the app. You’re not allowed to copy, or modify the app, any part of the app, or our trademarks in any way. You’re not allowed to attempt to extract the source code of the app, and you also shouldn’t try to translate the app into other languages, or make derivative versions. The app itself, and all the trade marks, copyright, database rights and other intellectual property rights related to it, still belong to DPS Indore.
-                </p>
+            </p>
                 <p>
                     DPS Indore is committed to ensuring that the app is as useful and efficient as possible. For that reason, we reserve the right to make changes to the app or to charge for its services, at any time and for any reason. We will never charge you for the app or its services without making it very clear to you exactly what you’re paying for.
                 </p>
@@ -45,7 +45,7 @@ const TermsAndCondition = () => {
                     </a>
                 </li>
             </ul>
-            <div className="font-pop flex flex-col gap-5">
+            <div className="font-poppins flex flex-col gap-5">
                 <p>
                     You should be aware that there are certain things that DPS Indore will not take responsibility for. Certain functions of the app will require the app to have an active internet connection. The connection can be Wi-Fi, or provided by your mobile network provider, but DPS Indore cannot take responsibility for the app not working at full functionality if you don’t have access to Wi-Fi, and you don’t have any of your data allowance left.
                 </p>
@@ -63,12 +63,12 @@ const TermsAndCondition = () => {
                     At some point, we may wish to update the app. The app is currently available on Android, iOS & KaiOS – the requirements for system(and for any additional systems we decide to extend the availability of the app to) may change, and you’ll need to download the updates if you want to keep using the app. DPS Indore does not promise that it will always update the app so that it is relevant to you and/or works with the Android, iOS & KaiOS version that you have installed on your device. However, you promise to always accept updates to the application when offered to you, We may also wish to stop providing the app, and may terminate use of it at any time without giving notice of termination to you. Unless we tell you otherwise, upon any termination, (a) the rights and licenses granted to you in these terms will end; (b) you must stop using the app, and (if needed) delete it from your device.
                 </p>
             </div>
-            <p className="font-sand mb-2 text-2xl">
+            <p className="font-pro mb-2 text-2xl">
                 <strong>
                     Changes to This Terms and Conditions
                 </strong>
             </p>
-            <div className="font-pop flex flex-col gap-3">
+            <div className="font-poppins flex flex-col gap-3">
                 <p>
                     We may update our Terms and Conditions from time to time. Thus, you are advised to review this page periodically for any changes. We will notify you of any changes by posting the new Terms and Conditions on this page.
                 </p>
@@ -76,12 +76,12 @@ const TermsAndCondition = () => {
                     These terms and conditions are effective as of 2020-11-28
                 </p>
             </div>
-            <p className="font-sand mb-2 text-2xl">
+            <p className="font-pro mb-2 text-2xl">
                 <strong>
                     Contact Us
                 </strong>
             </p>
-            <div className="font-pop">
+            <div className="font-poppins">
                 <p>
                     If you have any questions or suggestions about our Terms and Conditions, do not hesitate to contact us at <a className="normal" href="mailto:halolegionofficial@gmail.com">halolegionofficial@gmail.com</a>.
                 </p>

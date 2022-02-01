@@ -31,7 +31,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     const current = new Date().getTime();
-    const past = new Date("Sep 23 2021 19:36:40").getTime();
+    const past = new Date("Jan 31 2022 00:00:00").getTime();
     if (current > past) {
       setViewPrompts(true);
     }
@@ -41,13 +41,13 @@ const Dashboard = () => {
     <>
       {signInStatus && user !== null && selectedEvents !== null ? (
         <Layout>
-          <div className="mt-12 relative z-30">
+          <div className="mt-12 relative z-30 mb-10">
 
-            <h1 className="font-pop p-2 font-bold mb-5 text-center  text-lg xsm:text-xl md:text-2xl xl:text-3xl">
-              Hi, {user.name}. Welcome to the club! <br/>
-Glad to have you here!
+            <h1 className="text-center font-sarala font-bold xsm:text-xl md:text-2xl lg:text-4xl text-lg">
+              Hi, {user.name}. Welcome to the club!<br />
+              Glad to have you here!
             </h1>
-            <div className="flex flex-col items-center justify-center">
+            <div className="flex flex-col items-center justify-center mt-5">
 
               <div className="flex flex-col xsm:flex-row xsm:flex-wrap justify-center items-center lg:w-10/12 xl:w-8/12">
                 {events.map((event, i) => (
@@ -58,49 +58,51 @@ Glad to have you here!
                   />
                 ))}
               </div>
-
-
-
-
-              <button className=" mt-3 bg-green_3 w-24 rounded-md font-pop text-sm h-6 xsm:text-lg xsm:h-8" onClick={() => updateEvents(selectedEvents, toast)}>Update</button>
+              <button className="bg-green_1 font-roboto w-20 rounded-md h-7  " onClick={() => updateEvents(selectedEvents, toast)}>update</button>
             </div>
 
 
 
-            <div className="mt-12 ml-2 mb-20 lg:mt-20 xl:mt-32">
-              <h1 className="font-pop font-bold text-lg xsm:text-xl md:text-2xl xl:text-3xl">If you encounter any problems, <br />kindly refer to the instructions below.</h1>
-
-              <div className="font-sand flex flex-col gap-2 mt-5 lg:mt-7">
-                <h2 className="font-bold xsm:text-lg">
-                  Instructions:-
-                </h2>
-                <ul className="instructions list-decimal pl-4 font-medium text-gray_2 flex flex-col gap-1 md:gap-2 lg:gap-3">
-                  <li>Just click and select the event boxes, whichever events you are interested in and then just click on update.</li>
-                  <li>If you have any further problems related to something,<br />
-                    please do not hesitate to contact us and we will be ready to help you out.</li>
-                  <li>{!viewPrompts ? "Prompts are now available just click on the View Prompts Button Below" : "Information for the prompts will be available later on."}</li>
-                  <li>As for any new updates, keep an eye out for announcements on our <span className="text-link_2"> Halolegion’s Discord Server</span>.</li>
-                  <li>Besides, have a great time.</li>
-                </ul>
-
-              </div>
+            <div className="flex flex-col gap-2 mt-10 ml-2">
+              <h1 className="font-pro text-xl xsm:text-2xl lg:text-3xl">For any issues, please refer to the instructions below:-</h1>
+              <ul className="instructions font-pop text-grey_1 pl-5 list-decimal xsm:text-lg">
+                <li>Just click and select the event boxes, whichever events you are interested in and then just click on update.</li>
+                <li>If you have any further problems related to something,<br />
+                  please do not hesitate to contact us and we will be ready to help you out.</li>
+                <li>{!viewPrompts ? "Prompts are now available just click on the View Prompts Button Below" : "Information for the prompts will be available later on."}</li>
+                <li>As for any new updates, keep an eye out for announcements on our <a className="text-blue_2" href="https://discord.gg/cRcENbvenz" rel="noreferrer noopener"> Halolegion’s Discord Server</a>.</li>
+                <li>Besides, have a great time.</li>
+              </ul>
             </div>
-            <div className="flex items-center justify-center">
+<div className="mt-10 flex justify-center items-center">
 
-              {viewPrompts ? (
+            <div className="flex w-80 xsm:w-8/12 lg:w-6/12 xsm:h-40 sm:h-56 sm:text-3xl items-center justify-center text-center h-36 bg-purple_1 font-sarala font-bold text-white text-2xl shadow-spread-md rounded-md">
+
+
                 <a
-                  href="https://dyinginthedarkness.herokuapp.com/halo-prompts"
+                  href="https://youtu.be/VftnXp47T7w"
                   target="_blank"
                   rel="noreferrer"
-                  className="bg-blue_4 w-full flex items-center justify-center h-28 text-xl text-white font-pop font-medium underline shadow-spread-md xsm:text-2xl xsm:h-32 sm:h-44 xl:h-64 lg:h-52 lg:text-3xl xl:text-4xl"
-                >
+                  className=""
+                  >
                   View Prompts
                 </a>
-              ) : (
-                ""
-              )}
-            </div>
+                  </div>
+                    </div>
+          
+
+
+
+<div className="mt-20">
+
+</div>
+
+
+
+
+
           </div>
+
         </Layout>
       ) : (
         <Redirect to={redirect} />

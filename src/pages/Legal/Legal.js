@@ -10,8 +10,8 @@ const Legal = () => {
         <Layout>
             <div className="mt-12 relative z-30 mb-10 xsm:mb-20">
                 <div className="flex flex-col gap-1 items-center justify-center text-center mb-10 lg:gap-7">
-                    <h1 className="font-bold font-pop text-xl xsm:text-2xl md:text-3xl lg:text-5xl">Lorem ipsum dolor sit amet, <br />consectetur adipiscing elit</h1>
-                    <button className="font-sand w-60 h-8 font-bold lg:text-lg lg:h-10 lg:w-64 bg-green_2 shadow-spread-md  rounded-md" onClick={() => setToggle(!toggle)}>View {toggle ? "Terms and Condition" : "Privacy Policy"}</button>
+                    <h1 className="font-sarala font-bold text-lg xsm:text-2xl sm:text-4xl text-center">No no, we won’t force you to give up<br/>on pizza and we also won’t try to<br/>know your grades in 7th class</h1>
+                    <button className="font-segoe w-60 h-8 lg:text-lg lg:h-10 mt-5 lg:w-64 shadow-spread-md bg-green_2  rounded-md" onClick={() => setToggle(!toggle)}>View {toggle ? "Terms and Condition" : "Privacy Policy"}</button>
                 </div>
                 {toggle ? <PrivacyPolicy /> : <TermsAndCondition />}
             </div>

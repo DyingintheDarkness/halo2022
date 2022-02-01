@@ -82,9 +82,43 @@ function Navbar() {
       </div>
       <div
         className={`${hideNav ? "flex" : "hidden"
-          } font-sans justify-center items-center text-xl sm:hidden mt-5`}
+          } font-poppins justify-center items-center text-xl sm:hidden mt-5`}
       >
-        <div className="flex flex-col w-3/4 gap-2 bg-purple_1 bg-opacity-50 shadow-spread-md  backdrop-filter backdrop-blur-lg p-5 rounded-md">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div className="flex flex-col w-3/4 gap-2 shadow-spread-md bg-blue_5 text-white  p-5 ">
           <nav className="flex flex-col gap-1">
             {links.map((link, i) => {
               return (
@@ -92,14 +126,15 @@ function Navbar() {
                   key={i}
                   to={link.src}
                   className={`${window.location.pathname === link.src
-                    ? "text-link_1"
-                    : "text-black"
+                    ? "underline"
+                    : "no-underline"
                     }
-                    border-2 border-white rounded-md  flex justify-center items-center h-12 
                     
+                    border-2 border-white rounded-md  flex justify-center items-center h-12 
+
                     `}
                 >
-                  {link.name}
+                  {link.name.toLowerCase()}
                 </Link>
               );
             })}
@@ -107,8 +142,8 @@ function Navbar() {
               <Link
                 to="/dashboard"
                 className={`${window.location.pathname === "/dashboard"
-                  ? "text-link_1"
-                  : "text-black"
+                  ? "underline"
+                  : "no-underline"
                   }  
                   border-2 border-white rounded-md  flex justify-center items-center h-12 
                   `}
@@ -119,18 +154,24 @@ function Navbar() {
               <Link
                 to="/join"
                 className={`${window.location.pathname === "/join"
-                  ? "text-link_1"
-                  : "text-black"
+                  ? "underline"
+                  : "no-underline"
                   }
-                  border-2 border-white rounded-md  flex justify-center items-center h-12 
                   
+                  border-2 border-white rounded-md  flex justify-center items-center h-12 
                   `}
               >
                 join
               </Link>
             }
           </nav>
-          {signInStatus ? <button className="border-2 border-white rounded-md  flex justify-center items-center h-12 w-7/12 bg-red-500 text-white" onClick={handleLogout} >logout</button> :
+
+
+          
+          {signInStatus ? <button className=" bg-red_1 flex items-center justify-center text-center p-1 rounded-md w-36
+                    outline-none
+                  h-10
+                    " onClick={handleLogout} >logout</button> :
             cookiesEnabled ?
               <GoogleLogin
                 clientId="630712713096-dqoroom09ebrhe0e3j4v28c2hsda4t5d.apps.googleusercontent.com"
@@ -141,20 +182,67 @@ function Navbar() {
                 render={(renderProps) => (
                   <button
                     onClick={renderProps.onClick}
-                    className="border-2 border-white rounded-md  flex justify-center items-center h-12 w-7/12 bg-green_5 text-purple-900"
+                    className=" bg-green_3 flex items-center justify-center text-center p-1 rounded-md w-36
+                    outline-none
+                  h-10
+                    "
 
                   >
                     login
                   </button>
                 )}
               />
-              : <button className="border-2 border-white rounded-md  flex justify-center items-center h-12 w-7/12 bg-green_5 text-purple-900" onClick={() => toast.info("Cookies are Disabled")}>login</button>
+              : <button className=" bg-green_3 flex items-center justify-center text-center p-1 rounded-md w-36
+              outline-none
+            h-10
+              " onClick={() => toast.info("Cookies are Disabled")}>logn</button>
           }
         </div>
+
+
+
+
+
+
+
+        
       </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
       <div className="items-center justify-between p-2 hidden sm:flex lg:text-lg">
         <div>
-          <Link to="/" className="align-left font-sand font-bold">
+          <Link to="/" className="align-left font-sarabun font-semibold">
             halolegion
           </Link>
         </div>
@@ -167,8 +255,8 @@ function Navbar() {
                 className={`
               font-pop
               ${window.location.pathname === link.src
-                    ? "text-link_1"
-                    : "text-black"
+                    ? "underline"
+                    : "no-underline"
                   }`}
 
               >
@@ -181,30 +269,26 @@ function Navbar() {
             <Link
               to="/dashboard"
               className={`${window.location.pathname === "/dashboard"
-                ? "text-link_1"
-                : "text-black"
+                ? "underline"
+                : "no-underline"
                 }`}
             >
-              dashboard
+              Dashboard
             </Link>
           ) : (
             <Link
               to="/join"
               className={`${window.location.pathname === "/join"
-                ? "text-link_1"
-                : "text-black"
+                ? "underline"
+                : "no-underline"
                 }`}
             >
-              join
+              Join
             </Link>
           )}
         </nav>
-        {signInStatus ? <button className="align-right font-pop border border-black flex items-center justify-center text-center p-1 rounded-md w-20 shadow-sm lg:w-50 lg:h-7
-      outline-none
-      
-      xl:h-8
-      transform hover:shadow-lg transition duration-500 ease-in-out" onClick={handleLogout}>logout</button> :
-
+        {signInStatus ? <button className="font-roboto w-20 bg-white shadow-spread-md h-8 rounded-md" onClick={handleLogout}>logout</button> :
+// main
           cookiesEnabled ?
             <GoogleLogin
               clientId="630712713096-dqoroom09ebrhe0e3j4v28c2hsda4t5d.apps.googleusercontent.com"
@@ -215,23 +299,14 @@ function Navbar() {
               render={(renderProps) => (
                 <button
                   onClick={renderProps.onClick}
-                  className="align-right font-pop border border-black flex items-center justify-center text-center p-1 rounded-md w-20 shadow-sm lg:w-50 lg:h-7
-                  outline-none
-                  
-                  xl:h-8
-                  transform hover:shadow-lg transition duration-500 ease-in-out"
-
+                  className="font-roboto w-20 bg-white shadow-spread-md h-8 rounded-md"
                 >
                   login
                 </button>
               )}
             />
             :
-            <button className="align-right font-pop border border-black flex items-center justify-center text-center p-1 rounded-md w-20 shadow-sm lg:w-50 lg:h-7
-            outline-none
-            
-            xl:h-8
-            transform hover:shadow-lg transition duration-500 ease-in-out" onClick={() => toast.info("Cookies are Disabled")}>login</button>
+            <button className="font-roboto w-20 bg-white shadow-spread-md h-8 rounded-md" onClick={() => toast.info("Cookies are Disabled")}>login</button>
         }
       </div>
     </>

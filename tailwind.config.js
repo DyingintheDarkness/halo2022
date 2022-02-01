@@ -16,53 +16,25 @@ module.exports = {
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
-      link_1: "#000AFF", 
-      link_2: "#4792D7", 
-      link_3: "#10B1F6", 
-      link_4: "#0A109F", 
-
-      
-
-      gray_1: "#DADADA", 
-      gray_2: "#BBBBBB", 
-      gray_3: "#F7F7F7", 
-      gray_4: "#F2F2F2", 
-
-
-      
-      orange_1: "#FBAD16",
-      blue_5: "#168DFB", 
-      green_7: "#52FB16",
-      purple_2: "#8307FF",
-      red_1: "#EB2626", 
-      violet_1: "#BE28F3",
-
-      
-      blue_1: "#6E85FF", 
-      blue_2: "#003FB9", 
-      blue_3: "#2145FF", 
-      blue_4: "#0008C3",
-
-      
-      purple_1: "#A065FF", 
-
-      
-      active_card: "#040AAE", 
-      inactive_card: "#DADADA",
-
-      
-      green_1: "#23FFBD", 
-      green_2: "#73FF81", 
-      green_3: "#18F82E", 
-      green_4: "#7FFFC9", 
-      green_5: "#3AFFA0", 
-      green_6: "#32FB9B", 
+      grey_1: "#868294",
+      grey_2: "#D2D2D2",
+      grey_3: "#ABABAB",
+      blue_1: "#4073F3",
+      blue_2: "#3900FF",
+      blue_3: "#6993FF",
+      blue_4: "#2077F2",
+      blue_5: "#5E6EFF",
+      green_1: "#3AFF5A",
+      green_2: "#42FFB0",
+      green_3: "#14F600",
+      red_1: "#FF0000",
+      purple_1: "#7B2AFF",
 
 
 
       black: colors.black,
       white: colors.white,
-      gray: colors.coolGray,
+      gray: colors.gray,
       red: colors.red,
       yellow: colors.amber,
       green: colors.emerald,
@@ -310,10 +282,17 @@ module.exports = {
         '"Courier New"',
         'monospace',
       ],
-      pop: ['Poppins', 'sans-serif'],
-      sand: ['Quicksand', 'sans-serif'],
-      major: ['Major Mono Display', 'monospace'],
-      rose: ['Red Rose', 'cursive']
+      sarabun: ['Sarabun', 'sans-serif'],
+      poppins: ['Poppins', 'sans-serif'],
+      condensed: ['Roboto Condensed', 'sans-serif'],
+      montserrat: ['Montserrat', 'sans-serif'],
+      roboto: ['Roboto', 'sans-serif'],
+      sarala: ['Sarala', 'sans-serif'],
+      sansation: ['Sansation', 'sans-serif'],
+      pro: ['Source Sans Pro', 'sans-serif'],
+      segoe: ['Segoe UI Local', 'Segoe UI Web (West European)'],
+
+
     },
     fontSize: {
       xs: ['0.75rem', { lineHeight: '1rem' }],

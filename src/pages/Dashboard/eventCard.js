@@ -24,42 +24,31 @@ const EventCard = (props) => {
 
 
         className={` ${active
-          ? "bg-active_card"
-          : "bg-inactive_card"
+          ? "bg-blue_1"
+          : "bg-grey_3"
           } 
-        
-        
-          flex flex-col
+          flex
           items-center
           w-56
           h-28
           m-4
-          
           lg:w-60
           lg:h-32
-          
-          
-          
-          
-          
-          
+          text-white
           xsm:w-64
           xsm:h-32
           rounded-md
-          justify-between
-          pt-6
-          pb-2
-          xsm:pt-7
+          justify-center
           cursor-pointer
-          font-pop
+          font-pro
+          font-bold
+          
         `
         }
 
       >
 
         <h1 className="text-xl text-white capitalize xsm:text-2xl lg:text-3xl">   {props.name}</h1>
-        <button className="bg-white w-32  text-sm rounded-md h-6 flex items-center justify-center xsm:text-base">{active ? "Selected" : "Select"}</button>
-
 
       </div>
 

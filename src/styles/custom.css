@@ -4,90 +4,151 @@ body {
   overflow-x: hidden;
 }
 
-.sign-google-btn {
-  box-shadow: 2px 2px 20px 2px rgba(0, 0, 0, 0.3);
+
+.fade-out {
+	animation: fadeOut 5s;
+  opacity: 0;
+}
+.fade-in {
+  animation: fadeIn 5s;
+  opacity: 1;
 }
 
-.hero-1 {
-  position: absolute;
-  z-index: -1;
-  top: 0;
-}
-.hero-2 {
-  position: absolute;
-  z-index: -4;
-  top: 0;
-  right: 0;
-}
-.hero-3 {
-  z-index: -2;
-}
-.hero-4 {
-  z-index: 1;
-}
-.hero-5 {
-  z-index: -5;
+@keyframes fadeOut {
+  from {
+  	opacity: 1;
+  }
+  to {
+ 	opacity: 0;
+  }
 }
 
-.secdiv {
-  z-index: -5;
-}
-.shadow-spread-md {
-  box-shadow: 2px 3px 20px 2px rgba(0, 0, 0, 0.3);
-}
-.contact-div-shadow {
-  box-shadow: 2px 3px 20px 2px rgba(0, 0, 0, 0.3);
-}
-.instructions li::marker {
-  color: black;
-  font-weight: bold;
+@keyframes fadeIn {
+  from {
+  	opacity: 0;
+  }
+  to {
+ 	opacity: 1;
+  }
 }
 
-.event-container {
-  padding-left: 20rem;
-}
 
-.legal-1 a {
-  color: #2719c5;
-  font-weight: bold;
-}
-.legal-1 a.normal {
+
+
+
+
+
+
+.legal a {
+  color: #3900FF;
   font-weight: normal;
 }
 
-.defaults .Toastify__close-button * {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 1.5rem;
-  height: 1.5rem;
-  fill: #ffff;
-  fill-opacity: 1;
+
+
+
+@font-face {
+  font-family: 'Segoe UI Local';
+  src: local('Segoe UI Light');
+  font-weight: 100;
+  font-style: normal;
 }
-.defaults {
-  color: #fff;
+
+@font-face {
+  font-family: 'Segoe UI Local';
+  src: local('Segoe UI Semilight');
+  font-weight: 300;
+  font-style: normal;
 }
-.error {
-  background-color: #ff7878;
-  background-image: linear-gradient(315deg, #ff7878 0%, #ff0000 80%);
+
+@font-face {
+  font-family: 'Segoe UI Local';
+  src: local('Segoe UI');
+  font-weight: 400;
+  font-style: normal;
 }
-.success {
-  background-color: #8fff78;
-  background-image: linear-gradient(315deg, #8fff78 0%, #00ff00 80%);
+
+@font-face {
+  font-family: 'Segoe UI Local';
+  src: local('Segoe UI Semibold');
+  font-weight: 600;
+  font-style: normal;
 }
-.info {
-  background-color: #78fff4;
-  background-image: linear-gradient(315deg, #78fff4 0%, #00d9ff 80%);
+
+@font-face {
+  font-family: 'Segoe UI Web (West European)';
+  src: url('https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-light.woff2') format('woff2'), url('https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-light.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Segoe UI Web (West European)';
+  src: url('https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-semilight.woff2') format('woff2'), url('https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-semilight.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Segoe UI Web (West European)';
+  src: url('https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-regular.woff2') format('woff2'), url('https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Segoe UI Web (West European)';
+  src: url('https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-semibold.woff2') format('woff2'), url('https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-semibold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
 }
 
 
-.defaults .Toastify__toast-icon i svg {
-  width: 1.5rem;
-  height: 1.5rem;
+body{
+background-color: #F7F7F7;
 }
 
-.defaults .Toastify__progress-bar{
-  background: #BBBB;
-}
+.shadow-spread-md {
+    box-shadow: 2px 3px 20px 2px rgba(0, 0, 0, 0.3);
+  }
+  
+  .instructions li::marker {
+    color: black;
+    font-weight: bold;
+  }
 
-
+  .defaults .Toastify__close-button * {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: #ffff;
+    fill-opacity: 1;
+  }
+  .defaults {
+    color: #fff;
+  }
+  .error {
+    background-color: #ff7878;
+    background-image: linear-gradient(315deg, #ff7878 0%, #ff0000 80%);
+  }
+  .success {
+    background-color: #8fff78;
+    background-image: linear-gradient(315deg, #8fff78 0%, #00ff00 80%);
+  }
+  .info {
+    background-color: #78fff4;
+    background-image: linear-gradient(315deg, #78fff4 0%, #00d9ff 80%);
+  }
+  
+  
+  .defaults .Toastify__toast-icon i svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  
+  .defaults .Toastify__progress-bar{
+    background: #BBBB;
+  }
+  

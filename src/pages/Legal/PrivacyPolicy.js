@@ -1,10 +1,10 @@
 const PrivacyPolicy = () => {
   return (
-    <div className="mb-1 legal-1 pl-1 pr-2">
-      <p className="font-sand mb-4 text-4xl xl:text-5xl -ml-1">
+    <div className="mb-1 legal pl-1 pr-2">
+      <p className="font-pro mb-4 text-4xl xl:text-5xl -ml-1">
         <strong>Privacy Policy</strong>
       </p>
-      <div className="font-pop text-sm xsm:text-base mt-2">
+      <div className="font-poppins text-sm xsm:text-base mt-2">
         <div className="flex flex-col gap-1">
           <p>
             DPS Indore built the Halolegion app as a Free app. This SERVICE is
@@ -67,7 +67,7 @@ const PrivacyPolicy = () => {
           </ul>
         </div>
 
-        <p className="font-sand mb-2 text-2xl">
+        <p className="font-pro mb-2 text-2xl">
           <strong>Log Data</strong>
         </p>
         <p>
@@ -79,7 +79,7 @@ const PrivacyPolicy = () => {
           the app when utilizing our Service, the time and date of your use of
           the Service, and other statistics.
         </p>
-        <p className="font-sand mb-2 text-2xl">
+        <p className="font-pro mb-2 text-2xl">
           <strong>Cookies</strong>
         </p>
         <div className="flex flex-col gap-1">
@@ -99,14 +99,14 @@ const PrivacyPolicy = () => {
           </p>
         </div>
 
-        <p className="font-sand mb-2 text-2xl">
+        <p className="font-pro mb-2 text-2xl">
           <strong>Service Providers</strong>
         </p>
         <p>
           We may employ third-party companies and individuals due to the
           following reasons:
         </p>
-        <ul className="font-pop font-light pt-1 pb-1">
+        <ul className="font-poppins font-light pt-1 pb-1">
           <li>To facilitate our Service;</li>
           <li>To provide the Service on our behalf;</li>
           <li>To perform Service-related services; or</li>
@@ -118,7 +118,7 @@ const PrivacyPolicy = () => {
           tasks assigned to them on our behalf. However, they are obligated not
           to disclose or use the information for any other purpose.
         </p>
-        <p className="font-sand mb-2 text-2xl">
+        <p className="font-pro mb-2 text-2xl">
           <strong>Security</strong>
         </p>
         <p>
@@ -128,7 +128,7 @@ const PrivacyPolicy = () => {
           method of electronic storage is 100% secure and reliable, and we
           cannot guarantee its absolute security.
         </p>
-        <p className="font-sand mb-2 text-2xl">
+        <p className="font-pro mb-2 text-2xl">
           <strong>Links to Other Sites</strong>
         </p>
         <p>
@@ -139,7 +139,7 @@ const PrivacyPolicy = () => {
           over and assume no responsibility for the content, privacy policies,
           or practices of any third-party sites or services.
         </p>
-        <p className="font-sand mb-2 text-2xl">
+        <p className="font-pro mb-2 text-2xl">
           <strong>Children’s Privacy</strong>
         </p>
         <p>
@@ -151,7 +151,7 @@ const PrivacyPolicy = () => {
           child has provided us with personal information, please contact us so
           that we will be able to do necessary actions.
         </p>
-        <p className="font-sand mb-2 text-2xl">
+        <p className="font-pro mb-2 text-2xl">
           <strong>Changes to This Privacy Policy</strong>
         </p>
         <p>
@@ -160,10 +160,10 @@ const PrivacyPolicy = () => {
           notify you of any changes by posting the new Privacy Policy on this
           page.
         </p>
-        <p className="font-pop text-base">
+        <p className="font-poppins text-base">
           This policy is effective as of 2020-11-sm xsm:text-base{" "}
         </p>
-        <p className="font-sand mb-2 text-2xl">
+        <p className="font-pro mb-2 text-2xl">
           <strong>Contact Us</strong>
         </p>
         <p>

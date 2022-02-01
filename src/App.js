@@ -88,6 +88,7 @@ function App() {
     getData();
     setSelectedEvents(JSON.parse(localStorage.getItem("events")));
     setRedirect(localStorage.getItem("redirect"))
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

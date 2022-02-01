@@ -1,150 +1,87 @@
 import React from "react";
-import Parallax from 'react-rellax';
 import Layout from "../../components/Layout";
 import { contacts, socials } from "./data";
-import { Link } from "react-router-dom";
 const Contact = () => {
   return (
     <Layout>
-      <div className="mt-10 font-pop font-bold text-lg text-center  xsm:text-2xl sm:text-3xl lg:text-4xl xl:text-5xl xsm:mt-16">
-        <h1>
-        Have any questions? 
 
-          <br /> We would love to hear from you. 
-        </h1>
+      <div className="mt-10">
 
-        <svg
-          className="w-20 h-20 -left-2 -mt-16 absolute hero-3  xsm:-mt-20 sm:w-32 sm:h-32 sm:-mt-28 sm:-left-7 md:w-36 md:h-36 md:-left-7 md:-mt-32"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          transform="rotate(5)"
-          viewBox="0 0 78 142"
-        >
-          <path
-            fill="url(#paint1_linear)"
-            d="M3 0l74.182 53.897-28.335 87.206h-91.694l-28.335-87.206L3 0z"
-          ></path>
-          <defs>
-            <linearGradient
-              id="paint1_linear"
-              x1="-75"
-              x2="81"
-              y1="0"
-              y2="156"
-              gradientUnits="userSpaceOnUse"
-            >
-              <stop stopColor="#F6CEEC"></stop>
-              <stop offset="1" stopColor="#D939CD"></stop>
-            </linearGradient>
-          </defs>
-        </svg>
-      </div>
+        <h1 className="font-sarala font-bold text-lg xsm:text-2xl sm:text-4xl flex items-center justify-center">Have something to say? Contact<br />us right now, unless its two in the<br /> morning...</h1>
+        <div className="bg-white mt-10 pb-5 pt-5">
+          <h1 className="text-center font-pro font-semibold text-lg xsm:text-2xl">
+            Get In Touch With Us
+          </h1>
 
 
-      <div className="flex flex-col pl-2 mt-8 w-full gap-1 lg:mt-28 xl:mt-14">
-        <h1 className="font-sand font-medium text-base xsm:text-lg sm:text-xl">
-        Here’s how you can reach us...
-        </h1>
-        <div className="flex flex-col gap-2">
+          <div className="flex flex-col sm:flex-row pl-2 sm:justify-around mt-4">
 
-          <div className="contact-div-shadow xsm:text-base md:text-lg font-pop flex items-center gap-3 bg-white w-64 xsm:w-80 md:w-96 md:p-4 xsm:p-2 p-0.5 rounded-md text-sm text-blue_2 sm:text-base">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-              className="h-7 w-7 text-gray_1"
-              viewBox="0 0 20 20"
-            >
-              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
-              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
-            </svg>
 
-            <Link to={{ pathname: "mailto:hi@halolegion.com" }} target="_blank">
-              hi@halolegion.com
-            </Link>
-          </div>
-          <div className="contact-div-shadow font-pop flex items-center gap-3 bg-white w-64 xsm:w-80 md:w-96 md:p-4 xsm:p-2 p-0.5 rounded-md text-sm text-blue_2 sm:text-base md:hidden">
-            <svg
-              className="h-7 w-7 text-gray_1"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20" fill="currentColor">
-              <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-            </svg>
 
-            <a href="https://www.google.com/maps/place/Delhi+Public+School,+Indore+Bypass+Rd,+Nipania+Road,+near+Water+Lilly,+Indore,+Madhya+Pradesh+452010/@22.7623268,75.9310855,17z/data=!4m2!3m1!1s0x39631d65000691bd:0x2ca713146ed7bc3b">
-              DPS Indore, India
-            </a>
-          </div>
-
-        </div>
-
-        <div className="flex flex-col gap-2 mt-2">
-          {contacts.map((person) => {
-            return (
-              <div key={person.name} className="flex flex-col gap-1 bg-white contact-div-shadow w-64 md:w-96 md:p-4 xsm:w-80 xsm:p-2 rounded-md pl-2 pb-2 pt-1 ">
-                <div>
-                  <h1 className="text-blue_2 xsm:text-lg md:text-xl">
-                    {person.name}
-                  </h1>
-                  <h2 className="text-sm xsm:text-base md:text-lg font-sand font-light ml-10 sm:text-base">
-                    -{person.designation}
+            <div className="flex items-start justify-start flex-col gap-1 sm:-ml-52">
+              <h1 className="font-segoe font-semibold  xsm:text-lg md:text-xl ">Email: <a href="mailto:hi@halolegion.com" className="font-pop font-light">hi@halolegion.com</a> </h1>
+              {contacts.map(contact => {
+                return <div className="flex flex-col  xsm:text-lg md:text-xl " key={contact.phone}>
+                  <h1 className="font-segoe font-semibold  xsm:text-lg md:text-xl" >{contact.name}</h1>
+                  <h2 className="font-pop text-grey_1 font-light text-sm ml-16 xsm:text-base">
+                    -{contact.designation}
                   </h2>
+                  <p className="font-poppins">
+                    {contact.phone}
+                  </p>
                 </div>
-                <p className="text-sm xsm:text-base md:text-lg">{person.phone}</p>
+              })}
+            </div>
+
+            <div className="flex items-start flex-col">
+              <h1 className="font-segoe font-semibold  xsm:text-lg md:text-xl ">Our Socials</h1>
+
+
+              <div className="flex items-center gap-2  w-64 md:w-96 xsm:w-80 rounded-md">
+                {socials.map(social => {
+                  return <a href={social.link} key={social.name}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
+                    {social.icon}
+                  </a>
+                })}
               </div>
-            );
-          })}
-          <Parallax speed={6} className="hero-3">
+            </div>
 
-            <svg
+          </div>
 
-              className="hero-3 h-32 w-32 absolute sm:w-44 sm:h-44 -right-9 md:w-40 md:h-40 lg:w-56 lg:h-56 lg:-right-14 "
-              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 127 230">
-              <circle cx="115" cy="115" r="115" fill="url(#paint0_linear)"></circle>
-              <defs>
-                <linearGradient
-                  id="paint0_linear"
-                  x1="0"
-                  x2="230"
-                  y1="0"
-                  y2="230"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop stopColor="#FEB692"></stop>
-                  <stop offset="1" stopColor="#EA5455"></stop>
-                </linearGradient>
-              </defs>
-            </svg>
-          </Parallax>
+
         </div>
 
-        <h1 className="font-sand font-medium text-base xsm:text-lg sm:text-xl">
-          Our Socials
-        </h1>
-        <div className="flex items-center gap-2 bg-white contact-div-shadow w-64 md:w-96 md:p-4 xsm:w-80 rounded-md p-1 mb-10">
-          {socials.map(social => {
-            return <a href={social.link} key={social.name}
-              target="_blank"
-              rel="noreferrer noopener nofollow"
-            >
-              {social.icon}
-            </a>
-          })}
-        </div>
-      </div>
 
-      <div className="flex-col w-screen gap-2 mt-10 hidden md:flex">
-        <h1 className="font-pop font-bold text-lg text-center sm:text-xl md:text-2xl lg:text-3xl">
-        Let’s have a conversation and get in touch.
-        </h1>
-        <div>
-          <iframe
-            className="w-full h-60 shadow-md xsm:h-80 md:h-96 lg:h-screen"
-            title="DPS Indore"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.0821678758057!2d75.92889681483157!3d22.762331731716277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39631d65000691bd%3A0x2ca713146ed7bc3b!2sDelhi%20Public%20School!5e0!3m2!1sen!2sin!4v1633106205692!5m2!1sen!2sin"
-            allowFullScreen=""
-            loading="lazy"
-          ></iframe>
+        <div className="mt-14">
+          <h1 className="font-sarala font-bold text-lg xsm:text-2xl sm:text-4xl flex items-center justify-center">Now it is not a thing of techies to meet in person is it?</h1>
+          <div className="mt-4">
+
+
+            <iframe
+              className="w-full h-60 shadow-md xsm:h-80 md:h-96 lg:h-screen"
+              title="DPS Indore"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.0821678758057!2d75.92889681483157!3d22.762331731716277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39631d65000691bd%3A0x2ca713146ed7bc3b!2sDelhi%20Public%20School!5e0!3m2!1sen!2sin!4v1633106205692!5m2!1sen!2sin"
+              allowFullScreen=""
+              loading="lazy"
+            ></iframe>
+          </div>
+
+
+
+
         </div>
+
+
+
+
+
+
+
+
+
       </div>
     </Layout>
   );
