@@ -31,7 +31,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     const current = new Date().getTime();
-    const past = new Date("Jan 31 2022 00:00:00").getTime();
+    const past = new Date("Dec 31 2022 00:00:00").getTime();
     if (current > past) {
       setViewPrompts(true);
     }
@@ -77,10 +77,8 @@ const Dashboard = () => {
 <div className="mt-10 flex justify-center items-center">
 
             <div className="flex w-80 xsm:w-8/12 lg:w-6/12 xsm:h-40 sm:h-56 sm:text-3xl items-center justify-center text-center h-36 bg-purple_1 font-sarala font-bold text-white text-2xl shadow-spread-md rounded-md">
-
-
                 <a
-                  href="https://youtu.be/VftnXp47T7w"
+                  href="#"
                   target="_blank"
                   rel="noreferrer"
                   className=""
