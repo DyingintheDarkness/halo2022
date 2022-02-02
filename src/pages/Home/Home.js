@@ -11,14 +11,13 @@ function Home() {
   const [count, setCount] = useState(0)
   const data = philosophy[count] || philosophy[0]
   useEffect(() => {
-    
     const timer = setTimeout(() => {
       if (count === philosophy.length - 1) {
         return setCount(0)
       }
       setCount(count + 1)
       
-    }, 6000)
+    }, 4000)
     
     return () => clearTimeout(timer)
   }, [count])
@@ -48,9 +47,9 @@ function Home() {
 
 
 
-            <div ref={cardRef} className="shadow-spread-md   bg-white flex flex-col items-center justify-center h-54 rounded-md p-5 gap-5 w-96 ">
+            <div ref={cardRef} className="shadow-spread-md   bg-white flex flex-col items-center justify-center h-54 rounded-md gap-5 w-96 p-5">
               <h1 className="text-lg font-condensed font-mediums">{data.title}</h1>
-              <p className="text-sm">{data.text}</p>
+              <p className="text-xs lg:text-sm">{data.text}</p>
             </div>
 
 
@@ -98,7 +97,7 @@ function Home() {
 
 
 
-        <div className="flex items-center justify-center flex-col">
+        <div className="flex items-center justify-center flex-col pt-10 pb-10">
           <h1 className="font-pro text-lg mt-2 xsm:text-xl md:text-2xl lg:text-3xl">Our Club Is About You</h1>
           <p className="font-poppins text-grey_1 pl-5 pr-5 xsm:w-10/12 lg:w-7/12 lg:text-lg text-sm xsm:text-base">
             Halo is about its members, about its legion. Be a part of the cavalry and join the war, I mean join the fun. Halo looks forward to having and already has people sharing the same ideas who at the same time can set themselves apart from others. We appreciate curiosity before knowledge, synergy before solitude. We stick to our philosophy, and that's why we're a legion.
@@ -108,7 +107,7 @@ function Home() {
 
 
 
-        <div className="flex items-center justify-center flex-col bg-white mt-5 text-center mb-16 pb-10 pt-5">
+        <div className="flex items-center justify-center flex-col bg-white mt-5 text-center mb-16 pb-10 pt-10">
           <h1 className="font-pro text-lg mt-2 xsm:text-xl md:text-2xl lg:text-3xl">Do You Think This Club Is For You?<br />Then Why Not Come Join Us</h1>
           <p className="mt-7 font-poppins text-grey_1 xsm:text-lg lg:text-xl">If You're Interested, You're Welcome To Join</p>
 

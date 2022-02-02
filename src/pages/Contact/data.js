@@ -24,7 +24,7 @@ export const socials = [
             </svg>
 
         ),
-        "link": "https://discord.gg/cRcENbvenz"
+        "link": "https://discord.gg/2TB4RJr4U7"
     },
     {
         "name": "instagram",
