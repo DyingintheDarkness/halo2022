@@ -33,7 +33,7 @@ function Navbar() {
     const { name, email, imageUrl } = e.profileObj;
     let data;
     try {
-      const req = await login(name, email, imageUrl)
+      const req = await login(email)
       data = req
     } catch (err) {
       data = await addUser(name, email, imageUrl)
@@ -124,7 +124,7 @@ function Navbar() {
 
 
 
-        <div className="flex flex-col w-3/4 gap-2 shadow-spread-md bg-blue_5 text-white  p-5 ">
+        <div className="flex flex-col w-3/4 gap-2 shadow-spread-md bg-blue_5 rounded-md text-white  p-5 ">
           <nav className="flex flex-col gap-1">
             {links.map((link, i) => {
               return (
