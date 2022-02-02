@@ -1,41 +1,37 @@
 import axios from "axios";
-import { getUserQuery } from "../GraphQL/Queries";
-import {
-  addUserQuery,
-  updateUserQuery,
-} from "../GraphQL/Mutations";
 
 export const checkToken = () => {
   const token = localStorage.getItem("token");
   return !!token && String(token) !== "null" && String(token) !== "undefined";
 };
 
-export const login = async (name, email, imageUrl) => {
-  if ((await getUser(email)).status === 204) {
-    addUser(name, email, imageUrl)
+export const login = async (email) => {
     return getUser(email)
-  }
-  return getUser(email);
 };
 
 export const getUser = async (email = undefined) => {
   const token = localStorage.getItem("token");
-  return axios.post("https://halolegion-2021.herokuapp.com/register", {
-    query: getUserQuery(token, email),
+  return axios.get("http://localhost:8300/user", {
+    params: {
+      token,email
+    }
   });
 };
 
-const addUser = async (name, email, imageUrl) => {
-  return axios.post("https://halolegion-2021.herokuapp.com/register", {
-    query: addUserQuery(name, email, imageUrl),
+export const addUser = async (name, email, imageUrl) => {
+  return axios.post("http://localhost:8300/user", {
+    name,
+    email,
+    avatar: imageUrl
   });
 };
 
 export const updateEvents = (events, toast) => {
   let token = localStorage.getItem("token");
   localStorage.setItem("events", JSON.stringify(events))
-  axios.post("https://halolegion-2021.herokuapp.com/register", {
-    query: updateUserQuery(token, events),
+  axios.post("http://localhost:8300/inductions/", {
+   token,
+   events
   })
     .catch(err => {
       toast.error("Something Weird Happened")

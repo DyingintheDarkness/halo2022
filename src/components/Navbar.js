@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { links } from "./links";
 import { toast } from "react-toastify"
-import { logout, login } from "./authentication"
+import { logout, login, addUser } from "./authentication"
 import { GoogleLogin } from "react-google-login";
 import {
   userAtom,
@@ -31,27 +31,33 @@ function Navbar() {
   };
   const responseGoogleSuccess = async (e) => {
     const { name, email, imageUrl } = e.profileObj;
-    const data = await login(name, email, imageUrl)
-      .then((res) => {
-        return res.data;
-      })
-      .catch((err) => {
-        logout();
-        setSignInStatus(false);
-        setRedirect("/join");
-        setUser(null);
-        setSelectedEvents([]);
-        return false;
-      });
+    let data;
+    try {
+      const req = await login(name, email, imageUrl)
+      data = req
+    } catch (err) {
+      data = await addUser(name, email, imageUrl)
+    }
     if (data) {
       setSignInStatus(true);
-      localStorage.setItem("token", data.token);
-      setUser(data);
+      localStorage.setItem("token", data.data.token);
+      setUser(data.data.user);
       localStorage.setItem("redirect", "/dashboard");
       setRedirect("/dashboard");
-      setSelectedEvents(data.events);
+      setSelectedEvents(data.data.user.events);
       toast.success("Logged In Succesfully");
+    } else {
+      logout();
+      setSignInStatus(false);
+      setRedirect("/join");
+      setUser(null);
+      setSelectedEvents([]);
+      return false;
     }
+
+
+
+
   };
   const handleLogout = () => {
     logout();

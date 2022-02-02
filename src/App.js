@@ -55,32 +55,24 @@ function App() {
   async function getData() {
     if (checkToken()) {
       const data = await getUser()
-        .then((res) => {
-          return res;
-        })
-        .catch((err) => {
-          setSignInStatus(false);
-          logout();
-          setRedirect("/join");
-          localStorage.setItem("redirect", "/join")
-          setUser(null);
-          setSelectedEvents([]);
-          toast.error("Something Weird Happened")
-          return false;
-        });
+
+
       if (data) {
         setSignInStatus(true);
         setRedirect("/dashboard");
-        setUser(data.data);
-        setSelectedEvents(data.data.events);
-        localStorage.setItem("events", JSON.stringify(data.data.events));
+        setUser(data.data.user);
+        setSelectedEvents(data.data.user.events);
+        localStorage.setItem("events", JSON.stringify(data.data.user.events));
         localStorage.setItem("redirect", "/dashboard")
       }
 
     } else {
+      logout()
       localStorage.setItem("redirect", "/join")
       setRedirect("/join")
     }
+
+
   }
 
 
@@ -88,7 +80,7 @@ function App() {
     getData();
     setSelectedEvents(JSON.parse(localStorage.getItem("events")));
     setRedirect(localStorage.getItem("redirect"))
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
