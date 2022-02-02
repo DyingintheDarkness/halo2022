@@ -11,7 +11,7 @@ export const login = async (email) => {
 
 export const getUser = async (email = undefined) => {
   const token = localStorage.getItem("token");
-  return axios.get("http://localhost:8300/user", {
+  return axios.get("https://halolegion-2021.herokuapp.com/user", {
     params: {
       token,email
     }
@@ -19,7 +19,7 @@ export const getUser = async (email = undefined) => {
 };
 
 export const addUser = async (name, email, imageUrl) => {
-  return axios.post("http://localhost:8300/user", {
+  return axios.post("https://halolegion-2021.herokuapp.com/user", {
     name,
     email,
     avatar: imageUrl
@@ -29,7 +29,7 @@ export const addUser = async (name, email, imageUrl) => {
 export const updateEvents = (events, toast) => {
   let token = localStorage.getItem("token");
   localStorage.setItem("events", JSON.stringify(events))
-  axios.post("http://localhost:8300/inductions/", {
+  axios.post("https://halolegion-2021.herokuapp.com/inductions/", {
    token,
    events
   })
