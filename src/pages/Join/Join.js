@@ -34,7 +34,7 @@ const Join = () => {
     const { name, email, imageUrl } = e.profileObj;
     let data;
     try {
-      const req = await login(name, email, imageUrl)
+      const req = await login(email)
       data = req
     } catch (err) {
       data = await addUser(name, email, imageUrl)
