@@ -31,7 +31,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     const current = new Date().getTime();
-    const past = new Date("Feb 10 2022 00:00:00").getTime();
+    const past = new Date("Feb 4 2022 23:59:00").getTime();
     if (current > past) {
       setViewPrompts(true);
     }
