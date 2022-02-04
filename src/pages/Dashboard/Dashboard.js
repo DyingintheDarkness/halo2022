@@ -22,7 +22,6 @@ const Dashboard = () => {
   const [viewPrompts, setViewPrompts] = useState(false);
   const events = [
     "coding",
-    "writing",
     "designing",
     "discussion",
     "gaming",
