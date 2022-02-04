@@ -68,7 +68,7 @@ function Home() {
           <div className="flex flex-col pl-2 gap-4 md:gap-10">
 
             <div className="flex flex-col">
-              <h2 className="font-sansation text-lg lg:text-xl">Take a look around You might just find you kind of people</h2>
+              <h2 className="font-sansation text-lg lg:text-xl">Take A Look Around You Might Just Find Your Kind Of People</h2>
               <p className="text-grey_1 font-poppins md:w-7/12 lg:w-5/12 lg:text-lg">Have A Knack For Tech Skills? Want To Chill With Cool Peeps? Talk To School Techies? Don't Look Around, Explore Here.</p>
             </div>
 
