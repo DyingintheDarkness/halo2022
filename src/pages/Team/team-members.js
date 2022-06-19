@@ -15,8 +15,8 @@ export const members = [
     designation: "Head Design",
   },
   {
-    name: "Kartik Saraf",
-    img: "https://res.cloudinary.com/dig6ih2ni/image/upload/c_scale,w_320,h_350/v1640771716/halolegion.com/kartik.jpg",
+    name: "Karan Agrawal",
+    img: "https://res.cloudinary.com/achal-jhawar/image/upload/v1655623788/karan_hyyv0u.jpg",
     designation: "Head Gaming",
   },
   {
