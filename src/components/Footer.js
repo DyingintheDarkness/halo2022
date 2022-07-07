@@ -44,25 +44,6 @@ const Footer = () => {
             );
           })}
 
-          {signInStatus ? (
-            <Link
-              to="/dashboard"
-              className={`${window.location.pathname === "/dashboard" ? "underline" : "no-underline"
-                }`}
-            >
-              dashboard
-            </Link>
-          ) : (
-            <Link
-              to="/join"
-              className={`${window.location.pathname === "/join"
-                ? "underline"
-                : "no-underline"
-                }`}
-            >
-              join
-            </Link>
-          )}
           <Link
             to="/legal"
             className={`${window.location.pathname === "/legal" ? "underline" : "no-underline"

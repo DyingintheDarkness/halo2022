@@ -73,7 +73,7 @@ body {
 
 
 body{
-background-color: #F7F7F7;
+background-color: #FBEDF0;
 }
 
 .shadow-spread-md {
@@ -116,6 +116,43 @@ background-color: #F7F7F7;
     height: 1.5rem;
   }
   
+  .button {
+    background-color: #FFD9E2;
+    border: none;
+    color: #99405E;
+    padding: 5px 25px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 2000px;
+  }
+
+  .buttonNavFirst {
+    background-color: #FFD9E2;
+    border: none;
+    color: #99405E;
+    padding: 5px 25px;
+    cursor: pointer;
+    border-radius: 2000px 0px 0px 2000px;
+  }
+
+  .buttonNavSecond {
+    background-color: #FFD9E2;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    color: #99405E;
+    padding: 5px 25px;
+    cursor: pointer;
+  }
+
+  .buttonNavThird {
+    background-color: #FFD9E2;
+    border: none;
+    color: #99405E;
+    padding: 5px 25px;
+    cursor: pointer;
+    border-radius: 0px 2000px 2000px 0px;
+  }
+
   .defaults .Toastify__progress-bar{
     background: #BBBB;
   }

@@ -2,7 +2,6 @@ import "./styles/app.css";
 import "./styles/custom.css";
 import 'react-toastify/dist/ReactToastify.css';
 import { Suspense, useEffect } from "react";
-import { checkToken, getUser, logout } from "./components/authentication";
 import {
   userAtom,
   signInStatusAtom,
@@ -12,7 +11,6 @@ import {
 import { useSetSharedState } from "./statedrive/index";
 import {
   Home,
-  Join,
   Dashboard,
   Resources,
   Contact,
@@ -53,25 +51,6 @@ function App() {
   };
 
   async function getData() {
-    if (checkToken()) {
-      const data = await getUser()
-
-
-      if (data) {
-        setSignInStatus(true);
-        setRedirect("/dashboard");
-        setUser(data.data.user);
-        setSelectedEvents(data.data.user.events);
-        localStorage.setItem("events", JSON.stringify(data.data.user.events));
-        localStorage.setItem("redirect", "/dashboard")
-      }
-
-    } else {
-      logout()
-      localStorage.setItem("redirect", "/join")
-      setRedirect("/join")
-    }
-
 
   }
 
@@ -106,7 +85,6 @@ function App() {
         <Suspense fallback={<Loading />}>
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/join" component={Join} />
             <Route exact path="/contact" component={Contact} />
             <Route exact path="/resources" component={Resources} />
             <Route exact path="/team" component={Team} />

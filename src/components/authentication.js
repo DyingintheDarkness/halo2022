@@ -44,6 +44,5 @@ export const updateEvents = (events, toast) => {
 export const logout = () => {
   localStorage.removeItem("token");
   localStorage.removeItem("events")
-  localStorage.setItem("redirect", "/join")
   return true;
 };
