@@ -14,7 +14,7 @@ function Navbar() {
           className="h-6 w-6"
           fill="none"
           viewBox="0 0 24 24"
-          stroke="currentColor"
+          stroke="#FFFFFF"
         >
           <path
             strokeLinecap="round"
@@ -26,38 +26,23 @@ function Navbar() {
       </div>
       <div
         className={`${hideNav ? "flex" : "hidden"
-          } font-poppins justify-center items-center text-xl sm:hidden mt-5`}
+          } font-sarabun justify-center items-center text-xl sm:hidden mt-5`}
       >
 
 
-        <div className="flex flex-col w-3/4 gap-2 shadow-spread-md bg-blue_5 rounded-md text-white  p-5 ">
+        <div className="flex flex-col w-full text-white p-4">
           <nav className="flex flex-col gap-1">
             {links.map((link, i) => {
               return (
                 <Link
                   key={i}
                   to={link.src}
-                  className={`${window.location.pathname === link.src
-                    ? "underline"
-                    : "no-underline"
-                    }
-                    border-2 border-white rounded-md  flex justify-center items-center h-12 
-                    `}
-                >
+                  className={`bg-grey rounded-xl  flex justify-center items-center h-12 text-white `}>
                   {link.name.toLowerCase()}
                 </Link>
               );
             })}
           </nav>
-          <button
-            className=" bg-green_3 flex items-center justify-center text-center p-1 rounded-md w-36
-                    outline-none
-                  h-10
-                    "
-
-          >
-            login
-          </button>
         </div>
       </div>
       <div className="items-center justify-between p-2 hidden sm:flex lg:text-lg">
@@ -68,9 +53,9 @@ function Navbar() {
             </Link>
           </button>
         </div>
-        <nav className="font-pop">
+        <nav className="font-sarabun">
 
-        <button class="buttonNavFirst">
+          <button class="buttonNavFirst">
             <Link to="/" className="align-left font-sarabun font-semibold">
               Home
             </Link>

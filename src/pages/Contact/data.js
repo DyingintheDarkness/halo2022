@@ -1,13 +1,13 @@
-export const contacts = [
-    {
-        "name": "Achal Jhawar",
-        "designation": "Director",
-        "phone": "+91 9977133993"
-    },
+export const contacts = [    
     {
         "name": "Savita Saluja",
-        "designation": "HOD Computer Science",
-        "phone": "+91 8770353105"
+        "designation": " HOD Computer Science",
+        "email": "savita.saluja@dpsindore.org"
+    },
+    {
+        "name": "Achal Jhawar",
+        "designation": " Management",
+        "email": "achal.jhawar@dpsindore.org"
     }
 ]
 export const socials = [

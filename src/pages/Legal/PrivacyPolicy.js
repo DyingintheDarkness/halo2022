@@ -4,10 +4,10 @@ const PrivacyPolicy = () => {
       <p className="font-pro mb-4 text-4xl xl:text-5xl -ml-1">
         <strong>Privacy Policy</strong>
       </p>
-      <div className="font-poppins text-sm xsm:text-base mt-2">
+      <div className="font-sarabun text-sm xsm:text-base mt-2">
         <div className="flex flex-col gap-1">
           <p>
-            DPS Indore built the Halolegion app as a Free app. This SERVICE is
+            DPS Indore built the halolegion app as a Free app. This SERVICE is
             provided by DPS Indore at no cost and is intended for use as is.
           </p>
           <p>
@@ -24,7 +24,7 @@ const PrivacyPolicy = () => {
           </p>
           <p>
             The terms used in this Privacy Policy have the same meanings as in
-            our Terms and Conditions, which is accessible at Halolegion unless
+            our Terms and Conditions, which is accessible at halolegion unless
             otherwise defined in this Privacy Policy.
           </p>
           <p>Information Collection and Use</p>
@@ -106,7 +106,7 @@ const PrivacyPolicy = () => {
           We may employ third-party companies and individuals due to the
           following reasons:
         </p>
-        <ul className="font-poppins font-light pt-1 pb-1">
+        <ul className="font-sarabun font-light pt-1 pb-1">
           <li>To facilitate our Service;</li>
           <li>To provide the Service on our behalf;</li>
           <li>To perform Service-related services; or</li>
@@ -160,7 +160,7 @@ const PrivacyPolicy = () => {
           notify you of any changes by posting the new Privacy Policy on this
           page.
         </p>
-        <p className="font-poppins text-base">
+        <p className="font-sarabun text-base">
           This policy is effective as of 2020-11-sm xsm:text-base{" "}
         </p>
         <p className="font-pro mb-2 text-2xl">

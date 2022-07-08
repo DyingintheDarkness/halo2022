@@ -74,7 +74,7 @@ const Join = () => {
         <h1 className="font-sarala font-bold text-lg xsm:text-2xl sm:text-4xl">
           Join us and help our to make the<br />good work even better!
         </h1>
-        <p className="font-poppins text-grey_1 break-words w-10/12 sm:text-lg">Well, what are you waiting for? We believe in you!</p>
+        <p className="font-sarabun text-grey_1 break-words w-10/12 sm:text-lg">Well, what are you waiting for? We believe in you!</p>
 
 
 

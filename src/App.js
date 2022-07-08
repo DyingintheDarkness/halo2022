@@ -76,7 +76,7 @@ function App() {
         closeButton={CloseButton}
         rtl={false}
         toastClassName={({ type }) => contextClass[type || "default"] +
-          " defaults relative flex justify-start items-center h-16 p-1 pl-2 font-pop mb-2 text-lg"
+          " defaults relative flex justify-start items-center h-16 p-1 pl-2 font-sarabun mb-2 text-lg"
         }
         bodyClassName={() => "flex"}
       ></ToastContainer>
