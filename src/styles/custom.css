@@ -4,321 +4,378 @@ body {
   overflow-x: hidden;
 }
 
-
-
-
 .legal a {
-  color: #3900FF;
+  color: #3900ff;
   font-weight: normal;
 }
 
-
-
-
 @font-face {
-  font-family: 'Segoe UI Local';
-  src: local('Segoe UI Light');
+  font-family: "Segoe UI Local";
+  src: local("Segoe UI Light");
   font-weight: 100;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Segoe UI Local';
-  src: local('Segoe UI Semilight');
+  font-family: "Segoe UI Local";
+  src: local("Segoe UI Semilight");
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Segoe UI Local';
-  src: local('Segoe UI');
+  font-family: "Segoe UI Local";
+  src: local("Segoe UI");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Segoe UI Local';
-  src: local('Segoe UI Semibold');
+  font-family: "Segoe UI Local";
+  src: local("Segoe UI Semibold");
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Segoe UI Web (West European)';
-  src: url('https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-light.woff2') format('woff2'), url('https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-light.woff') format('woff');
+  font-family: "Segoe UI Web (West European)";
+  src: url("https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-light.woff2")
+      format("woff2"),
+    url("https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-light.woff")
+      format("woff");
   font-weight: 100;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Segoe UI Web (West European)';
-  src: url('https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-semilight.woff2') format('woff2'), url('https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-semilight.woff') format('woff');
+  font-family: "Segoe UI Web (West European)";
+  src: url("https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-semilight.woff2")
+      format("woff2"),
+    url("https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-semilight.woff")
+      format("woff");
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Segoe UI Web (West European)';
-  src: url('https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-regular.woff2') format('woff2'), url('https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-regular.woff') format('woff');
+  font-family: "Segoe UI Web (West European)";
+  src: url("https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-regular.woff2")
+      format("woff2"),
+    url("https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-regular.woff")
+      format("woff");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Segoe UI Web (West European)';
-  src: url('https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-semibold.woff2') format('woff2'), url('https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-semibold.woff') format('woff');
+  font-family: "Segoe UI Web (West European)";
+  src: url("https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-semibold.woff2")
+      format("woff2"),
+    url("https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-semibold.woff")
+      format("woff");
   font-weight: 600;
   font-style: normal;
 }
 
-
-body{
-background-color: #1B1b23;
+body {
+  background-color: #1b1b23;
 }
 
-  .halfbabes{
-    width: 48%;
-    background-color: #2F3038;
-    border: none;
-    color: #9EA6EC;
-    cursor: pointer;
-    border-radius: 30px;
-    overflow:hidden;
-    position:relative;
+.halfbabes {
+  width: 48%;
+  background-color: #2f3038;
+  border: none;
+  color: #9ea6ec;
+  cursor: pointer;
+  border-radius: 30px;
+  overflow: hidden;
+  position: relative;
+}
 
-  }
-
-  
 .shadow-spread-md {
-    box-shadow: 2px 3px 20px 2px rgba(0, 0, 0, 0.3);
-  }
-  
-  .instructions li::marker {
-    color: black;
-    font-weight: bold;
-  }
+  box-shadow: 2px 3px 20px 2px rgba(0, 0, 0, 0.3);
+}
 
-  .defaults .Toastify__close-button * {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 1.5rem;
-    height: 1.5rem;
-    fill: #ffff;
-    fill-opacity: 1;
-  }
-  .defaults {
-    color: #fff;
-  }
-  .error {
-    background-color: #ff7878;
-    background-image: linear-gradient(315deg, #ff7878 0%, #ff0000 80%);
-  }
-  .success {
-    background-color: #8fff78;
-    background-image: linear-gradient(315deg, #8fff78 0%, #00ff00 80%);
-  }
-  .info {
-    background-color: #78fff4;
-    background-image: linear-gradient(315deg, #78fff4 0%, #00d9ff 80%);
-  }
-  
-  
-  .defaults .Toastify__toast-icon i svg {
-    width: 1.5rem;
-    height: 1.5rem;
-  }
-  
-  .button {
-    background-color: #2F3038;
-    border: none;
-    color: #9EA6EC;
-    padding: 5px 25px;
-    margin: 20px 15px;
-    cursor: pointer;
-    border-radius: 2000px;
-  }
+.instructions li::marker {
+  color: black;
+  font-weight: bold;
+}
 
-  .buttonNavFirst {
-    background-color: #2F3038;
-    border: none;
-    color: #9EA6EC;
-    padding: 5px 25px;
-    cursor: pointer;
-    border-radius: 2000px 0px 0px 2000px;
+.defaults .Toastify__close-button * {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: #ffff;
+  fill-opacity: 1;
+}
+.defaults {
+  color: #fff;
+}
+.error {
+  background-color: #ff7878;
+  background-image: linear-gradient(315deg, #ff7878 0%, #ff0000 80%);
+}
+.success {
+  background-color: #8fff78;
+  background-image: linear-gradient(315deg, #8fff78 0%, #00ff00 80%);
+}
+.info {
+  background-color: #78fff4;
+  background-image: linear-gradient(315deg, #78fff4 0%, #00d9ff 80%);
+}
+
+.defaults .Toastify__toast-icon i svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.button {
+  background-color: #2f3038;
+  border: none;
+  color: #9ea6ec;
+  padding: 5px 25px;
+  margin: 20px 15px;
+  cursor: pointer;
+  border-radius: 2000px;
+}
+
+.buttonNavFirst {
+  background-color: #2f3038;
+  border: none;
+  color: #9ea6ec;
+  padding: 5px 25px;
+  cursor: pointer;
+  border-radius: 2000px 0px 0px 2000px;
+}
+
+.buttonNavSecond {
+  background-color: #2f3038;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  color: #9ea6ec;
+  padding: 5px 25px;
+  cursor: pointer;
+}
+
+.buttonNavThird {
+  background-color: #2f3038;
+  border: none;
+  color: #9ea6ec;
+  padding: 5px 25px;
+  cursor: pointer;
+  border-radius: 0px 2000px 2000px 0px;
+}
+
+@media only screen and (max-width: 720px) {
+  .resImgEnd {
+    display: none;
   }
+}
 
-  .buttonNavSecond {
-    background-color: #2F3038;
-    border-left: 1px solid black;
-    border-right: 1px solid black;
-    color: #9EA6EC;
-    padding: 5px 25px;
-    cursor: pointer;
+@media only screen and (max-width: 479px) {
+  .hidecausebadresponsive {
+    display: none;
   }
+}
 
-  .buttonNavThird {
-    background-color: #2F3038;
-    border: none;
-    color: #9EA6EC;
-    padding: 5px 25px;
-    cursor: pointer;
-    border-radius: 0px 2000px 2000px 0px;
-  }
+.lol {
+  margin-bottom: 10px;
+}
 
+.loli {
+  margin-left: 40px;
+  margin-right: 40px;
+}
 
-  @media only screen and (max-width: 720px) { 
-    .resImgEnd { 
-      display: none; 
-    } 
-  }
+.sublol {
+  color: #ffffff;
+  margin-bottom: 10px;
+}
 
-  @media only screen and (max-width: 479px){
-    .hidecausebadresponsive{
-      display:none
-    }
-  }
+.cardPad {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
 
-  .lol{
+.resImg {
+  max-width: 100%;
+  height: auto;
+}
+
+.paddingTxtIntro {
+  padding-left: 2rem;
+}
+
+@media only screen and (max-width: 480px) {
+  .End {
+    margin-left: 0%;
+    margin-top: 10px;
     margin-bottom: 10px;
   }
+}
 
-  .loli{
-    margin-left: 40px;
-    margin-right: 40px;
+@media only screen and (max-width: 480px) {
+  .paddingTxtIntro {
+    display: none;
   }
+}
 
-  .sublol{
-    color: #FFFFFF;
+.paddingTxt {
+  padding-left: 9rem;
+  padding-right: 9rem;
+}
+
+@media only screen and (max-width: 480px) {
+  .paddingTxt {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .halfbabes {
+    width: 90%;
+    background-color: #2f3038;
+    border: none;
+    color: #9ea6ec;
+    cursor: pointer;
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
     margin-bottom: 10px;
   }
+}
 
-  .cardPad{
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+@media only screen and (max-width: 640px) {
+  .ex {
+    padding-top: 10px;
   }
+}
 
-  .resImg{
-    max-width: 100%;
-    height: auto;
-  }
-  
-  .paddingTxtIntro{
-    padding-left: 2rem;
-  }
+.resImgEnd {
+  margin-left: auto;
+  max-width: 100%;
+  height: auto;
+}
 
-  @media only screen and (max-width: 480px) { 
-    .End{
-      margin-left: 0%;
-      margin-top: 10px;
-      margin-bottom: 10px;
-    }
-  }
+.accentText {
+  color: #9ea6ec;
+  font-style: normal;
+}
 
-  @media only screen and (max-width: 480px) { 
-    .paddingTxtIntro{
-      display: none;
-    }
-  }
+.bg-card {
+  background-color: #2f3038;
+  border: none;
+  color: #9ea6ec;
+  margin-left: 20px;
+  margin-right: 20px;
+  cursor: pointer;
+  border-radius: 30px;
+}
 
-  .paddingTxt{
-    padding-left: 9rem;
-    padding-right: 9rem;
-  }
-  
-  @media only screen and (max-width: 480px) { 
-    .paddingTxt{
-      padding-left: 0px;
-      padding-right: 0px;
-    }
-  }
+.bg-grey {
+  background-color: #2f3038;
+}
 
-  @media only screen and (max-width: 640px) { 
+.resCard{
+  background-color: #1b1b23;
+  border: none;
+  color: #9ea6ec;
+  margin-left: 20px;
+  margin-top: 5px;
+  padding-top:  2.5rem;
+  padding-bottom:  2.5rem;
+  margin-right: 20px;
+  cursor: pointer;
+  border-radius: 30px;
+  padding-left:  2.5rem;
+  text-align: start;
+}
 
-    .halfbabes{
-      width: 90%;
-      background-color: #2F3038;
-      border: none;
-      color: #9EA6EC;
-      cursor: pointer;
-      border-radius: 30px;
-      overflow:hidden;
-      position:relative;
-      margin-bottom: 10px;
-    }
-  
-  }
-
-  @media only screen and (max-width: 640px) { 
-
-    .ex{
-      padding-top: 10px;
-    }
-  
-  }
-
-  .resImgEnd{
-    margin-left: auto;
-    max-width: 100%;
-    height: auto;
-  }
-
-  .accentText{
-    color:#9EA6EC;
-    font-style: normal;
-    
-  }
-
-  .bg-card {
-    background-color: #2F3038;
+@media only screen and (max-width: 385px) {
+  .resCard{
+    background-color: #1b1b23;
     border: none;
-    color: #9EA6EC;
+    color: #9ea6ec;
     margin-left: 20px;
+    margin-top: 5px;
+    padding-top:  2.5rem;
+    padding-bottom:  2.5rem;
     margin-right: 20px;
     cursor: pointer;
     border-radius: 30px;
+    padding-left:  2.5rem;
+    text-align: center;
   }
+}
 
-  .bg-grey {
-    background-color: #2F3038;
-  }
-
-  .txt-card-top{
-    background-color: #2F3038;
+@media only screen and (max-width: 385px) {
+  .resCard{
+    background-color: #00000000;
     border: none;
-    color: #9EA6EC;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    margin-top: 0px;
+    color: #9ea6ec;
     margin-left: 20px;
-    margin-right: 20px;
-    margin-bottom: 5px;
-    cursor: pointer;
-    border-radius: 50px 50px 0px 0px;
-  }
-
-  .centershit{
-    display: flex;
-    align-items: center;
-  }
-
-  .VertMarg{
-    margin-bottom: 20px;
-    margin-top: 20px;
-  }
-
-  .txt-card-bottom{
-    background-color: #2F3038;
-    border: none;
-    color: #9EA6EC;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-    margin-left: 20px;
+    padding-left: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
     margin-right: 20px;
     cursor: pointer;
-    border-radius: 0px 0px 50px 50px;
+    border-radius: 30px;
+    text-align: center;
   }
+}
 
-  .defaults .Toastify__progress-bar{
-    background: #BBBB;
-  }
-  
+.txt-card-top {
+  background-color: #2f3038;
+  border: none;
+  color: #9ea6ec;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  border-radius: 50px 50px 0px 0px;
+}
+
+.centershit {
+  display: flex;
+  align-items: center;
+}
+
+.VertMarg {
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.VertMarg10 {
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.VertMargTop {
+  margin-top: 15px;
+}
+
+.contactAs {
+  margin-right: 25px;
+}
+
+.txt-card-bottom {
+  background-color: #2f3038;
+  border: none;
+  color: #9ea6ec;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  margin-left: 20px;
+  margin-right: 20px;
+  cursor: pointer;
+  border-radius: 0px 0px 50px 50px;
+}
+
+.defaults .Toastify__progress-bar {
+  background: #bbbb;
+}
