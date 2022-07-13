@@ -27,30 +27,44 @@ export const members = [
   {
     name: "Ayush Rai",
     designation: "Editing Director",
+    github: "empty" ,
     twitter: "https://twitter.com/Ayush79901610",
     instagram: "https://www.instagram.com/ayushrai14_official/",
   },
   {
     name: "Prakruti Pavecha",
-    designation: "Coding Director"
+    designation: "Coding Director",
+    github:"empty",
+    twitter: "empty",
+    instagram: "empty",
   },
   {
     name: "Lavanya Singh",
     designation: "Quizzing Director",
-    github: "https://github.com/Maitreya29",
+    github: "empty",
     twitter: "https://twitter.com/Lavsisshy",
     instagram: "https://www.instagram.com/lavanyaaaasingh/",
   },
   {
     name: "Giriman Kohli",
     designation: "Designer",
+    github:"empty",
+    twitter: "empty",
+    instagram: "empty",
+    
   },
   {
     name: "Disha Gautam",
     designation: "Quizzing Co-head",
+    github:"empty",
+    twitter: "empty",
+    instagram: "empty",
   },
   {
     name: "Pratham Saluja",
     designation: "Editing Co-Head",
+    github:"empty",
+    twitter: "empty",
+    instagram: "empty",
   }
 ];
