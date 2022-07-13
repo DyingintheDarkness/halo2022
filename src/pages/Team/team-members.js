@@ -2,6 +2,9 @@ export const members = [
   {
     name: "Savita Saluja",
     designation: "HOD Computer Science",
+    github: "empty",
+    twitter: "empty",
+    instagram: "empty",
   },
   {
     name: "Achal Jhawar",
