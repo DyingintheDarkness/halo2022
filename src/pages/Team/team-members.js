@@ -21,13 +21,6 @@ export const members = [
     instagram: "https://www.instagram.com/0925.karan/",
   },
   {
-    name: "Maitreya Patni",
-    designation: "Technical Executive",
-    github: "https://github.com/Maitreya29",
-    twitter: "https://twitter.com/maitreya29",
-    instagram: "https://www.instagram.com/maitreyapatni/",
-  },
-  {
     name: "Ayush Rai",
     designation: "Editing Director",
     github: "empty" ,
