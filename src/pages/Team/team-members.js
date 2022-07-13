@@ -19,24 +19,24 @@ export const members = [
   },
   {
     name: "Maitreya Patni",
-    designation: "Coding head",
+    designation: "Technical Executive",
     github: "https://github.com/Maitreya29",
     twitter: "https://twitter.com/maitreya29",
     instagram: "https://www.instagram.com/maitreyapatni/",
   },
   {
     name: "Ayush Rai",
-    designation: "Video Editor Head",
+    designation: "Editing Director",
     twitter: "https://twitter.com/Ayush79901610",
     instagram: "https://www.instagram.com/ayushrai14_official/",
   },
   {
     name: "Prakruti Pavecha",
-    designation: "Coding Co-Head"
+    designation: "Coding Director"
   },
   {
     name: "Lavanya Singh",
-    designation: "Writer",
+    designation: "Quizzing Director",
     github: "https://github.com/Maitreya29",
     twitter: "https://twitter.com/Lavsisshy",
     instagram: "https://www.instagram.com/lavanyaaaasingh/",
@@ -51,6 +51,6 @@ export const members = [
   },
   {
     name: "Pratham Saluja",
-    designation: "Video Editor",
+    designation: "Editing Co-Head",
   }
 ];
