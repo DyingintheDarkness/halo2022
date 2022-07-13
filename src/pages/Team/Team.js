@@ -8,7 +8,23 @@ const Team = () => {
         <div className="flex items-center justify-center">
           <div className="flex flex-col justify-center items-center xsm:flex-row xsm:flex-wrap gap-10 lg:ml-1">
             {members.map((member) => {
-              if (member.github === "empty") {
+              if (member.instagram === "empty") {
+                return(
+                  <div
+                    key={member.name}
+                    className={`rounded-md about-card items-center bg-card w-60 h-full pb-1`}
+                  >
+                    <div className="flex flex-col items-center centershit">
+                      <h1 className="font-pro font-medium xsm:text-lg md:text-xl VertMargTop">
+                        {member.name}
+                      </h1>
+                      <h2 className="font-segoe font-semibold text-xsm lg:text-lg VertMargTop">
+                        {member.designation}
+                      </h2>
+                    </div>
+                  </div>
+                );
+              } else if (member.github === "empty") {
                 return (
                   <div
                     key={member.name}
@@ -43,22 +59,6 @@ const Team = () => {
                           </svg>
                         </a>
                       </div>
-                    </div>
-                  </div>
-                );
-              } else if (member.instagram === "empty") {
-                return(
-                  <div
-                    key={member.name}
-                    className={`rounded-md about-card items-center bg-card w-60 h-full pb-1`}
-                  >
-                    <div className="flex flex-col items-center centershit">
-                      <h1 className="font-pro font-medium xsm:text-lg md:text-xl VertMargTop">
-                        {member.name}
-                      </h1>
-                      <h2 className="font-segoe font-semibold text-xsm lg:text-lg VertMargTop">
-                        {member.designation}
-                      </h2>
                     </div>
                   </div>
                 );
