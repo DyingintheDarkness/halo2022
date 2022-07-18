@@ -6,7 +6,7 @@ export const contacts = [
     },
     {
         "name": "Achal Jhawar",
-        "designation": " Management",
+        "designation": "President",
         "email": "achal.jhawar@dpsindore.org"
     }
 ]
