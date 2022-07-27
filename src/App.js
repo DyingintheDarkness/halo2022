@@ -14,6 +14,7 @@ import {
   Dashboard,
   Resources,
   Contact,
+  Events,
   Team,
   Legal,
 } from "./pages/exports";
@@ -86,6 +87,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/contact" component={Contact} />
+            <Route exact path="/events" component={Events} />
             <Route exact path="/resources" component={Resources} />
             <Route exact path="/team" component={Team} />
             <Route exact path="/legal" component={Legal} />
