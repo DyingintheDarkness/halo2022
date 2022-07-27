@@ -67,6 +67,12 @@ function Navbar() {
             </Link>
           </button>
 
+          <button class="buttonNavSecond">
+            <Link to="/events" className="align-left font-sarabun font-semibold">
+              Events
+            </Link>
+          </button>
+
           <button class="buttonNavThird">
             <Link to="/team" className="align-left font-sarabun font-semibold">
               Team
