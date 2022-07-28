@@ -16,17 +16,11 @@ const Events = () => {
             <h1 className="font-sarabun text-4xl font-semibold">Encode</h1>
             <div className="flex flex-col py-10 text-center" key="idk">
               <h2 className="font-sarabun text-grey_1 font-light text-sm xsm:text-base">
-                2 students per Team and 1 team per School
+                A mixed bag of problems in the form of outputs and questions can be <br/>
+                attempted by the contestants in any programming language of their choice.<br/>
+                students from classes 6th to 12th can participate in this event. One team per school<br/>
+                and 2 students per team.<br/>
               </h2>
-              <h2 className="font-sarabun text-grey_1 font-light text-sm xsm:text-base">
-                Eligibility: 6th to 12th
-              </h2>
-              <br/>
-              <h2 className="font-sarabun text-grey_1 font-light text-sm xsm:text-base">
-                A mixed bag of problems in the form of outputs and questions can be 
-                attempted by the contestants in any programming language of their choice.
-              </h2>
-              <br/>
             </div>
           </div>
         </div>
