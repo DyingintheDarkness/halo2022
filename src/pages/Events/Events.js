@@ -62,13 +62,9 @@ const Events = () => {
             <h1 className="font-sarabun text-4xl font-semibold">Qurious</h1>
             <div className="flex flex-col py-10 text-center" key="idk">
               <h2 className="font-sarabun text-grey_1 font-light text-sm xsm:text-base">
-                Quizzing
-              </h2>
-              <h2 className="font-sarabun text-grey_1 font-light text-sm xsm:text-base">
-                Teams of 2
-              </h2>
-              <h2 className="font-sarabun text-grey_1 font-light text-sm xsm:text-base">
-                8th to 12th
+                A perplexing questionnaire will be provided to based on the field of computers, <br/>
+                technology and recent events in the tech world. students from classes<br/>
+                8th to 12th can participate in this event. One team per school<br/>
               </h2>
               <br></br>
             </div>
