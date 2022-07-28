@@ -16,13 +16,15 @@ const Events = () => {
             <h1 className="font-sarabun text-4xl font-semibold">Encode</h1>
             <div className="flex flex-col py-10 text-center" key="idk">
               <h2 className="font-sarabun text-grey_1 font-light text-sm xsm:text-base">
-                Competitive Programming
+                2 students per Team and 1 team per School
               </h2>
               <h2 className="font-sarabun text-grey_1 font-light text-sm xsm:text-base">
-                Teams of 2
+                Eligibility: 6th to 12th
               </h2>
               <h2 className="font-sarabun text-grey_1 font-light text-sm xsm:text-base">
-                6th to 12th
+                A mixed bag of problems in the form of outputs and questions can be 
+                attempted by the contestants in any programming language of their choice.
+                Judgements would be made on account of speed and accuracy.
               </h2>
               <br></br>
             </div>
