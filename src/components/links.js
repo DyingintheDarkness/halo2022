@@ -8,7 +8,7 @@ export const links = [
     src: "/contact",
   },
   {
-    name: "Events",
+    name: "Halocon",
     src: "/events",
   },
   {

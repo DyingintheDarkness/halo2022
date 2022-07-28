@@ -69,7 +69,7 @@ function Navbar() {
 
           <button class="buttonNavSecond">
             <Link to="/events" className="align-left font-sarabun font-semibold">
-              Events
+              Halocon
             </Link>
           </button>
 
