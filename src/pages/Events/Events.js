@@ -18,15 +18,17 @@ const Events = () => {
               <h2 className="font-sarabun text-grey_1 font-light text-sm xsm:text-base">
                 2 students per Team and 1 team per School
               </h2>
+              <br/>
               <h2 className="font-sarabun text-grey_1 font-light text-sm xsm:text-base">
                 Eligibility: 6th to 12th
               </h2>
+              <br/>
               <h2 className="font-sarabun text-grey_1 font-light text-sm xsm:text-base">
-                A mixed bag of problems in the form of outputs and questions can be 
-                attempted by the contestants in any programming language of their choice.
-                Judgements would be made on account of speed and accuracy.
+                A mixed bag of problems in the form of outputs and questions can be <br/>
+                attempted by the contestants in any programming language of their choice.<br/>
+                Judgements would be made on account of speed and accuracy.<br/>
               </h2>
-              <br></br>
+              <br/>
             </div>
           </div>
         </div>
