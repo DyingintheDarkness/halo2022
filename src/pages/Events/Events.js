@@ -36,15 +36,12 @@ const Events = () => {
             <h1 className="font-sarabun text-4xl font-semibold">Recoil</h1>
             <div className="flex flex-col py-10 text-center" key="idk">
               <h2 className="font-sarabun text-grey_1 font-light text-sm xsm:text-base">
-                Gaming
+                One Player from Each team will compete in multiple death matches. Points will be<br/>
+                awarded to the team on each kill. Based on their ranking on the leader board and a<br/>
+                high view of their skill, teams will be grouped in brackets to compete against each<br/>
+                other(5 vs 5) in a single-elimination format. Any last-minute entries will be placed in<br />
+                the lower brackets.
               </h2>
-              <h2 className="font-sarabun text-grey_1 font-light text-sm xsm:text-base">
-                Teams of 5+1
-              </h2>
-              <h2 className="font-sarabun text-grey_1 font-light text-sm xsm:text-base">
-                8th to 12th
-              </h2>
-              <br></br>
             </div>
           </div>
         </div>
@@ -59,7 +56,7 @@ const Events = () => {
               height="198"
             ></img>
 
-            <h1 className="font-sarabun text-4xl font-semibold">Qurious</h1>
+            <h1 className="font-sarabun text-4xl font-semibold">QuЯious</h1>
             <div className="flex flex-col py-10 text-center" key="idk">
               <h2 className="font-sarabun text-grey_1 font-light text-sm xsm:text-base">
                 A perplexing questionnaire will be provided to based on the field of computers, <br/>
