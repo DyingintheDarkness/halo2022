@@ -25,7 +25,6 @@ const Events = () => {
               <h2 className="font-sarabun text-grey_1 font-light text-sm xsm:text-base">
                 A mixed bag of problems in the form of outputs and questions can be 
                 attempted by the contestants in any programming language of their choice.
-                Judgements would be made on account of speed and accuracy.
               </h2>
               <br/>
             </div>
