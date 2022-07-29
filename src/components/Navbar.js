@@ -74,7 +74,7 @@ function Navbar() {
           </button>
           
           <button class="buttonNavSecond">
-            <Link to="https://forms.gle/HUkBkm4N4otGTFKL9" className="align-left font-sarabun font-semibold">
+            <Link href="https://forms.gle/HUkBkm4N4otGTFKL9" className="align-left font-sarabun font-semibold">
               Register
             </Link>
           </button>
