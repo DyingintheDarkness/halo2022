@@ -13,7 +13,7 @@ export const links = [
   },
   {
     name: "Register",
-    src: "/events",
+    src: "https://forms.gle/HUkBkm4N4otGTFKL9",
   },
   {
     name: "Team",
