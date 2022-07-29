@@ -28,9 +28,9 @@ const Footer = () => {
         <nav className="flex flex-col End paddingTxt font-sarabun pl-12  gap-1 md:gap-3 pt-2 md:text-lg sm:mt-8 md:mt-14">
           {links.map((link, i) => {
             return (
-              <Link
+              <a
                 key={i}
-                to={link.src}
+                href={link.src}
                 className={`
             font-sarabun
             ${window.location.pathname === link.src
@@ -40,7 +40,7 @@ const Footer = () => {
 
               >
                 {link.name}
-              </Link>
+              </a>
             );
           })}
 
