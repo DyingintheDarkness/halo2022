@@ -16,7 +16,8 @@ const Events = () => {
             <h1 className="font-sarabun text-4xl font-semibold">Encode</h1>
             <div className="flex flex-col py-10 text-center" key="idk">
               <h2 className="font-sarabun text-grey_1 font-light text-sm xsm:text-base">
-                
+                An Oppourtunity to interact with riviting problems and producing <br/>
+                creative experiences on the ferocius python.<br/>
               </h2>
             </div>
           </div>
