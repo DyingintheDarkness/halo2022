@@ -16,8 +16,8 @@ const Events = () => {
             <h1 className="font-sarabun text-4xl font-semibold">Encode</h1>
             <div className="flex flex-col py-10 text-center" key="idk">
               <h2 className="font-sarabun text-grey_1 font-light text-sm xsm:text-base">
-                An Oppourtunity to interact with riviting problems and producing 
-                creative experiences on the ferocius python.
+                An Oppourtunity to interact with riveting problems and producing <br/>
+                creative experiences on the ferocius python.<br/>
               </h2>
             </div>
           </div>
@@ -34,9 +34,9 @@ const Events = () => {
             <h1 className="font-sarabun text-4xl font-semibold">Recoil</h1>
             <div className="flex flex-col py-10 text-center" key="idk">
               <h2 className="font-sarabun text-grey_1 font-light text-sm xsm:text-base">
-                One Player from Each team will compete in multiple death matches. Points will be
-                awarded to the team on each kill. Based on their ranking on the leader board and a
-                high view of their skill.
+                One Player from Each team will compete in multiple death matches. Points will be<br/>
+                awarded to the team on each kill. Based on their ranking on the leader board and a<br/>
+                high view of their skill.<br/>
               </h2>
             </div>
           </div>
@@ -55,8 +55,8 @@ const Events = () => {
             <h1 className="font-sarabun text-4xl font-semibold">QuЯious</h1>
             <div className="flex flex-col py-10 text-center" key="idk">
               <h2 className="font-sarabun text-grey_1 font-light text-sm xsm:text-base">
-                A perplexing questionnaire will be provided to based on the field of computers, 
-                technology and recent events in the tech world. One team per school.
+                A perplexing questionnaire will be provided to based on the field of computers,<br/>
+                technology and recent events in the tech world. One team per school.<br/>
               </h2>
               <br></br>
             </div>
