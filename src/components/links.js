@@ -12,6 +12,10 @@ export const links = [
     src: "/events",
   },
   {
+    name: "Register",
+    src: "/events",
+  },
+  {
     name: "Team",
     src: "/team",
   },

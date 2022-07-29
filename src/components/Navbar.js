@@ -72,6 +72,12 @@ function Navbar() {
               Halocon
             </Link>
           </button>
+          
+          <button class="buttonNavSecond">
+            <Link to="/events" className="align-left font-sarabun font-semibold">
+              Register
+            </Link>
+          </button>
 
           <button class="buttonNavThird">
             <Link to="/team" className="align-left font-sarabun font-semibold">
