@@ -3,13 +3,7 @@ export const contacts = [
         "name": "Savita Saluja",
         "designation": " HOD Computer Science",
         "email": "savita.saluja@dpsindore.org"
-    },
-    {
-        "name": "Pratham Saluja",
-        "designation": "Club Director",
-        "email": "pratham.saluja36@gmail.com"
     }
-
 ]
 export const socials = [
     {
