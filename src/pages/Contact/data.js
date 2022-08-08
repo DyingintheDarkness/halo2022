@@ -6,9 +6,15 @@ export const contacts = [
     },
     {
         "name": "Achal Jhawar",
-        "designation": "President",
+        "designation": "Club Director(21-22)",
         "email": "achal.jhawar@dpsindore.org"
+    },
+    {
+        "name": "Pratham Saluja",
+        "designation": "Club Director(22-23)",
+        "email": "pratham.saluja36@gmail.com"
     }
+
 ]
 export const socials = [
     {
