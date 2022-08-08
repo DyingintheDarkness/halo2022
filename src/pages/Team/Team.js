@@ -22,6 +22,8 @@ const Team = () => {
                         <h2 className="font-segoe font-semibold text-xsm lg:text-lg VertMarg10">
                           {member.designation}
                         </h2>
+                        <div className="VertMarg10 flex flex-row items-center">
+                        </div>
                       </div>
                     </div>
                   );
