@@ -58,7 +58,7 @@ function Home() {
               <p className="loli text-3xl text-white">
                 At Halo, we are more than a high school club. Halo is about making.<br/>
                 It's about its members. A legion is dysfunctional unless a cavalry is<br/>
-                present. Thus, Halo cares about its cavalry. Halo is consists of<br/>
+                present. Thus, Halo cares about its cavalry. Halo consists of<br/>
                 like-minded individuals possessing a diverse skill-set.<br/>
                 Our Philosophy is what makes us a legion.<br/>
               </p>
