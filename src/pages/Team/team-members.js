@@ -16,6 +16,9 @@ export const members = [
   {
     name: "Pratham Saluja",
     designation: "Club Director(22-23)",
+    github:"empty",
+    twitter: "empty",
+    instagram: "empty",
   },
   {
     name: "Karan Agrawal",
