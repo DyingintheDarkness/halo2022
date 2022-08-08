@@ -15,7 +15,6 @@ const Team = () => {
                       key={member.name}
                       className={`rounded-md about-card items-center bg-card w-60 h-full pb-1`}
                     >
-                      <br/>
                       <div className="flex flex-col items-center centershit">
                         <h1 className="font-pro font-medium xsm:text-lg md:text-xl VertMargTop">
                           {member.name}
