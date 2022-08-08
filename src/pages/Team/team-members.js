@@ -8,14 +8,14 @@ export const members = [
   },
   {
     name: "Achal Jhawar",
-    designation: "Club Director(21-22)",
+    designation: "Club Director (21-22)",
     github: "https://github.com/achaljhawar",
     twitter: "https://twitter.com/AchalJhawar",
     instagram: "https://www.instagram.com/achal.jhawar",
   },
   {
     name: "Pratham Saluja",
-    designation: "Club Director(22-23)",
+    designation: "Club Director (22-23)",
     github:"empty",
     twitter: "empty",
     instagram: "empty",
