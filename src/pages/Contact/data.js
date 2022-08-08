@@ -5,13 +5,8 @@ export const contacts = [
         "email": "savita.saluja@dpsindore.org"
     },
     {
-        "name": "Achal Jhawar",
-        "designation": "Club Director(21-22)",
-        "email": "achal.jhawar@dpsindore.org"
-    },
-    {
         "name": "Pratham Saluja",
-        "designation": "Club Director(22-23)",
+        "designation": "Club Director",
         "email": "pratham.saluja36@gmail.com"
     }
 
