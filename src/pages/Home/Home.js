@@ -55,8 +55,12 @@ function Home() {
 
           <div className="txt-card-bottom cardPad flex flex-col xsm:flex-row items-center">
             <div>
-              <p className="loli text-3xl text-white">We All Stand By Our Philosophy <br></br>
-                Our Philosophy is what makes us a legion
+              <p className="loli text-3xl text-white">
+                At Halo, we are more than a high school club. Halo is about making.<br/>
+                It's about its members. A legion is dysfunctional unless a cavalry is<br/>
+                present. Thus, Halo cares about its cavalry. Halo is consists of<br/>
+                like-minded individuals possessing a diverse skill-set.<br/>
+                Our Philosophy is what makes us a legion.<br/>
               </p>
             </div>
             <img src="https://i.imgur.com/olqGEit.png" className="resImgEnd px-11 hidden" width="194" height="163"></img>
