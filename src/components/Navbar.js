@@ -73,11 +73,11 @@ function Navbar() {
             </Link>
           </button>
           
-          <button class="buttonNavSecond">
-            <a href="https://forms.gle/HUkBkm4N4otGTFKL9" className="align-left font-sarabun font-semibold">
+          {/* <button class="buttonNavSecond">
+            <a href="/register" className="align-left font-sarabun font-semibold">
               Register
             </a>
-          </button>
+          </button> */}
 
           <button class="buttonNavThird">
             <Link to="/team" className="align-left font-sarabun font-semibold">
