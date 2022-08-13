@@ -1,4 +1,5 @@
 import "./styles/app.css";
+import "./styles/tailwind.css";
 import "./styles/custom.css";
 import 'react-toastify/dist/ReactToastify.css';
 import { Suspense, useEffect } from "react";
@@ -17,10 +18,12 @@ import {
   Events,
   Team,
   Legal,
+  Register
 } from "./pages/exports";
 import Loading from "./components/Loading";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
+import { RecoilRoot } from "recoil";
 
 const CloseButton = ({ closeToast }) => (
   <i
@@ -80,9 +83,10 @@ function App() {
           " defaults relative flex justify-start items-center h-16 p-1 pl-2 font-sarabun mb-2 text-lg"
         }
         bodyClassName={() => "flex"}
-      ></ToastContainer>
+        ></ToastContainer>
 
       <Router>
+        <RecoilRoot>
         <Suspense fallback={<Loading />}>
           <Switch>
             <Route exact path="/" component={Home} />
@@ -92,9 +96,11 @@ function App() {
             <Route exact path="/team" component={Team} />
             <Route exact path="/legal" component={Legal} />
             <Route exact path="/dashboard" component={Dashboard} />
+            <Route exact path="/register/:key" component={Register} />
             <Route path="*" component={() => { return <div className="font-sans font-medium pl-1">404 - Page Not Found</div> }} />x
           </Switch>
         </Suspense>
+</RecoilRoot>
       </Router>
     </>
   );

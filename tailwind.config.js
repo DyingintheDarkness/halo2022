@@ -7,6 +7,7 @@ module.exports = {
   theme: {
     screens: {
       xsm: "480px",
+      sm_2: "540px",
       sm: '700px',
       md: '768px',
       lg: '1024px',
@@ -16,6 +17,8 @@ module.exports = {
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
+
+
       grey_1: "#868294",
       grey_2: "#D2D2D2",
       grey_3: "#ABABAB",
@@ -29,6 +32,20 @@ module.exports = {
       green_3: "#14F600",
       red_1: "#FF0000",
       purple_1: "#7B2AFF",
+      
+      // Register Page Colors
+      grey_4: "#6C6C6C",
+      grey_5: "#A2A4AB",
+      grey_6: "#9F9F9F",
+      blue_6: "#002CC5",
+      blue_7: "#1e89e8",
+      black_1: "#323644",
+      black_2: "#2F3038",
+      green_4: "#008234",
+
+
+
+
 
 
 
