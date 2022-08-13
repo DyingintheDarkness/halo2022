@@ -6,18 +6,19 @@ import { useSharedState } from "../../statedrive";
 import Event from "./Event";
 import Files from "react-butterfiles";
 import Layout from "../../components/Layout";
+import { toast } from "react-toastify";
 import uuid from "react-uuid"
 
 
 const Register = () => {
     const { key } = useParams()
-    const [validKey, setValidKey] = useState(false); // False
+    const [validKey, setValidKey] = useState(true); // False
     const [form, setForm] = useSharedState(registerDataAtom);
     const [event, setEvent] = useState("recoil");
     const events = ["recoil", "encode", "qurious"]
     const participantCount = { recoil: { min: 5, max: 6 }, encode: { max: 2 }, qurious: { max: 2 } }
     const sendKey = async () => {
-        const req = await axios.post("https://register-halo22.herokuapp.com/register/verify", {}, {
+        const req = await axios.post("http://localhost:8080/register/verify", {}, {
             headers: {
                 "Authorization": key
             }
@@ -35,8 +36,8 @@ const Register = () => {
             ...form,
             coordinator: { ...form.coordinator, [e.target.name]: e.target.value }
         })
-
     }
+
     useEffect(() => {
         sendKey()
     }, [])
@@ -84,7 +85,7 @@ const Register = () => {
                                         })
 
                                     }}
-                                    onError={(err) => console.error("Image Upload Failed")}
+                                    onError={(err) => toast.error("Image Upload Failed")}
                                 >
                                     {({ browseFiles }) => (
                                         <button className="text-sm sm_2:text-base font-medium  sm:w-3/6  sm_2:w-5/12 w-4/5 bg-blue_6 text-white h-10 self-center rounded-md" onClick={browseFiles}>{form.coordinator.fileName || "Upload Image"}</button>
@@ -94,18 +95,10 @@ const Register = () => {
                             </div>
                         </div>
                         <div className="flex gap-4 flex-col">
-        <div>
-            {events.map((key) => {
-                if (key === event) {
-                    return <div key={uuid()}>
-                        <Event event={key} participantCount={participantCount} />
-                    </div>
-                }
-                return null
-            }
-            )}
-        </div>
-    </div>
+                            <div>
+                                <Events event={event} events={events} participantCount={participantCount} />
+                            </div>
+                        </div>
                     </div>
                 </Layout>
             }
@@ -119,7 +112,7 @@ const Events = ({ event, events, participantCount }) => {
         <div>
             {events.map((key) => {
                 if (key === event) {
-                    return <div key={uuid()}>
+                    return <div>
                         <Event event={key} participantCount={participantCount} />
                     </div>
                 }
