@@ -20,6 +20,7 @@
         "react-router-dom": "^5.3.0",
         "react-scripts": "4.0.3",
         "react-toastify": "^8.0.3",
+        "react-uuid": "^1.0.2",
         "recoil": "^0.4.1",
         "web-vitals": "^1.0.1"
     },
@@ -39,7 +40,6 @@
         "test": "react-scripts test",
         "eject": "react-scripts eject",
         "watch:css": "postcss src/styles/tailwind.css -o src/styles/app.css"
-        
     },
     "eslintConfig": {
         "extends": [
