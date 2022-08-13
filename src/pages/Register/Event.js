@@ -79,7 +79,7 @@ const Event = ({ event, participantCount }) => {
             })}
             <button disabled={disableButton} onClick={async () => {
                 await checkValues()
-                const req = await axios.post(`http://localhost:8080/register/${event}`, {
+                const req = await axios.post(`https://register-halo22.herokuapp.com/register/${event}`, {
                     key: key,
                     coordinator: form.coordinator,
                     event: event,
