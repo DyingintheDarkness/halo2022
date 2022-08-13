@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import { useEffect, useState, useRef } from "react";
 import axios from "axios";
-import Loading from "../../components/Loading";
 import { registerDataAtom } from "../../statedrive/atoms";
 import { useSharedState } from "../../statedrive";
 import Event from "./Event";
@@ -12,13 +11,13 @@ import uuid from "react-uuid"
 
 const Register = () => {
     const { key } = useParams()
-    const [validKey, setValidKey] = useState(true);
+    const [validKey, setValidKey] = useState(false); // False
     const [form, setForm] = useSharedState(registerDataAtom);
     const [event, setEvent] = useState("recoil");
     const events = ["recoil", "encode", "qurious"]
     const participantCount = { recoil: { min: 5, max: 6 }, encode: { max: 2 }, qurious: { max: 2 } }
     const sendKey = async () => {
-        const req = await axios.post("http://localhost:8080/register/verify", {}, {
+        const req = await axios.post("https://register-halo22.herokuapp.com/register/verify", {}, {
             headers: {
                 "Authorization": key
             }
@@ -38,22 +37,14 @@ const Register = () => {
         })
 
     }
-    // useEffect(() => {
-    //     sendKey()
-    // }, [])
+    useEffect(() => {
+        sendKey()
+    }, [])
 
-    // useEffect(() => {
-    // console.log(form);
-    // if (form.name !== "" && form.email !== "") {
-    //     setDisableButton(false)
-    // } else {
-    //     setDisableButton(true)
-    // }
-    // }, [form])
     return (
         <>
-            <Layout>
-                {!validKey ? <Loading /> :
+            {!validKey ? <div className="font-sans font-medium pl-1">404 - Page Not Found</div> :
+                <Layout>
 
                     <div className="mb-14">
                         <div className="flex flex-row gap-2 justify-center mt-5 text-white">
@@ -102,10 +93,22 @@ const Register = () => {
 
                             </div>
                         </div>
-                        <Events event={event} events={events} participantCount={participantCount} />
+                        <div className="flex gap-4 flex-col">
+        <div>
+            {events.map((key) => {
+                if (key === event) {
+                    return <div key={uuid()}>
+                        <Event event={key} participantCount={participantCount} />
                     </div>
                 }
-            </Layout>
+                return null
+            }
+            )}
+        </div>
+    </div>
+                    </div>
+                </Layout>
+            }
         </>
 
     );

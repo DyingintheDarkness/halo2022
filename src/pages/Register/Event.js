@@ -3,10 +3,12 @@ import { useState, useEffect } from "react";
 import { useSharedState } from "../../statedrive";
 import { registerDataAtom } from "../../statedrive/atoms";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+import { toast } from "react-toastify";
 import uuid from "react-uuid"
 import Files from "react-butterfiles";
 
 // Bug: Input Losing Focus on Key Press
+// Status: Not Fixed
 
 const Event = ({ event, participantCount }) => {
     const { key } = useParams();
@@ -16,13 +18,12 @@ const Event = ({ event, participantCount }) => {
     let min = participantCount[event].min || max;
 
     const checkValues = async () => {
-        if (form.coordinator.name !== "" && form.coordinator.email !== "") {
+        if (form.coordinator.name !== "" && form.coordinator.email !== "" && form.coordinator.contact !== "" && form.coordinator.image !== "" && form.coordinator.fileName !== "") {
             if (form[event].length >= min && form[event].length <= max) {
                 for (let i = 0; i < form[event].length; i++) {
-                    if (form[event][i].name === "" || form[event][i].contact === "" || form[event][i].image === "" || form[event][i].fileName === "") {
+                    if (!form[event][i].name === "" && !form[event][i].contact === "" && !form[event][i].image === "" && !form[event][i].fileName === "") {
                         return setDisableButton(true)
                     }
-                    return setDisableButton(false)
                 }
                 setDisableButton(false);
             } else {
@@ -38,6 +39,10 @@ const Event = ({ event, participantCount }) => {
         }
         setForm({ ...form, [event]: [...form[event]] });
     }
+    useEffect(() => {
+        checkValues();
+    })
+
     return <>
         <div className="flex flex-col">
             {Object.keys([...Array(max)]).map((i) => {
@@ -73,12 +78,15 @@ const Event = ({ event, participantCount }) => {
             })}
             <button disabled={disableButton} onClick={async () => {
                 await checkValues()
-                axios.post(`http://localhost:8080/register/${event}`, {
+                const req = await axios.post(`https://register-halo22.herokuapp.com/register/${event}`, {
                     key: key,
                     coordinator: form.coordinator,
                     event: event,
                     participants: form[event]
                 })
+                if (req.status === 200) {
+                    toast.success("Registered Successfully")
+                }
             }} className={` sm:w-3/12  sm_2:w-4/12 w-3/5 h-12 rounded-md text-white font-sarabun font-bold mt-10 self-center ${disableButton ? "bg-grey_6 bg-opacity-10" : "bg-green_4"}`}>Submit</button>
         </div>
     </>
