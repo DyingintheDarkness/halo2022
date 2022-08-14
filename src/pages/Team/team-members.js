@@ -14,6 +14,13 @@ export const members = [
     instagram: "empty",
   },
   {
+    name: "Achal Jhawar",
+    designation: "QuЯious Director",
+    github: "https://github.com/achaljhawar",
+    twitter: "https://twitter.com/AchalJhawar",
+    instagram: "https://www.instagram.com/achal.jhawar",
+  },
+  {
     name: "Karan Agrawal",
     designation: "Recoil Director",
     github: "https://github.com/KDrop25",
@@ -26,13 +33,6 @@ export const members = [
     github:"empty",
     twitter: "empty",
     instagram: "empty",
-  },
-  {
-    name: "Achal Jhawar",
-    designation: "QuЯious Director",
-    github: "https://github.com/achaljhawar",
-    twitter: "https://twitter.com/AchalJhawar",
-    instagram: "https://www.instagram.com/achal.jhawar",
   },
   {
     name: "Giriman Kohli",
@@ -48,6 +48,20 @@ export const members = [
     github: "empty" ,
     twitter: "https://twitter.com/Ayush79901610",
     instagram: "https://www.instagram.com/ayushrai14_official/",
+  },
+  {
+    name: "Lavanya Singh",
+    designation: "QuЯious Co-Director",
+    github: "empty",
+    twitter: "https://twitter.com/Lavsisshy",
+    instagram: "https://www.instagram.com/lavanyaaaasingh/",
+  },
+  {
+    name: "Disha Gautam",
+    designation: "QuЯious Co-Director",
+    github:"empty",
+    twitter: "empty",
+    instagram: "empty",
   },
   {
     name: "Aadi Gwaliorkar",
@@ -69,19 +83,5 @@ export const members = [
     github: "empty",
     twitter: "empty",
     instagram: "empty"
-  },
-  {
-    name: "Lavanya Singh",
-    designation: "QuЯious Co-Director",
-    github: "empty",
-    twitter: "https://twitter.com/Lavsisshy",
-    instagram: "https://www.instagram.com/lavanyaaaasingh/",
-  },
-  {
-    name: "Disha Gautam",
-    designation: "QuЯious Co-Director",
-    github:"empty",
-    twitter: "empty",
-    instagram: "empty",
   }
 ];
