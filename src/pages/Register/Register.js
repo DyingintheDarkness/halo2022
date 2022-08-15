@@ -12,7 +12,7 @@ import uuid from "react-uuid"
 
 const Register = () => {
     const { key } = useParams()
-    const [validKey, setValidKey] = useState(true); // False
+    const [validKey, setValidKey] = useState(false); // False
     const [form, setForm] = useSharedState(registerDataAtom);
     const [event, setEvent] = useState("recoil");
     const events = ["recoil", "encode", "qurious"]
