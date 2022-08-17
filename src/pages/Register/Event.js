@@ -17,8 +17,17 @@ const Event = ({ event, participantCount }) => {
         if (form.coordinator.name && form.coordinator.email && form.coordinator.contact && form.coordinator.image && form.coordinator.fileName) {
             if (form[event].length >= min && form[event].length <= max) {
                 // check if any fields are empty or not
-                for (let participant of form[event]) {
-                    if (participant.name === "" || participant.email === "" || participant.contact === "" || !(/data:image\/([a-zA-Z]*);base64,([^]*)/.test(participant.image)) || participant.fileName === "") {
+                if (form[event].length === max) {
+                    console.log(form[event])
+                    if (form[event][max - 1] && !form[event][max - 1].name && !form[event][max - 1].contact && !form[event][max - 1].image && !form[event][max - 1].fileName) {
+                        setForm({
+                            ...form,
+                            [event]: form[event].slice(0, max - 1)
+                        })
+                    }
+                }
+                for (let i = 0; i < (form[event].length === max ? max : min); i++) {
+                    if (form[event][i].name === "" || form[event][i].email === "" || form[event][i].contact === "" || !(/data:image\/([a-zA-Z]*);base64,([^]*)/.test(form[event][i].image)) || form[event][i].fileName === "") {
                         setDisableButton(true)
                         return
                     }
