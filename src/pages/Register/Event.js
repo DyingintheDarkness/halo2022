@@ -88,7 +88,7 @@ const Event = ({ event, participantCount }) => {
             })}
             <button disabled={disableButton} onClick={async () => {
                 await checkValues()
-                const req = await axios.post(`hhttps://backend-halo22.up.railway.app/register/${event}`, {
+                const req = await axios.post(`https://backend-halo22.up.railway.app/register/${event}`, {
                     key: key,
                     coordinator: form.coordinator,
                     event: event,
