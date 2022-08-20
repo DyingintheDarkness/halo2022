@@ -18,7 +18,7 @@ const Register = () => {
     const events = ["recoil", "encode", "qurious"]
     const participantCount = { recoil: { min: 5, max: 6 }, encode: { max: 2 }, qurious: { max: 2 } }
     const sendKey = async () => {
-        const req = await axios.post("https://register-halo22.herokuapp.com/register/verify", {}, {
+        const req = await axios.post("https://backend-halo22.up.railway.app/register/verify", {}, {
             headers: {
                 "Authorization": key
             }
